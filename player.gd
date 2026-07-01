@@ -8,7 +8,7 @@ var degrees := 0
 @onready var speech := get_node("/root/YachtSinkers/Speech")
 
 func _physics_process(delta: float) -> void:
-	var rotation_input := Input.get_axis("ui_left","ui_right")
+	var rotation_input := Input.get_axis("left", "right")
 	var rotation_direction := (transform.basis * Vector3(0, rotation_input, 0)).normalized()
 	rotation += rotation_direction * ROTATION_SPEED * delta
 	move_and_slide()
