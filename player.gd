@@ -13,4 +13,4 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
-		print(roundi(rad_to_deg(rotation.y + 2 * PI)) % 360)
+		print(roundi(rad_to_deg(rotation.y + PI)))
