@@ -20,5 +20,6 @@ mesh = SubResource("SphereMesh_xx5pe")
 stream = ExtResource("2_rsqnq")
 autoplay = true
 bus = &"reverb"
+emission_angle_enabled = true
 
 [connection signal="finished" from="BuoySound" to="." method="_on_buoy_sound_finished"]
