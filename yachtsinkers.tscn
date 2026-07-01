@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cca0fudfwucjs" path="res://player.tscn" id="1_djnc4"]
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://buoy.tscn" id="2_xpjbq"]
+[ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_xpjbq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
 sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
@@ -33,3 +34,5 @@ transform = Transform3D(1, 0, 0, 0, -0.9227412, -0.38542044, 0, 0.38542044, -0.9
 
 [node name="Buoy" parent="." unique_id=210908673 instance=ExtResource("2_xpjbq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Speech" parent="." unique_id=106919617 instance=ExtResource("3_xpjbq")]

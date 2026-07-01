@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsjjrexwnmn13"]
+
+[ext_resource type="Script" uid="uid://baepkwsak77wd" path="res://speech.gd" id="1_1tdmq"]
+
+[node name="Speech" type="Node" unique_id=106919617]
+script = ExtResource("1_1tdmq")
