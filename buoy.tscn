@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://baaiohuuwnua8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t7gb3"]
+
+[node name="Buoy" type="StaticBody3D" unique_id=210908673]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]
+shape = SubResource("SphereShape3D_t7gb3")
