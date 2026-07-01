@@ -5,5 +5,5 @@ extends Area3D
 func _on_buoy_sound_finished() -> void:
 	$BuoySound.play()
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	speech.say("Boom")
