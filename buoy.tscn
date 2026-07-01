@@ -20,7 +20,5 @@ mesh = SubResource("SphereMesh_xx5pe")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 stream = ExtResource("2_rsqnq")
 autoplay = true
-bus = &"reverb"
-emission_angle_enabled = true
 
 [connection signal="finished" from="BuoySound" to="." method="_on_buoy_sound_finished"]
