@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://buoy.tscn" id="2_xpjbq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
+sky_horizon_color = Color(0.3299445, 0.47842848, 0.7221412, 1)
+ground_bottom_color = Color(0.03829214, 0.026294347, 0.22173753, 1)
+ground_horizon_color = Color(0.32941177, 0.47843137, 0.72156864, 1)
 
 [sub_resource type="Sky" id="Sky_a0tk4"]
 sky_material = SubResource("ProceduralSkyMaterial_noarx")
