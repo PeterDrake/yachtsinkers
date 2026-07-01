@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://brmdlrm07bc3q"]
+
+[ext_resource type="PackedScene" uid="uid://cca0fudfwucjs" path="res://player.tscn" id="1_djnc4"]
+[ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://buoy.tscn" id="2_xpjbq"]
+[ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_xpjbq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
+sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
+sky_horizon_color = Color(0.3299445, 0.47842848, 0.7221412, 1)
+ground_bottom_color = Color(0.03829214, 0.026294347, 0.22173753, 1)
+ground_horizon_color = Color(0.32941177, 0.47843137, 0.72156864, 1)
+
+[sub_resource type="Sky" id="Sky_a0tk4"]
+sky_material = SubResource("ProceduralSkyMaterial_noarx")
+
+[sub_resource type="Environment" id="Environment_r3fl7"]
+background_mode = 2
+sky = SubResource("Sky_a0tk4")
+glow_enabled = true
+
+[node name="YachtSinkers" type="Node3D" unique_id=1044159240]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=470058384]
+environment = SubResource("Environment_r3fl7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=982052187]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=219399317 instance=ExtResource("1_djnc4")]
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1221709577]
+transform = Transform3D(1, 0, 0, 0, -0.9227412, -0.38542044, 0, 0.38542044, -0.9227412, 0, -1.5978748, -1.1316499)
+
+[node name="Buoy" parent="." unique_id=210908673 instance=ExtResource("2_xpjbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Speech" parent="." unique_id=106919617 instance=ExtResource("3_xpjbq")]
