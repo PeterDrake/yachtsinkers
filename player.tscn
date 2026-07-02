@@ -25,3 +25,6 @@ mesh = SubResource("CapsuleMesh_xx5pe")
 shape = SubResource("ConvexPolygonShape3D_4flbx")
 target_position = Vector3(0, 0, 0)
 collide_with_areas = true
+
+[node name="RockCollisionTimer" type="Timer" parent="." unique_id=1718509002]
+one_shot = true

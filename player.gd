@@ -16,6 +16,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector3.ZERO
 	move_and_slide()
+	for i in get_slide_collision_count():
+		if get_slide_collision(i).get_collider().name == "Rock" and $RockCollisionTimer.is_stopped():
+			print("Rock collision")
+			$RockCollisionTimer.start()
+
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("space"):

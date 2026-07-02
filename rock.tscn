@@ -6,7 +6,9 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_o0qsl"]
 
-[node name="Rock" type="Area3D" unique_id=1808236213]
+[node name="Rock" type="RigidBody3D" unique_id=820593581]
+freeze = true
+max_contacts_reported = 1
 script = ExtResource("1_o0qsl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]
@@ -14,5 +16,3 @@ shape = SubResource("BoxShape3D_dcxyd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=718199581]
 mesh = SubResource("BoxMesh_o0qsl")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
