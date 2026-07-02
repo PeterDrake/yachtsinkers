@@ -8,6 +8,11 @@
 
 config_version=5
 
+[accessibility]
+
+general/accessibility_support=1
+general/updates_per_second=100
+
 [application]
 
 config/name="Yachtsinkers"
@@ -23,6 +28,7 @@ buses/default_bus_layout="uid://dtymexjy4cblt"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [input]
 
@@ -57,4 +63,5 @@ forward={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
