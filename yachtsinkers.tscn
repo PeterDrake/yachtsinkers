@@ -39,4 +39,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 [node name="Speech" parent="." unique_id=106919617 instance=ExtResource("3_xpjbq")]
 
 [node name="Rock" parent="." unique_id=1808236213 instance=ExtResource("4_o6jxr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.759991, 4.7683716e-07, -11.099407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -9.581989)
