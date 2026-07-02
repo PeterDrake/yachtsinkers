@@ -40,7 +40,8 @@ func _check_for_collisions():
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
-		speech.say("EchoLocating", true)
+		#speech.say("EchoLocating", true)
+		$SonarSound.play()
 		var count = $ShapeCast3D.get_collision_count()
 		for i in range(count):
 			$ShapeCast3D.get_collider(i).sonar_return()
