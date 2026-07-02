@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
-		degrees = roundi(rad_to_deg(rotation.y + PI))
-		print(degrees)
-		speech.say(str(degrees) + "degrees", true)
+		speech.say("EchoLocating", true)
+		var count = $ShapeCast3D.get_collision_count()
+		for i in range(count):
+			$ShapeCast3D.get_collider(i).sonar_return()
