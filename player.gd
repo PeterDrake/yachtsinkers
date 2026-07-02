@@ -17,17 +17,26 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector3.ZERO
 	move_and_slide()
-	for i in get_slide_collision_count():
-		if get_slide_collision(i).get_collider().name == "Rock" and $RockCollisionTimer.is_stopped():
-			speech.say("Collision with rock.")
-			$RockCollisionTimer.start()
-			health -= 1
-			if health == 0:
-				speech.say("You have died")
-				queue_free()
-			else:
-				speech.say("Your health: " + str(health))
+	_check_for_collisions()
 
+func _check_for_collisions():
+	if $CollisionTimer.is_stopped():
+		var collision_count = get_slide_collision_count()
+		if collision_count > 0:
+			$CollisionTimer.start()
+		for i in collision_count:
+			var collider = get_slide_collision(i).get_collider()
+			if collider.name == "Rock":
+				speech.say("Collision with rock")
+				health -= 1
+				if health == 0:
+					speech.say("You have died")
+					queue_free()
+				else:
+					speech.say("Your health: " + str(health))
+			elif collider.name == "Buoy":
+				speech.say("Collision with buoy")
+				collider.receive_hit()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("space"):

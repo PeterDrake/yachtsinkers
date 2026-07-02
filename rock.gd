@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends StaticBody3D
 
 @onready var speech := get_node("/root/YachtSinkers/Speech")
 

@@ -7,7 +7,7 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_xx5pe"]
 
-[node name="Buoy" type="Area3D" unique_id=1808236213]
+[node name="Buoy" type="StaticBody3D" unique_id=1626336948]
 script = ExtResource("1_rsqnq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]
@@ -21,5 +21,4 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 stream = ExtResource("2_rsqnq")
 autoplay = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="BuoySound" to="." method="_on_buoy_sound_finished"]
