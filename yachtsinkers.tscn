@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://brmdlrm07bc3q"]
 
 [ext_resource type="PackedScene" uid="uid://cca0fudfwucjs" path="res://player.tscn" id="1_djnc4"]
-[ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://buoy.tscn" id="2_xpjbq"]
+[ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="2_xpjbq"]
 [ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_xpjbq"]
+[ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_o6jxr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
 sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
@@ -32,7 +33,10 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1221709577]
 transform = Transform3D(1, 0, 0, 0, -0.9227412, -0.38542044, 0, 0.38542044, -0.9227412, 0, -1.5978748, -1.1316499)
 
-[node name="Buoy" parent="." unique_id=210908673 instance=ExtResource("2_xpjbq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+[node name="Yacht" parent="." unique_id=210908673 instance=ExtResource("2_xpjbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
 
 [node name="Speech" parent="." unique_id=106919617 instance=ExtResource("3_xpjbq")]
+
+[node name="Rock" parent="." unique_id=1808236213 instance=ExtResource("4_o6jxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -9.581989)

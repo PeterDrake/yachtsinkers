@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://cca0fudfwucjs"]
 
 [ext_resource type="Script" uid="uid://5arewfe6go3x" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="AudioStream" uid="uid://00akojavfg78" path="res://sonar.wav" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://duj0lby64epyr" path="res://yacht hit.wav" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t7gb3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xx5pe"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4flbx"]
+points = PackedVector3Array(-1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, -20, -1, 20, 20, -1, 20, -20, 1, 20, 20, 1, 20)
 
 [node name="Player" type="CharacterBody3D" unique_id=219399317]
 transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.742278e-08, -7.642742e-15, -1, 0, 0, 0)
@@ -17,3 +22,17 @@ shape = SubResource("CapsuleShape3D_t7gb3")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=877574588]
 transform = Transform3D(1, 0, 0, 0, 5.9604645e-08, -0.99999994, 0, 0.99999994, 5.9604645e-08, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_xx5pe")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=2053754596]
+shape = SubResource("ConvexPolygonShape3D_4flbx")
+target_position = Vector3(0, 0, 0)
+collide_with_areas = true
+
+[node name="CollisionTimer" type="Timer" parent="." unique_id=1718509002]
+one_shot = true
+
+[node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=1036465681]
+stream = ExtResource("2_onrkg")
+
+[node name="CollisionSound" type="AudioStreamPlayer3D" parent="." unique_id=1863250029]
+stream = ExtResource("3_i3pqv")
