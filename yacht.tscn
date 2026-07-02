@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="1_rsqnq"]
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="2_bj3yo"]
 [ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="3_7e6i7"]
+[ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="4_m36ax"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t7gb3"]
 
@@ -24,5 +25,8 @@ autoplay = true
 
 [node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=1504693947]
 stream = ExtResource("3_7e6i7")
+
+[node name="DestructionSound" type="AudioStreamPlayer3D" parent="." unique_id=623671194]
+stream = ExtResource("4_m36ax")
 
 [connection signal="finished" from="BoatSound" to="." method="_on_buoy_sound_finished"]
