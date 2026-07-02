@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cca0fudfwucjs" path="res://player.tscn" id="1_djnc4"]
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://buoy.tscn" id="2_xpjbq"]
 [ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_xpjbq"]
+[ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_o6jxr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
 sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
@@ -36,3 +37,6 @@ transform = Transform3D(1, 0, 0, 0, -0.9227412, -0.38542044, 0, 0.38542044, -0.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
 [node name="Speech" parent="." unique_id=106919617 instance=ExtResource("3_xpjbq")]
+
+[node name="Rock" parent="." unique_id=1808236213 instance=ExtResource("4_o6jxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.759991, 4.7683716e-07, -11.099407)

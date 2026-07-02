@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bxsllf8ybqpya"]
+
+[ext_resource type="Script" uid="uid://dgpti0wp78lpe" path="res://rock.gd" id="1_o0qsl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcxyd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o0qsl"]
+
+[node name="Rock" type="Area3D" unique_id=1808236213]
+script = ExtResource("1_o0qsl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]
+shape = SubResource("BoxShape3D_dcxyd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=718199581]
+mesh = SubResource("BoxMesh_o0qsl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
