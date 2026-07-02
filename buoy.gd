@@ -16,4 +16,5 @@ func receive_hit() -> void:
 		speech.say("Buoy health: " + str(health))
 
 func sonar_return() -> void:
-	speech.say("Buoy")
+	#speech.say("Buoy")
+	$SonarSound.play()
