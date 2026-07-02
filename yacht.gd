@@ -4,9 +4,19 @@ extends StaticBody3D
 @onready var player := get_node("/root/YachtSinkers/Player")
 
 var health := 5
+var waypoint_index = 0
+
+const SPEED := 3
+const WAYPOINTS := [Vector3(-20, 0, -20), Vector3(-20, 0, 20), Vector3(20, 0, 20), Vector3(20, 0, -20)]
+
+func _process(delta: float) -> void:
+	var destination = WAYPOINTS[waypoint_index]
+	position += position.direction_to(destination) * SPEED * delta
+	if position.distance_to(destination) < 1:
+		waypoint_index = (waypoint_index + 1) % len(WAYPOINTS)
 
 func _on_buoy_sound_finished() -> void:
-	$BuoySound.play()
+	$BoatSound.play()
 
 func receive_hit() -> void:
 	health -= 1
