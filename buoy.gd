@@ -8,8 +8,8 @@ func _on_buoy_sound_finished() -> void:
 	$BuoySound.play()
 
 func _on_body_entered(_body: Node) -> void:
-	health -= 1
 	speech.say("Collision with buoy")
+	health -= 1
 	if health == 0:
 		speech.say("Buoy destroyed")
 		queue_free()
