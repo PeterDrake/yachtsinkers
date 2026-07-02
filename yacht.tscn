@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://baaiohuuwnua8"]
 
-[ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://buoy.gd" id="1_rsqnq"]
+[ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="1_rsqnq"]
 [ext_resource type="AudioStream" uid="uid://c3wnehe3xe1gb" path="res://ping_noreverb.wav" id="2_rsqnq"]
 [ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="3_7e6i7"]
 
@@ -8,7 +8,7 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_xx5pe"]
 
-[node name="Buoy" type="StaticBody3D" unique_id=1626336948]
+[node name="Yacht" type="StaticBody3D" unique_id=1626336948]
 script = ExtResource("1_rsqnq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]

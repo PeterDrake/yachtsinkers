@@ -34,8 +34,8 @@ func _check_for_collisions():
 					queue_free()
 				else:
 					speech.say("Your health: " + str(health))
-			elif collider.name == "Buoy":
-				speech.say("Collision with buoy")
+			elif collider.name == "Yacht":
+				speech.say("Collision with yacht")
 				collider.receive_hit()
 
 func _process(_delta: float) -> void:
