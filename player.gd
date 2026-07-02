@@ -23,11 +23,11 @@ func _check_for_collisions():
 	if $CollisionTimer.is_stopped():
 		var collision_count = get_slide_collision_count()
 		if collision_count > 0:
+			$CollisionSound.play()
 			$CollisionTimer.start()
 		for i in collision_count:
 			var collider = get_slide_collision(i).get_collider()
 			if collider.name == "Rock":
-				speech.say("Collision with rock")
 				health -= 1
 				if health == 0:
 					speech.say("You have died")
@@ -35,7 +35,6 @@ func _check_for_collisions():
 				else:
 					speech.say("Your health: " + str(health))
 			elif collider.name == "Yacht":
-				speech.say("Collision with yacht")
 				collider.receive_hit()
 
 func _process(_delta: float) -> void:
