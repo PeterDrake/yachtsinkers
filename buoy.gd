@@ -1,6 +1,7 @@
 extends StaticBody3D
 
 @onready var speech := get_node("/root/YachtSinkers/Speech")
+@onready var player := get_node("/root/YachtSinkers/Player")
 
 var health := 5
 
@@ -16,5 +17,6 @@ func receive_hit() -> void:
 		speech.say("Buoy health: " + str(health))
 
 func sonar_return() -> void:
-	#speech.say("Buoy")
+	var distance := position.distance_to(player.position)
+	await get_tree().create_timer(distance / 10.0).timeout
 	$SonarSound.play()
