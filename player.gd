@@ -39,7 +39,6 @@ func _check_for_collisions():
 					$CollisionSound.play()
 				collider.receive_hit()
 
-
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
 		#speech.say("EchoLocating", true)
