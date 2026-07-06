@@ -14,6 +14,7 @@ func _physics_process(delta: float) -> void:
 	if not sinking:
 		var destination = WAYPOINTS[waypoint_index]
 		velocity = position.direction_to(destination) * SPEED * delta
+		look_at(destination)
 		if position.distance_to(destination) < 1:
 			waypoint_index = (waypoint_index + 1) % len(WAYPOINTS)
 		move_and_slide()
