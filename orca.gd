@@ -19,7 +19,7 @@ func play_dialog():
 func sonar_return() -> void:
 	var distance := position.distance_to(player.position)
 	await get_tree().create_timer(distance / 10.0).timeout
-	$OrcaSound.play()
+	$SonarSound.play()
 
 #const SPEED = 5.0
 #const JUMP_VELOCITY = 4.5
