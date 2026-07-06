@@ -22,12 +22,13 @@ transform = Transform3D(0.949, 0, 0, 0, 0.949, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("BoxMesh_dcxyd")
 
 [node name="RudderSound" type="AudioStreamPlayer3D" parent="." unique_id=1659163169]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0.99174535)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 1.8778776)
 stream = ExtResource("2_h6xxa")
-attenuation_model = 1
+attenuation_model = 3
 unit_size = 5.0
 autoplay = true
-emission_angle_enabled = true
+max_distance = 4.0
+bus = &"rudder"
 emission_angle_degrees = 36.0
 emission_angle_filter_attenuation_db = -70.0
 

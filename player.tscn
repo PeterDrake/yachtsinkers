@@ -36,3 +36,6 @@ stream = ExtResource("2_onrkg")
 
 [node name="CollisionSound" type="AudioStreamPlayer3D" parent="." unique_id=1863250029]
 stream = ExtResource("3_i3pqv")
+
+[node name="BiteSound" type="AudioStreamPlayer3D" parent="." unique_id=1474880397]
+stream = ExtResource("3_i3pqv")

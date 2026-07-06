@@ -8,7 +8,11 @@ extends CharacterBody3D
 func play_dialog():
 	$OrcaSound.play()
 	speech.say(text)
-	player.ram_damage += 1
+	var my_name = name.substr(0, name.find("Orca"))
+	if my_name == "Delilah":
+		player.ram_damage = 2
+	elif my_name == "Phil":
+		player.bite_enabled = true
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 

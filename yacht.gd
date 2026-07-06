@@ -6,14 +6,14 @@ extends CharacterBody3D
 var health := 5
 var waypoint_index = 0
 var sinking := false
+var speed := 150
 
-const SPEED := 150
 const WAYPOINTS := [Vector3(-20, 0, -20), Vector3(-20, 0, 20), Vector3(20, 0, 20), Vector3(20, 0, -20)]
 
 func _physics_process(delta: float) -> void:
 	if not sinking:
 		var destination = WAYPOINTS[waypoint_index]
-		velocity = position.direction_to(destination) * SPEED * delta
+		velocity = position.direction_to(destination) * speed * delta
 		look_at(destination)
 		if position.distance_to(destination) < 1:
 			waypoint_index = (waypoint_index + 1) % len(WAYPOINTS)
@@ -40,6 +40,10 @@ func receive_hit(damage) -> void:
 		else:
 			speech.say("Yacht health: " + str(health))
 
+func receive_bite() -> void:
+	$RudderSound.visible = false
+	speed = 75
+	
 func sonar_return() -> void:
 	var distance := position.distance_to(player.position)
 	await get_tree().create_timer(distance / 10.0).timeout

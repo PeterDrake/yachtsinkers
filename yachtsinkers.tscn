@@ -72,7 +72,7 @@ text = "Caption"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DellilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_o76c1")]
+[node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_o76c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.528457, 0, 8.739593)
 text = "GLADIS: Get in, loser. We're going YachtSinking.
 DELILAH: Schweet.
@@ -81,8 +81,8 @@ DELILAH: Try to ram the yacht very, very hard.
 Your ram damage is now increased."
 
 [node name="PhilOrca" parent="." unique_id=213966905 instance=ExtResource("6_o76c1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.856575, 0, 6.070155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.243284, 0, 6.214802)
 text = "GLADIS: Phil, I need to slow these yachts down.
 PHIL: You could try biting the rudder.
 GLADIS: How would I do that?
-PHIL: Get behind the yacht. When you hear the rudder splashing, press B."
+PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."
