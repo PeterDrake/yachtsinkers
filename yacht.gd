@@ -17,7 +17,9 @@ func _physics_process(delta: float) -> void:
 		look_at(destination)
 		if position.distance_to(destination) < 1:
 			waypoint_index = (waypoint_index + 1) % len(WAYPOINTS)
-		move_and_slide()
+	else:
+		velocity = Vector3.DOWN * 0.6
+	move_and_slide()
 
 func _on_buoy_sound_finished() -> void:
 	$BoatSound.play()
