@@ -22,10 +22,10 @@ func _physics_process(delta: float) -> void:
 func _on_buoy_sound_finished() -> void:
 	$BoatSound.play()
 
-func receive_hit() -> void:
+func receive_hit(damage) -> void:
 	if not sinking:
-		health -= 1
-		if health == 0:
+		health -= damage
+		if health <= 0:
 			speech.say("Yacht destroyed")
 			$BoatSound.stop()
 			$DestructionSound.play()

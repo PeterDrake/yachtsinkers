@@ -5,6 +5,7 @@ const ROTATION_SPEED := 1.5
 
 var degrees := 0
 var health := 5
+var ram_damage := 1
 
 @onready var speech := get_node("/root/YachtSinkers/Speech")
 
@@ -37,7 +38,9 @@ func _check_for_collisions():
 			elif collider.name == "Yacht":
 				if not collider.sinking:
 					$CollisionSound.play()
-				collider.receive_hit()
+				collider.receive_hit(ram_damage)
+			elif "Orca" in collider.name:
+				collider.play_dialog()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
