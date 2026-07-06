@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED := 5.0
+const SPEED := 250.0
 const ROTATION_SPEED := 1.5
 
 var degrees := 0
@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 	var rotation_direction := (transform.basis * Vector3(0, rotation_input, 0)).normalized()
 	rotation += rotation_direction * ROTATION_SPEED * delta
 	if Input.is_action_pressed("forward"):
-		velocity = global_transform.basis.z * SPEED
+		velocity = global_transform.basis.z * SPEED * delta
 	else:
 		velocity = Vector3.ZERO
 	move_and_slide()

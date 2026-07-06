@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends CharacterBody3D
 
 @onready var speech := get_node("/root/YachtSinkers/Speech")
 @onready var player := get_node("/root/YachtSinkers/Player")
@@ -7,15 +7,16 @@ var health := 5
 var waypoint_index = 0
 var sinking := false
 
-const SPEED := 3
+const SPEED := 150
 const WAYPOINTS := [Vector3(-20, 0, -20), Vector3(-20, 0, 20), Vector3(20, 0, 20), Vector3(20, 0, -20)]
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if not sinking:
 		var destination = WAYPOINTS[waypoint_index]
-		position += position.direction_to(destination) * SPEED * delta
+		velocity = position.direction_to(destination) * SPEED * delta
 		if position.distance_to(destination) < 1:
 			waypoint_index = (waypoint_index + 1) % len(WAYPOINTS)
+		move_and_slide()
 
 func _on_buoy_sound_finished() -> void:
 	$BoatSound.play()
