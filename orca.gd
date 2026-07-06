@@ -9,7 +9,13 @@ func play_dialog():
 	$OrcaSound.play()
 	speech.say(text)
 	player.ram_damage += 1
+	await get_tree().create_timer(2.0).timeout
 	queue_free()
+
+func sonar_return() -> void:
+	var distance := position.distance_to(player.position)
+	await get_tree().create_timer(distance / 10.0).timeout
+	$OrcaSound.play()
 
 #const SPEED = 5.0
 #const JUMP_VELOCITY = 4.5
