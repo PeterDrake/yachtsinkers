@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="1_rsqnq"]
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="2_bj3yo"]
+[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="2_h6xxa"]
 [ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="3_7e6i7"]
 [ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="4_m36ax"]
 
@@ -20,6 +21,14 @@ shape = SubResource("BoxShape3D_o76c1")
 transform = Transform3D(0.949, 0, 0, 0, 0.949, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("BoxMesh_dcxyd")
 
+[node name="RudderSound" type="AudioStreamPlayer3D" parent="." unique_id=1659163169]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0.99174535)
+stream = ExtResource("2_h6xxa")
+autoplay = true
+max_distance = 6.0
+emission_angle_enabled = true
+emission_angle_degrees = 41.0
+
 [node name="BoatSound" type="AudioStreamPlayer3D" parent="." unique_id=1197138728]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 stream = ExtResource("2_bj3yo")
@@ -31,4 +40,5 @@ stream = ExtResource("3_7e6i7")
 [node name="DestructionSound" type="AudioStreamPlayer3D" parent="." unique_id=623671194]
 stream = ExtResource("4_m36ax")
 
+[connection signal="finished" from="RudderSound" to="." method="_on_rudder_sound_finished"]
 [connection signal="finished" from="BoatSound" to="." method="_on_buoy_sound_finished"]

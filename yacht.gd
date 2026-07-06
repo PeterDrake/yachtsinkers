@@ -22,6 +22,11 @@ func _physics_process(delta: float) -> void:
 func _on_buoy_sound_finished() -> void:
 	$BoatSound.play()
 
+func _on_rudder_sound_finished() -> void:
+	var rng = RandomNumberGenerator.new()
+	$RudderSound.pitch_scale = rng.randf_range(0.5, 5.0)
+	$RudderSound.play()
+
 func receive_hit(damage) -> void:
 	if not sinking:
 		health -= damage
