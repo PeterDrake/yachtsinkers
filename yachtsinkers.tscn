@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="2_xpjbq"]
 [ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_xpjbq"]
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_o6jxr"]
+[ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="6_o76c1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
 sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
@@ -70,3 +71,18 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ix6xn")
 text = "Caption"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_o76c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.528457, 0, 8.739593)
+text = "GLADIS: Get in, loser. We're going YachtSinking.
+DELILAH: Schweet.
+GLADIS: Any advice, Delilah?
+DELILAH: Try to ram the yacht very, very hard.
+Your ram damage is now increased."
+
+[node name="PhilOrca" parent="." unique_id=213966905 instance=ExtResource("6_o76c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.243284, 0, 6.214802)
+text = "GLADIS: Phil, I need to slow these yachts down.
+PHIL: You could try biting the rudder off.
+GLADIS: How would I do that?
+PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."

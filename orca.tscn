@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c64plly6bqef"]
+
+[ext_resource type="Script" uid="uid://cj65ckpica3pl" path="res://orca.gd" id="1_44a57"]
+[ext_resource type="AudioStream" uid="uid://b712tq17m41dn" path="res://orca_1.wav" id="2_yluti"]
+[ext_resource type="AudioStream" uid="uid://dacvfe2gfta3c" path="res://orca_ping.wav" id="3_ug5op"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vx343"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_44a57"]
+
+[node name="Orca" type="CharacterBody3D" unique_id=1879044386]
+script = ExtResource("1_44a57")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1571680884]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_vx343")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1341966574]
+transform = Transform3D(1, 0, 0, 0, 5.9604645e-08, -0.99999994, 0, 0.99999994, 5.9604645e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_44a57")
+
+[node name="OrcaSound" type="AudioStreamPlayer3D" parent="." unique_id=368202243]
+stream = ExtResource("2_yluti")
+playback_type = 1
+
+[node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=936035840]
+stream = ExtResource("3_ug5op")
+bus = &"reverb"
+playback_type = 1
