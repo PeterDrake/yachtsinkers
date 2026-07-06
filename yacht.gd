@@ -41,7 +41,7 @@ func receive_hit(damage) -> void:
 			speech.say("Yacht health: " + str(health))
 
 func receive_bite() -> void:
-	$RudderSound.visible = false
+	$RudderSound.stop()
 	speed = 75
 	
 func sonar_return() -> void:

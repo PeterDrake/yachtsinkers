@@ -52,9 +52,7 @@ func _process(_delta: float) -> void:
 		var count = $ShapeCast3D.get_collision_count()
 		for i in range(count):
 			$ShapeCast3D.get_collider(i).sonar_return()
-	elif Input.is_action_just_pressed("bite") and bite_enabled and rudder.visible and \
+	elif Input.is_action_just_pressed("bite") and bite_enabled and rudder.is_playing() and \
 			position.distance_to(rudder.global_position) < 3:
-		print(position.distance_to(rudder.global_position))
-		print(rudder.visible)
 		$BiteSound.play()
 		yacht.receive_bite()
