@@ -53,3 +53,7 @@ stream = ExtResource("5_sweqy")
 [node name="DiveSound" type="AudioStreamPlayer3D" parent="." unique_id=1351512848]
 stream = ExtResource("6_2hs0m")
 playback_type = 1
+
+[node name="WaveTimer" type="Timer" parent="." unique_id=395009908]
+wait_time = 20.0
+one_shot = true
