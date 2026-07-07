@@ -31,6 +31,7 @@ unit_size = 5.0
 autoplay = true
 max_distance = 4.0
 bus = &"rudder"
+playback_type = 1
 emission_angle_degrees = 36.0
 emission_angle_filter_attenuation_db = -70.0
 
@@ -39,12 +40,15 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 stream = ExtResource("2_bj3yo")
 autoplay = true
 bus = &"boat"
+playback_type = 1
 
 [node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=1504693947]
 stream = ExtResource("3_7e6i7")
+playback_type = 1
 
 [node name="DestructionSound" type="AudioStreamPlayer3D" parent="." unique_id=623671194]
 stream = ExtResource("4_m36ax")
+playback_type = 1
 
 [node name="ShotTimer" type="Timer" parent="." unique_id=1776475871]
 wait_time = 15.0
@@ -52,6 +56,7 @@ one_shot = true
 
 [node name="ShotSound" type="AudioStreamPlayer3D" parent="." unique_id=1373479092]
 stream = ExtResource("6_6bq12")
+playback_type = 1
 
 [node name="ReloadSound" type="AudioStreamPlayer3D" parent="." unique_id=733171440]
 stream = ExtResource("7_ywhoy")

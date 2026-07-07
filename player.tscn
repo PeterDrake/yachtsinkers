@@ -38,17 +38,21 @@ one_shot = true
 [node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=1036465681]
 transform = Transform3D(1, 6.6814974e-22, 0, 6.6814974e-22, 1, 0, 0, 0, 1, -8.731939e-08, -7.633704e-15, -0.5)
 stream = ExtResource("2_onrkg")
+playback_type = 1
 
 [node name="CollisionSound" type="AudioStreamPlayer3D" parent="." unique_id=1863250029]
 transform = Transform3D(1, 6.6814974e-22, 0, 6.6814974e-22, 1, 0, 0, 0, 1, -8.731939e-08, -7.633704e-15, -0.5)
 stream = ExtResource("3_i3pqv")
+playback_type = 1
 
 [node name="BiteSound" type="AudioStreamPlayer3D" parent="." unique_id=1474880397]
 transform = Transform3D(1, 6.6814974e-22, 0, 6.6814974e-22, 1, 0, 0, 0, 1, -8.731939e-08, -7.633704e-15, -0.5)
 stream = ExtResource("4_hqtel")
+playback_type = 1
 
 [node name="GunHitSound" type="AudioStreamPlayer3D" parent="." unique_id=535758089]
 stream = ExtResource("5_sweqy")
+playback_type = 1
 
 [node name="DiveSound" type="AudioStreamPlayer3D" parent="." unique_id=1351512848]
 stream = ExtResource("6_2hs0m")
