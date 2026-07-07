@@ -7,7 +7,6 @@ var health := 10
 var waypoint_index = 0
 var sinking := false
 var speed := 150
-var gun_state := "waiting"
 
 const WAYPOINTS := [Vector3(-20, 0, -20), Vector3(-20, 0, 20), Vector3(20, 0, 20), Vector3(20, 0, -20)]
 const GUN_RANGE := 10
@@ -24,27 +23,20 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	if gun_state == "waiting":
+	if $ShotTimer.is_stopped():
 		if position.distance_to(player.position) < GUN_RANGE:
+			$ShotTimer.start()
 			print("Loading gun")
 			$ReloadSound.play()  # Loading Sound
-			$LoadTimer.start()
-			gun_state = "loading"
-	elif gun_state == "loading":
-		if $LoadTimer.is_stopped():
+			await get_tree().create_timer(2.0).timeout
 			print("Firing at range " + str(position.distance_to(player.position)))
 			$ShotSound.play()  # Shooting Sound
-			$ShotTimer.start()
-			gun_state = "cooling"
 			if position.distance_to(player.position) < GUN_RANGE:
 				print("Hit!")
 				player.health -= 1
 				player.is_hit()
 			else:
 				print("Miss.")
-	else:  # cooling
-		if $ShotTimer.is_stopped():
-			gun_state = "waiting"
 
 func _on_buoy_sound_finished() -> void:
 	$BoatSound.play()
