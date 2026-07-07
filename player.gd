@@ -59,10 +59,12 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("bite") and bite_enabled and rudder.is_playing() and \
 			position.distance_to(rudder.global_position) < 3:
 		$BiteSound.play()
+		speech.say("Rudder bitten off.")
 		yacht.receive_bite()
 	elif Input.is_action_just_pressed("dive") and dive_enabled and position.distance_to(yacht.global_position) < 3 and \
 			$WaveTimer.is_stopped():
 		$DiveSound.play()
+		speech.say("Wave activated.")
 		$WaveTimer.start()
 		yacht.receive_wave()
 

@@ -28,6 +28,7 @@ func _process(_delta: float) -> void:
 		if not shooting and player and position.distance_to(player.position) < GUN_RANGE:
 			shooting = true
 			$ReloadSound.play()  # Loading Sound
+			speech.say("Loading gun...")
 			await get_tree().create_timer(2.0).timeout
 			if $ShotTimer.is_stopped(): # May have been started by a wave
 				$ShotSound.play()  # Shooting Sound
@@ -35,6 +36,8 @@ func _process(_delta: float) -> void:
 				$ShotTimer.start()
 				if position.distance_to(player.position) < GUN_RANGE:
 					player.receive_bullet()
+				else:
+					speech.say("Gun missed.")
 			shooting = false
 
 func _on_buoy_sound_finished() -> void:
