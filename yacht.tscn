@@ -44,5 +44,13 @@ stream = ExtResource("3_7e6i7")
 [node name="DestructionSound" type="AudioStreamPlayer3D" parent="." unique_id=623671194]
 stream = ExtResource("4_m36ax")
 
+[node name="ShotTimer" type="Timer" parent="." unique_id=1776475871]
+wait_time = 5.0
+one_shot = true
+
+[node name="LoadTimer" type="Timer" parent="." unique_id=141274812]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="finished" from="RudderSound" to="." method="_on_rudder_sound_finished"]
 [connection signal="finished" from="BoatSound" to="." method="_on_buoy_sound_finished"]

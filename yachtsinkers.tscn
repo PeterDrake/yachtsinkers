@@ -79,7 +79,7 @@ GLADIS: Get in, loser. We're going YachtSinking.
 DELILAH: Schweet.
 GLADIS: Any advice, Delilah?
 DELILAH: Try to ram the yacht very, very hard.
-Your ram damage is now increased."
+Your ram damage has increased."
 
 [node name="PhilOrca" parent="." unique_id=213966905 instance=ExtResource("6_o76c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.243284, 0, 6.214802)
