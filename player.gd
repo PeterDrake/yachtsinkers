@@ -35,10 +35,10 @@ func _check_for_collisions():
 				$CollisionSound.play()
 				health -= 1
 				if health == 0:
-					speech.say("You have died")
+					speech.say("You collided with a rock.\nYou have died")
 					queue_free()
 				else:
-					speech.say("Your health: " + str(health))
+					speech.say("You collided with a rock.\nYour health: " + str(health))
 			elif collider.name == "Yacht":
 				if not collider.sinking:
 					$CollisionSound.play()
