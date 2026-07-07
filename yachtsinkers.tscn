@@ -73,7 +73,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_o76c1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.528457, 0, 8.739593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.890306, 0, 11.736488)
 text = "You found another orca!
 GLADIS: Get in, loser. We're going YachtSinking.
 DELILAH: Schweet.
@@ -82,9 +82,18 @@ DELILAH: Try to ram the yacht very, very hard.
 Your ram damage has increased."
 
 [node name="PhilOrca" parent="." unique_id=213966905 instance=ExtResource("6_o76c1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.243284, 0, 6.214802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.412863, 0, 11.526627)
 text = "You found another orca!
 GLADIS: Phil, I need to slow these yachts down.
 PHIL: You could try biting the rudder off.
 GLADIS: How would I do that?
 PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."
+
+[node name="ClaraOrca" parent="." unique_id=1485497090 instance=ExtResource("6_o76c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.285677, 0, 11.526627)
+text = "You found another orca!
+GLADIS: Hey, Clara. We’re gonna sink another yacht.
+CLARA: Pod goals.
+GLADIS: This is tiring work. Got any fish?
+CLARA: Here, have a tuna.
+Your health has increased by 5."
