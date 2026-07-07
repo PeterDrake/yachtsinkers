@@ -15,6 +15,8 @@ func play_dialog():
 		player.bite_enabled = true
 	elif my_name == "Clara":
 		player.health += 5
+	elif my_name == "Mary":
+		player.dive_enabled = true
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 

@@ -8,6 +8,7 @@ var health := 5
 
 var ram_damage := 1
 var bite_enabled := false
+var dive_enabled := false
 
 @onready var speech := get_node("/root/YachtSinkers/Speech")
 @onready var yacht := get_node("/root/YachtSinkers/Yacht")
@@ -59,6 +60,9 @@ func _process(_delta: float) -> void:
 			position.distance_to(rudder.global_position) < 3:
 		$BiteSound.play()
 		yacht.receive_bite()
+	elif Input.is_action_just_pressed("dive") and dive_enabled and position.distance_to(yacht.global_position) < 3:
+		$DiveSound.play()
+		yacht.receive_wave()
 
 func receive_bullet():
 	await get_tree().create_timer(0.3).timeout

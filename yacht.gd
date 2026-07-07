@@ -56,7 +56,10 @@ func receive_hit(damage) -> void:
 func receive_bite() -> void:
 	$RudderSound.stop()
 	speed = 75
-	
+
+func receive_wave() -> void:
+	print("Wav'd!")
+
 func sonar_return() -> void:
 	var distance := position.distance_to(player.position)
 	await get_tree().create_timer(distance / 10.0).timeout
