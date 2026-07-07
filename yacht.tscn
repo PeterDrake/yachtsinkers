@@ -47,7 +47,7 @@ stream = ExtResource("3_7e6i7")
 stream = ExtResource("4_m36ax")
 
 [node name="ShotTimer" type="Timer" parent="." unique_id=1776475871]
-wait_time = 5.0
+wait_time = 15.0
 one_shot = true
 
 [node name="ShotSound" type="AudioStreamPlayer3D" parent="." unique_id=1373479092]
