@@ -56,3 +56,7 @@ func _process(_delta: float) -> void:
 			position.distance_to(rudder.global_position) < 3:
 		$BiteSound.play()
 		yacht.receive_bite()
+
+func is_hit():
+	await get_tree().create_timer(0.3).timeout
+	$GunHitSound.play()

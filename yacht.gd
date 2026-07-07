@@ -27,17 +27,19 @@ func _process(_delta: float) -> void:
 	if gun_state == "waiting":
 		if position.distance_to(player.position) < GUN_RANGE:
 			print("Loading gun")
-			$SonarSound.play()  # Loading Sound
+			$ReloadSound.play()  # Loading Sound
 			$LoadTimer.start()
 			gun_state = "loading"
 	elif gun_state == "loading":
 		if $LoadTimer.is_stopped():
 			print("Firing at range " + str(position.distance_to(player.position)))
-			$DestructionSound.play()  # Shooting Sound
+			$ShotSound.play()  # Shooting Sound
 			$ShotTimer.start()
 			gun_state = "cooling"
 			if position.distance_to(player.position) < GUN_RANGE:
 				print("Hit!")
+				player.health -= 1
+				player.is_hit()
 			else:
 				print("Miss.")
 	else:  # cooling
