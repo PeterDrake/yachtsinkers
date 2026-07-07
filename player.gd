@@ -33,18 +33,21 @@ func _check_for_collisions():
 			var collider = get_slide_collision(i).get_collider()
 			if collider.name == "Rock":
 				$CollisionSound.play()
-				health -= 1
-				if health == 0:
-					speech.say("You collided with a rock.\nYou have died")
-					queue_free()
-				else:
-					speech.say("You collided with a rock.\nYour health: " + str(health))
+				_take_damage("You collided with a rock.")
 			elif collider.name == "Yacht":
 				if not collider.sinking:
 					$CollisionSound.play()
 				collider.receive_hit(ram_damage)
 			elif "Orca" in collider.name:
 				collider.play_dialog()
+
+func _take_damage(reason: String):
+	health -= 1
+	if health == 0:
+		speech.say(reason + "\nYou have died")
+		queue_free()
+	else:
+		speech.say(reason + "\nYour health: " + str(health))
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
@@ -57,6 +60,7 @@ func _process(_delta: float) -> void:
 		$BiteSound.play()
 		yacht.receive_bite()
 
-func is_hit():
+func receive_bullet():
 	await get_tree().create_timer(0.3).timeout
 	$GunHitSound.play()
+	_take_damage("You were hit by a bullet.")

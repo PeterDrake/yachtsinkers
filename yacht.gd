@@ -24,19 +24,13 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	if $ShotTimer.is_stopped():
-		if position.distance_to(player.position) < GUN_RANGE:
+		if player and position.distance_to(player.position) < GUN_RANGE:
 			$ShotTimer.start()
-			print("Loading gun")
 			$ReloadSound.play()  # Loading Sound
 			await get_tree().create_timer(2.0).timeout
-			print("Firing at range " + str(position.distance_to(player.position)))
 			$ShotSound.play()  # Shooting Sound
 			if position.distance_to(player.position) < GUN_RANGE:
-				print("Hit!")
-				player.health -= 1
-				player.is_hit()
-			else:
-				print("Miss.")
+				player.receive_bullet()
 
 func _on_buoy_sound_finished() -> void:
 	$BoatSound.play()
