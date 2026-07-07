@@ -100,7 +100,6 @@ accessibility_live = 2
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_o6jxr")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ix6xn")
-text = "Caption"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
