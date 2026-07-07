@@ -50,28 +50,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
 [node name="Rock" parent="." unique_id=1808236213 instance=ExtResource("4_o6jxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -9.581989)
 
-[node name="Caption" type="Label" parent="." unique_id=1334498009]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -30.5
-offset_top = -23.0
-offset_right = 30.5
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 6
-size_flags_vertical = 10
-focus_mode = 2
-accessibility_live = 2
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_o6jxr")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ix6xn")
-text = "Caption"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_o76c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.890306, 0, 11.736488)
 text = "You found another orca!
@@ -97,3 +75,44 @@ CLARA: Pod goals.
 GLADIS: This is tiring work. Got any fish?
 CLARA: Here, have a tuna.
 Your health has increased by 5."
+
+[node name="MaryOrca" parent="." unique_id=117862570 instance=ExtResource("6_o76c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8425093, 0, 11.526627)
+text = "You found another orca!
+GLADIS: The crew of those yachts have guns!
+MARY: Oh, we can deal with that.
+GLADIS: How’s that, Mary?
+MARY: As you approach the boat, press 2 to swim under it. The wave you make will wash over the boat, stopping the gunners for a while.
+"
+
+[node name="UI" type="Control" parent="." unique_id=1789536252]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Caption" type="Label" parent="UI" unique_id=1334498009]
+custom_minimum_size = Vector2(100, -1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 506.0
+offset_top = 563.0
+offset_right = 606.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+focus_mode = 2
+accessibility_live = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6jxr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ix6xn")
+text = "Caption"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
