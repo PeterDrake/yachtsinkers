@@ -6,6 +6,7 @@ extends CharacterBody3D
 var health := 10
 var waypoint_index = 0
 var sinking := false
+var shooting := false
 var speed := 150
 
 const WAYPOINTS := [Vector3(-20, 0, -20), Vector3(-20, 0, 20), Vector3(20, 0, 20), Vector3(20, 0, -20)]
@@ -24,13 +25,17 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	if $ShotTimer.is_stopped():
-		if player and position.distance_to(player.position) < GUN_RANGE:
-			$ShotTimer.start()
+		if not shooting and player and position.distance_to(player.position) < GUN_RANGE:
+			shooting = true
 			$ReloadSound.play()  # Loading Sound
 			await get_tree().create_timer(2.0).timeout
-			$ShotSound.play()  # Shooting Sound
-			if position.distance_to(player.position) < GUN_RANGE:
-				player.receive_bullet()
+			if $ShotTimer.is_stopped(): # May have been started by a wave
+				$ShotSound.play()  # Shooting Sound
+				$ShotTimer.wait_time = 15.0
+				$ShotTimer.start()
+				if position.distance_to(player.position) < GUN_RANGE:
+					player.receive_bullet()
+			shooting = false
 
 func _on_buoy_sound_finished() -> void:
 	$BoatSound.play()
@@ -58,7 +63,8 @@ func receive_bite() -> void:
 	speed = 75
 
 func receive_wave() -> void:
-	print("Wav'd!")
+	$ShotTimer.wait_time = 20.0
+	$ShotTimer.start()
 
 func sonar_return() -> void:
 	var distance := position.distance_to(player.position)
