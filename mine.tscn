@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ckbk4fmtrrdii"]
+
+[ext_resource type="Script" uid="uid://ta7wrmupffrc" path="res://mine.gd" id="1_i6hay"]
+[ext_resource type="AudioStream" uid="uid://bnjrmkrxkkr8u" path="res://rock.wav" id="2_i213m"]
+[ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="3_i213m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vanlv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_w3yfb"]
+
+[node name="Mine" type="StaticBody3D" unique_id=1796733267]
+script = ExtResource("1_i6hay")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]
+shape = SubResource("SphereShape3D_vanlv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=718199581]
+mesh = SubResource("SphereMesh_w3yfb")
+
+[node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=692003736]
+stream = ExtResource("2_i213m")
+
+[node name="DetonationSound" type="AudioStreamPlayer3D" parent="." unique_id=470503086]
+stream = ExtResource("3_i213m")

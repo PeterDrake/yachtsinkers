@@ -32,17 +32,19 @@ func _check_for_collisions():
 			$CollisionTimer.start()
 		for i in collision_count:
 			var collider = get_slide_collision(i).get_collider()
-			if collider.name == "Rock":
+			if "Rock" in collider.name:
 				$CollisionSound.play()
-				_take_damage("You collided with a rock.")
+				take_damage("You collided with a rock.")
 			elif collider.name == "Yacht":
 				if not collider.sinking:
 					$CollisionSound.play()
 				collider.receive_hit(ram_damage)
 			elif "Orca" in collider.name:
 				collider.play_dialog()
+			elif "Mine" in collider.name:
+				collider.detonate(true)
 
-func _take_damage(reason: String):
+func take_damage(reason: String):
 	health -= 1
 	if health == 0:
 		speech.say(reason + "\nYou have died")
@@ -71,4 +73,4 @@ func _process(_delta: float) -> void:
 func receive_bullet():
 	await get_tree().create_timer(0.3).timeout
 	$GunHitSound.play()
-	_take_damage("You were hit by a bullet.")
+	take_damage("You were hit by a bullet.")

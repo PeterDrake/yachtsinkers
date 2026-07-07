@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="2_xpjbq"]
 [ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_xpjbq"]
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_o6jxr"]
+[ext_resource type="PackedScene" uid="uid://ckbk4fmtrrdii" path="res://mine.tscn" id="6_lmnw4"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="6_o76c1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
@@ -49,6 +50,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
 
 [node name="Rock" parent="." unique_id=1808236213 instance=ExtResource("4_o6jxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -9.581989)
+
+[node name="Mine" parent="." unique_id=1796733267 instance=ExtResource("6_lmnw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.84251, 0, -4.4733734)
 
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_o76c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.890306, 0, 11.736488)
