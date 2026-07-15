@@ -7,6 +7,7 @@ bg_color = Color(0, 0.17626616, 0.31130394, 1)
 
 [node name="PauseMenu" type="Control" unique_id=290838109]
 process_mode = 2
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
