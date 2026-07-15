@@ -129,3 +129,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

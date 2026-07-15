@@ -15,20 +15,18 @@ func _process(_delta: float) -> void:
 func pause():
 	print("pause")
 	get_tree().paused = true
+	yachtsinkers.current_level.hide()
 	show()	
 
 func unpause():
 	print("unpause")
 	get_tree().paused = false
+	yachtsinkers.current_level.show()
 	hide()
 
 func _on_visibility_changed() -> void:
 	if visible:
 		$VBoxContainer/HBoxContainer/VBoxContainer/ContinueButton.grab_focus()
-	else:
-		if ready and yachtsinkers:
-			var caption = yachtsinkers.current_level.find_child("Caption")
-			caption.grab_focus()
 
 func _on_continue_button_pressed() -> void:
 	unpause()
@@ -42,12 +40,17 @@ func _on_quit_button_pressed() -> void:
 
 func _on_settings_button_pressed() -> void:
 	occluded = true
+	hide()
 	yachtsinkers.find_child("SettingsMenu").show()
 
 func _on_audio_library_button_pressed() -> void:
 	occluded = true
+	hide()
 	yachtsinkers.find_child("AudioLibrary").show()
 
 func _on_instructions_button_pressed() -> void:
 	occluded = true
-	yachtsinkers.find_child("Instructions").show()
+	hide()
+	var screen := yachtsinkers.find_child("Instructions")
+	screen.previous_screen = self
+	screen.show()

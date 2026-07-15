@@ -97,6 +97,7 @@ focus_neighbor_bottom = NodePath("../AudioLibraryButton")
 focus_next = NodePath("../AudioLibraryButton")
 focus_previous = NodePath("../../VBoxContainer/QuitButton")
 theme_override_font_sizes/font_size = 48
+disabled = true
 text = "Settings"
 
 [node name="AudioLibraryButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617347346]
@@ -109,6 +110,7 @@ focus_neighbor_bottom = NodePath("../InstructionsButton")
 focus_next = NodePath("../InstructionsButton")
 focus_previous = NodePath("../SettingsButton")
 theme_override_font_sizes/font_size = 48
+disabled = true
 text = "Audio Library"
 
 [node name="InstructionsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617886323]
