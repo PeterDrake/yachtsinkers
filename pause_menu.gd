@@ -31,7 +31,8 @@ func _on_continue_button_pressed() -> void:
 	unpause()
 
 func _on_restart_button_pressed() -> void:
-	pass # Replace with function body.
+	yachtsinkers.restart_level()
+	unpause()
 
 func _on_quit_button_pressed() -> void:
 	pass # Replace with function body.

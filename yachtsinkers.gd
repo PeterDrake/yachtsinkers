@@ -5,3 +5,9 @@ extends Node3D
 func _ready():
 	current_level = load("res://level.tscn").instantiate()
 	add_child(current_level)
+
+func restart_level():
+	current_level.queue_free()
+	current_level = load("res://level.tscn").instantiate()
+	add_child(current_level)
+	
