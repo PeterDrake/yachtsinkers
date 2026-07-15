@@ -11,10 +11,10 @@ var bite_enabled := false
 var dive_enabled := false
 var slap_enabled := false
 
-@onready var speech := get_node("/root/YachtSinkers/Speech")
-@onready var yacht := get_node("/root/YachtSinkers/Yacht")
-@onready var rudder := get_node("/root/YachtSinkers/Yacht/RudderSound")
-@onready var yachtsinkers := get_node("/root/YachtSinkers")
+@onready var speech := get_node("../Speech")
+@onready var yacht := get_node("../Yacht")
+@onready var rudder := get_node("../Yacht/RudderSound")
+@onready var level := get_node("..")
 
 func _physics_process(delta: float) -> void:
 	var rotation_input := Input.get_axis("left", "right")
@@ -72,7 +72,7 @@ func _process(_delta: float) -> void:
 		$WaveTimer.start()
 		yacht.receive_wave()
 	elif Input.is_action_just_pressed("slap") and slap_enabled and $SlapTimer.is_stopped():
-		for object in yachtsinkers.get_children():
+		for object in level.get_children():
 			if "Mine" in object.name and position.distance_to(object.global_position) < 10:
 				object.detonate(false)
 		$SlapSound.play()

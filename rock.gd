@@ -1,7 +1,7 @@
 extends StaticBody3D
 
-@onready var speech := get_node("/root/YachtSinkers/Speech")
-@onready var player := get_node("/root/YachtSinkers/Player")
+@onready var speech := get_node("../Speech")
+@onready var player := get_node("../Player")
 
 func sonar_return() -> void:
 	var distance := position.distance_to(player.position)

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@onready var speech := get_node("/root/YachtSinkers/Speech")
-@onready var player := get_node("/root/YachtSinkers/Player")
+@onready var speech := get_node("../Speech")
+@onready var player := get_node("../Player")
 
 var health := 10
 var waypoint_index = 0
