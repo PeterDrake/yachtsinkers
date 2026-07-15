@@ -13,6 +13,14 @@ func play_dialog():
 		player.ram_damage = 2
 	elif my_name == "Phil":
 		player.bite_enabled = true
+	elif my_name == "Clara":
+		player.health += 5
+	elif my_name == "Mary":
+		player.dive_enabled = true
+	elif my_name == "Herbie":
+		player.speed = 500.0
+	elif my_name == "Greg":
+		player.slap_enabled = true
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
