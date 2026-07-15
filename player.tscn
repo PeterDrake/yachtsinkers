@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dl7algop8i21y" path="res://rudder_bite.wav" id="4_hqtel"]
 [ext_resource type="AudioStream" uid="uid://c1vn2xcm881w1" path="res://hit.wav" id="5_sweqy"]
 [ext_resource type="AudioStream" uid="uid://cw413o1kb5ass" path="res://dive.wav" id="6_2hs0m"]
+[ext_resource type="AudioStream" uid="uid://d7ys7j0pjc3y" path="res://tail_slap.wav" id="7_1jxqw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t7gb3"]
 
@@ -56,6 +57,10 @@ playback_type = 1
 
 [node name="DiveSound" type="AudioStreamPlayer3D" parent="." unique_id=1351512848]
 stream = ExtResource("6_2hs0m")
+playback_type = 1
+
+[node name="SlapSound" type="AudioStreamPlayer3D" parent="." unique_id=1836383971]
+stream = ExtResource("7_1jxqw")
 playback_type = 1
 
 [node name="WaveTimer" type="Timer" parent="." unique_id=395009908]

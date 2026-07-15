@@ -75,6 +75,7 @@ func _process(_delta: float) -> void:
 		for object in yachtsinkers.get_children():
 			if "Mine" in object.name and position.distance_to(object.global_position) < 10:
 				object.detonate(false)
+		$SlapSound.play()
 		speech.say("Tail slap activated.")
 		$SlapTimer.start()
 
