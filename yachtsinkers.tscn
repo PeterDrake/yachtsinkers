@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://brmdlrm07bc3q"]
 
 [ext_resource type="Script" uid="uid://dmhyjjxiggt3j" path="res://yachtsinkers.gd" id="1_dcxyd"]
+[ext_resource type="PackedScene" uid="uid://br1a3kdte8j1h" path="res://settings_menu.tscn" id="3_o6jxr"]
 [ext_resource type="PackedScene" uid="uid://73ld43bownb0" path="res://pause_menu.tscn" id="3_xpjbq"]
 
 [node name="YachtSinkers" type="Node3D" unique_id=1044159240]
@@ -8,4 +9,7 @@ script = ExtResource("1_dcxyd")
 
 [node name="PauseMenu" parent="." unique_id=290838109 instance=ExtResource("3_xpjbq")]
 process_mode = 3
+visible = false
+
+[node name="SettingsMenu" parent="." unique_id=2122777761 instance=ExtResource("3_o6jxr")]
 visible = false
