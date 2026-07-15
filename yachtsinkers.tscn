@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dmhyjjxiggt3j" path="res://yachtsinkers.gd" id="1_dcxyd"]
 [ext_resource type="PackedScene" uid="uid://crsb702v3qubh" path="res://level.tscn" id="2_djnc4"]
+[ext_resource type="PackedScene" uid="uid://73ld43bownb0" path="res://pause_menu.tscn" id="3_xpjbq"]
 
 [node name="YachtSinkers" type="Node3D" unique_id=1044159240]
 script = ExtResource("1_dcxyd")
 
 [node name="Level" parent="." unique_id=84596190 instance=ExtResource("2_djnc4")]
+
+[node name="PauseMenu" parent="." unique_id=290838109 instance=ExtResource("3_xpjbq")]
+process_mode = 3
+visible = false
