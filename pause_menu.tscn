@@ -51,18 +51,33 @@ size_flags_horizontal = 3
 [node name="ContinueButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2049052619]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_right = NodePath("../RestartButton")
+focus_neighbor_bottom = NodePath("../RestartButton")
+focus_next = NodePath("../RestartButton")
 theme_override_font_sizes/font_size = 48
 text = "Continue"
 
 [node name="RestartButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1038856797]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../ContinueButton")
+focus_neighbor_top = NodePath("../ContinueButton")
+focus_neighbor_right = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../ContinueButton")
 theme_override_font_sizes/font_size = 48
 text = "Restart Level"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1365439469]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../RestartButton")
+focus_neighbor_top = NodePath("../RestartButton")
+focus_neighbor_right = NodePath("../../VBoxContainer2/SettingsButton")
+focus_neighbor_bottom = NodePath("../../VBoxContainer2/SettingsButton")
+focus_next = NodePath("../../VBoxContainer2/SettingsButton")
+focus_previous = NodePath("../RestartButton")
 theme_override_font_sizes/font_size = 48
 text = "Quit to Title"
 
@@ -73,17 +88,34 @@ size_flags_horizontal = 3
 [node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=912260969]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../VBoxContainer/QuitButton")
+focus_neighbor_top = NodePath("../../VBoxContainer/QuitButton")
+focus_neighbor_right = NodePath("../AudioLibraryButton")
+focus_neighbor_bottom = NodePath("../AudioLibraryButton")
+focus_next = NodePath("../AudioLibraryButton")
+focus_previous = NodePath("../../VBoxContainer/QuitButton")
 theme_override_font_sizes/font_size = 48
 text = "Settings"
 
 [node name="AudioLibraryButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617347346]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../SettingsButton")
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_right = NodePath("../InstructionsButton")
+focus_neighbor_bottom = NodePath("../InstructionsButton")
+focus_next = NodePath("../InstructionsButton")
+focus_previous = NodePath("../SettingsButton")
 theme_override_font_sizes/font_size = 48
 text = "Audio Library"
 
 [node name="InstructionsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617886323]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../AudioLibraryButton")
+focus_neighbor_top = NodePath("../AudioLibraryButton")
+focus_previous = NodePath("../AudioLibraryButton")
 theme_override_font_sizes/font_size = 48
 text = "Instructions"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

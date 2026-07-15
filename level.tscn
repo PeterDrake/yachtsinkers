@@ -63,10 +63,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.15749, 0, -9.473373)
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("7_8b0r0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.890306, 0, 11.736488)
 text = "You found another orca!
-GLADIS: Get in, loser. We're going YachtSinking.
+GLADIS: Get in loser. We're going YachtSinking.
 DELILAH: Schweet.
 GLADIS: Any advice, Delilah?
-DELILAH: Try to ram the yacht very, very hard.
+DELILAH: Try to ram the yacht very very hard.
 Your ram damage has increased."
 
 [node name="PhilOrca" parent="." unique_id=1538291848 instance=ExtResource("7_8b0r0")]
