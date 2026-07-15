@@ -51,8 +51,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
 [node name="Rock" parent="." unique_id=1808236213 instance=ExtResource("4_o6jxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -9.581989)
 
-[node name="Mine" parent="." unique_id=1796733267 instance=ExtResource("6_lmnw4")]
+[node name="Mine1" parent="." unique_id=1796733267 instance=ExtResource("6_lmnw4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.84251, 0, -4.4733734)
+
+[node name="Mine2" parent="." unique_id=53341935 instance=ExtResource("6_lmnw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.84251, 0, -4.4733734)
+
+[node name="Mine3" parent="." unique_id=1779207562 instance=ExtResource("6_lmnw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.15749, 0, -9.473373)
 
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_o76c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.890306, 0, 11.736488)
@@ -94,6 +100,14 @@ text = "You found another orca!
 GLADIS: I wish I was as fast as you, Herbie!
 HERBIE: It’s all in the tail.
 Your speed has increased."
+
+[node name="GregOrca" parent="." unique_id=2050400485 instance=ExtResource("6_o76c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.389141, 0, 11.526627)
+text = "You found another orca!
+GLADIS: They’ve put mines in the water!
+GREG: The arrogance. The sea is our domain!
+GLADIS: Damn straight.
+GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, safely detonating any nearby mines."
 
 [node name="Caption" type="Label" parent="." unique_id=1334498009]
 custom_minimum_size = Vector2(100, -1)

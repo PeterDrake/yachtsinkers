@@ -9,10 +9,12 @@ var speed := 250.0
 var ram_damage := 1
 var bite_enabled := false
 var dive_enabled := false
+var slap_enabled := false
 
 @onready var speech := get_node("/root/YachtSinkers/Speech")
 @onready var yacht := get_node("/root/YachtSinkers/Yacht")
 @onready var rudder := get_node("/root/YachtSinkers/Yacht/RudderSound")
+@onready var yachtsinkers := get_node("/root/YachtSinkers")
 
 func _physics_process(delta: float) -> void:
 	var rotation_input := Input.get_axis("left", "right")
@@ -69,6 +71,12 @@ func _process(_delta: float) -> void:
 		speech.say("Wave activated.")
 		$WaveTimer.start()
 		yacht.receive_wave()
+	elif Input.is_action_just_pressed("slap") and slap_enabled and $SlapTimer.is_stopped():
+		for object in yachtsinkers.get_children():
+			if "Mine" in object.name and position.distance_to(object.global_position) < 10:
+				object.detonate(false)
+		speech.say("Tail slap activated.")
+		$SlapTimer.start()
 
 func receive_bullet():
 	await get_tree().create_timer(0.3).timeout
