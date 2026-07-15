@@ -88,6 +88,13 @@ MARY: Oh, we can deal with that.
 GLADIS: How’s that, Mary?
 MARY: As you approach the boat, press 2 to swim under it. The wave you make will wash over the boat, stopping the gunners for a while."
 
+[node name="HerbieOrca" parent="." unique_id=483332389 instance=ExtResource("6_o76c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.389141, 0, 11.526627)
+text = "You found another orca!
+GLADIS: I wish I was as fast as you, Herbie!
+HERBIE: It’s all in the tail.
+Your speed has increased."
+
 [node name="Caption" type="Label" parent="." unique_id=1334498009]
 custom_minimum_size = Vector2(100, -1)
 anchors_preset = 12

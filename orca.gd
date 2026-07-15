@@ -17,6 +17,8 @@ func play_dialog():
 		player.health += 5
 	elif my_name == "Mary":
 		player.dive_enabled = true
+	elif my_name == "Herbie":
+		player.speed = 500.0
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
