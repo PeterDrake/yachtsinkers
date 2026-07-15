@@ -45,7 +45,8 @@ func _on_settings_button_pressed() -> void:
 	yachtsinkers.find_child("SettingsMenu").show()
 
 func _on_audio_library_button_pressed() -> void:
-	pass # Replace with function body.
+	occluded = true
+	yachtsinkers.find_child("AudioLibrary").show()
 
 func _on_instructions_button_pressed() -> void:
 	pass # Replace with function body.
