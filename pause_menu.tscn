@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cdcq5lo4lq35d" path="res://pause_menu.gd" id="1_hdmo1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
+bg_color = Color(0, 0.17626616, 0.31130394, 1)
+
 [node name="PauseMenu" type="Control" unique_id=290838109]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,17 +15,75 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hdmo1")
 
-[node name="Label" type="Label" parent="." unique_id=1091792887]
-process_mode = 2
+[node name="Panel" type="Panel" parent="." unique_id=2144496260]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdmo1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1947849068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1091792887]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 64
 text = "Pause"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1156288268]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1221192663]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2049052619]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Continue"
+
+[node name="RestartButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1038856797]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Restart Level"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1365439469]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Quit to Title"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=953045439]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=912260969]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+
+[node name="AudioLibraryButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617347346]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Audio Library"
+
+[node name="InstructionsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617886323]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Instructions"
