@@ -47,3 +47,27 @@ func _on_gun_fired_button_pressed() -> void:
 
 func _on_gun_hit_button_pressed() -> void:
 	$Sounds/GunHitPlayer.play()
+
+func _on_echo_button_pressed() -> void:
+	$Sounds/EcholocatePlayer.play()
+
+func _on_bite_button_pressed() -> void:
+	$Sounds/BitePlayer.play()
+
+func _on_dive_button_pressed() -> void:
+	$Sounds/DivePlayer.play()
+
+func _on_slap_button_pressed() -> void:
+	$Sounds/SlapPlayer.play()
+
+func _on_ship_return_button_pressed() -> void:
+	$Sounds/ShipReturnPlayer.play()
+
+func _on_rock_return_button_pressed() -> void:
+	$Sounds/RockReturnPlayer.play()
+
+func _on_mine_return_button_pressed() -> void:
+	$Sounds/MineReturnPlayer.play()
+
+func _on_orca_return_button_pressed() -> void:
+	$Sounds/OrcaReturnPlayer.play()

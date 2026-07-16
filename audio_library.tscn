@@ -10,6 +10,13 @@
 [ext_resource type="AudioStream" uid="uid://b712tq17m41dn" path="res://orca_1.wav" id="8_aqb5m"]
 [ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://reload.wav" id="9_ywc62"]
 [ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://gunshot.wav" id="10_yyc0e"]
+[ext_resource type="AudioStream" uid="uid://00akojavfg78" path="res://sonar.wav" id="11_vfd73"]
+[ext_resource type="AudioStream" uid="uid://dl7algop8i21y" path="res://rudder_bite.wav" id="12_3jke3"]
+[ext_resource type="AudioStream" uid="uid://cw413o1kb5ass" path="res://dive.wav" id="13_3digw"]
+[ext_resource type="AudioStream" uid="uid://d7ys7j0pjc3y" path="res://tail_slap.wav" id="14_veo6m"]
+[ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="15_tdr1m"]
+[ext_resource type="AudioStream" uid="uid://b4k8kooos1qfl" path="res://mine_ping.wav" id="16_3digw"]
+[ext_resource type="AudioStream" uid="uid://dacvfe2gfta3c" path="res://orca_ping.wav" id="17_veo6m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
@@ -223,6 +230,38 @@ playback_type = 1
 stream = ExtResource("4_8eh6q")
 playback_type = 1
 
+[node name="EcholocatePlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1746258204]
+stream = ExtResource("11_vfd73")
+playback_type = 1
+
+[node name="BitePlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=2005491964]
+stream = ExtResource("12_3jke3")
+playback_type = 1
+
+[node name="DivePlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=179821586]
+stream = ExtResource("13_3digw")
+playback_type = 1
+
+[node name="SlapPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=806270900]
+stream = ExtResource("14_veo6m")
+playback_type = 1
+
+[node name="ShipReturnPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=279810552]
+stream = ExtResource("15_tdr1m")
+playback_type = 1
+
+[node name="RockReturnPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1286678712]
+stream = ExtResource("6_xt7e3")
+playback_type = 1
+
+[node name="MineReturnPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1925101052]
+stream = ExtResource("16_3digw")
+playback_type = 1
+
+[node name="OrcaReturnPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1146532119]
+stream = ExtResource("17_veo6m")
+playback_type = 1
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/YachtButton" to="." method="_on_yacht_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/RudderButton" to="." method="_on_rudder_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/RamButton" to="." method="_on_ram_button_pressed"]
@@ -233,3 +272,12 @@ playback_type = 1
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/GunLoadButton" to="." method="_on_gun_load_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/GunFiredButton" to="." method="_on_gun_fired_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/GunHitButton" to="." method="_on_gun_hit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/EchoButton" to="." method="_on_echo_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/BiteButton" to="." method="_on_bite_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/DiveButton" to="." method="_on_dive_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/SlapButton" to="." method="_on_slap_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/ShipReturnButton" to="." method="_on_ship_return_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/RockReturnButton" to="." method="_on_rock_return_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/MineReturnButton" to="." method="_on_mine_return_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/OrcaReturnButton" to="." method="_on_orca_return_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/ReturnButton" to="." method="_on_return_button_pressed"]
