@@ -52,9 +52,12 @@ size_flags_horizontal = 3
 [node name="ContinueButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2049052619]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../VBoxContainer2/InstructionsButton")
+focus_neighbor_top = NodePath("../../VBoxContainer2/InstructionsButton")
 focus_neighbor_right = NodePath("../RestartButton")
 focus_neighbor_bottom = NodePath("../RestartButton")
 focus_next = NodePath("../RestartButton")
+focus_previous = NodePath("../../VBoxContainer2/InstructionsButton")
 theme_override_font_sizes/font_size = 48
 text = "Continue"
 
@@ -117,6 +120,9 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../AudioLibraryButton")
 focus_neighbor_top = NodePath("../AudioLibraryButton")
+focus_neighbor_right = NodePath("../../VBoxContainer/ContinueButton")
+focus_neighbor_bottom = NodePath("../../VBoxContainer/ContinueButton")
+focus_next = NodePath("../../VBoxContainer/ContinueButton")
 focus_previous = NodePath("../AudioLibraryButton")
 theme_override_font_sizes/font_size = 48
 text = "Instructions"

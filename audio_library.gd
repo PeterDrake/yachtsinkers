@@ -16,6 +16,16 @@ func close():
 	previous_screen.show()
 	hide()
 
+func _on_visibility_changed() -> void:
+	print('visibility changed')
+	if visible:
+		print('visible')
+		if get_tree().is_accessibility_enabled():
+			$VBoxContainer/HBoxContainer/VBoxContainer/ConstantLabel.grab_focus()
+		else:
+			print("vadsfasdf")
+			$VBoxContainer/HBoxContainer/VBoxContainer/YachtButton.grab_focus()
+			
 func _on_yacht_button_pressed() -> void:
 	$Sounds/YachtPlayer.play()
 	await get_tree().create_timer(2.0).timeout
