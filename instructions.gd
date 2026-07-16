@@ -2,7 +2,7 @@ extends Control
 
 @onready var pause_menu = get_node("../PauseMenu")
 
-var previous_screen = null
+var previous_screen
 
 func _process(_delta: float) -> void:
 	if visible and Input.is_action_just_pressed("pause"):

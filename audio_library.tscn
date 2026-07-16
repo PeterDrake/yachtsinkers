@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dwn7377x8heyl"]
 
 [ext_resource type="Script" uid="uid://s7y2v0fpd7jk" path="res://audio_library.gd" id="1_twe8u"]
+[ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="2_xoeck"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
@@ -25,15 +26,156 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oerog")
 
-[node name="Label" type="Label" parent="." unique_id=735699599]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=62524170]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=735699599]
+layout_mode = 2
 text = "Audio Library"
 horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=70222972]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1329019594]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ConstantLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=985825831]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Constant Sounds"
+
+[node name="YachtButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1859977847]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Yacht"
+
+[node name="RudderButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1981102455]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Rudder"
+
+[node name="EventLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=892529959]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Events"
+
+[node name="RamButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1925677409]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Ram Yacht"
+
+[node name="DestroyedButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1227209316]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Yacht Destroyed"
+
+[node name="HitRockButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=544738283]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hit Rock"
+
+[node name="MineExplosionButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1289736579]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Mine Explosion"
+
+[node name="MetOrcaButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=804641210]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Met Another Orca"
+
+[node name="GunLoadButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1706417278]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Gun Loading"
+
+[node name="GunFiredButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1195476499]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Gun Fired"
+
+[node name="GunHitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=725445791]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Gun Hit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=358278478]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActionLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=244821505]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Actions"
+
+[node name="EchoButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=68208935]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Echolocate"
+
+[node name="BiteButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1655728841]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Bite Rudder"
+
+[node name="DiveButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=858549067]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Dive / Splash"
+
+[node name="SlapButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1190859781]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Tail Slap"
+
+[node name="SonarEchoLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=747130602]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Sonar Echoes	"
+
+[node name="ShipReturnButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1178152634]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Ship Echo"
+
+[node name="RockReturnButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1688137472]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Rock Echo"
+
+[node name="MineReturnButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=626464214]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Mine Echo"
+
+[node name="OrcaReturnButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=240044107]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Orca Echo"
+
+[node name="Spacer" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=84213397]
+layout_mode = 2
+size_flags_vertical = 6
+text = " "
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2121702990]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Return"
+
+[node name="Sounds" type="Node" parent="." unique_id=673090245]
+
+[node name="YachtPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1701002381]
+stream = ExtResource("2_xoeck")
+bus = &"boat"
+playback_type = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/YachtButton" to="." method="_on_yacht_button_pressed"]
