@@ -26,7 +26,10 @@ func unpause():
 
 func _on_visibility_changed() -> void:
 	if visible:
-		$VBoxContainer/HBoxContainer/VBoxContainer/ContinueButton.grab_focus()
+		if get_tree().is_accessibility_enabled():
+			$VBoxContainer/Title.grab_focus()
+		else:
+			$VBoxContainer/HBoxContainer/VBoxContainer/ContinueButton.grab_focus()
 
 func _on_continue_button_pressed() -> void:
 	unpause()

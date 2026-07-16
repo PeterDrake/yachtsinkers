@@ -49,8 +49,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=735699599]
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=735699599]
 layout_mode = 2
+focus_neighbor_left = NodePath("../HBoxContainer/VBoxContainer2/ReturnButton")
+focus_neighbor_top = NodePath("../HBoxContainer/VBoxContainer2/ReturnButton")
+focus_neighbor_right = NodePath("../HBoxContainer/VBoxContainer/ConstantLabel")
+focus_neighbor_bottom = NodePath("../HBoxContainer/VBoxContainer/ConstantLabel")
+focus_next = NodePath("../HBoxContainer/VBoxContainer/ConstantLabel")
+focus_previous = NodePath("../HBoxContainer/VBoxContainer2/ReturnButton")
+focus_mode = 3
+theme_override_font_sizes/font_size = 64
 text = "Audio Library"
 horizontal_alignment = 1
 
@@ -65,18 +73,25 @@ size_flags_horizontal = 3
 [node name="ConstantLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=985825831]
 layout_mode = 2
 size_flags_vertical = 6
+focus_neighbor_left = NodePath("../../../Title")
+focus_neighbor_top = NodePath("../../../Title")
+focus_neighbor_right = NodePath("../YachtButton")
+focus_neighbor_bottom = NodePath("../YachtButton")
+focus_next = NodePath("../YachtButton")
+focus_previous = NodePath("../../../Title")
 focus_mode = 3
 text = "Constant Sounds"
+horizontal_alignment = 1
 
 [node name="YachtButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1859977847]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_left = NodePath("../../VBoxContainer2/ReturnButton")
-focus_neighbor_top = NodePath("../../VBoxContainer2/ReturnButton")
+focus_neighbor_left = NodePath("../ConstantLabel")
+focus_neighbor_top = NodePath("../ConstantLabel")
 focus_neighbor_right = NodePath("../RudderButton")
 focus_neighbor_bottom = NodePath("../RudderButton")
 focus_next = NodePath("../RudderButton")
-focus_previous = NodePath("../../VBoxContainer2/ReturnButton")
+focus_previous = NodePath("../ConstantLabel")
 text = "Yacht"
 
 [node name="RudderButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1981102455]
@@ -84,27 +99,34 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../YachtButton")
 focus_neighbor_top = NodePath("../YachtButton")
-focus_neighbor_right = NodePath("../RamButton")
-focus_neighbor_bottom = NodePath("../RamButton")
-focus_next = NodePath("../RamButton")
+focus_neighbor_right = NodePath("../EventLabel")
+focus_neighbor_bottom = NodePath("../EventLabel")
+focus_next = NodePath("../EventLabel")
 focus_previous = NodePath("../YachtButton")
 text = "Rudder"
 
 [node name="EventLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=892529959]
 layout_mode = 2
 size_flags_vertical = 6
+focus_neighbor_left = NodePath("../RudderButton")
+focus_neighbor_top = NodePath("../RudderButton")
+focus_neighbor_right = NodePath("../RamButton")
+focus_neighbor_bottom = NodePath("../RamButton")
+focus_next = NodePath("../RamButton")
+focus_previous = NodePath("../RudderButton")
 focus_mode = 3
 text = "Events"
+horizontal_alignment = 1
 
 [node name="RamButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1925677409]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_left = NodePath("../RudderButton")
-focus_neighbor_top = NodePath("../RudderButton")
+focus_neighbor_left = NodePath("../EventLabel")
+focus_neighbor_top = NodePath("../EventLabel")
 focus_neighbor_right = NodePath("../DestroyedButton")
 focus_neighbor_bottom = NodePath("../DestroyedButton")
 focus_next = NodePath("../DestroyedButton")
-focus_previous = NodePath("../RudderButton")
+focus_previous = NodePath("../EventLabel")
 text = "Ram Yacht"
 
 [node name="DestroyedButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1227209316]
@@ -178,9 +200,9 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../GunFiredButton")
 focus_neighbor_top = NodePath("../GunFiredButton")
-focus_neighbor_right = NodePath("../../VBoxContainer2/EchoButton")
-focus_neighbor_bottom = NodePath("../../VBoxContainer2/EchoButton")
-focus_next = NodePath("../../VBoxContainer2/EchoButton")
+focus_neighbor_right = NodePath("../../VBoxContainer2/ActionLabel")
+focus_neighbor_bottom = NodePath("../../VBoxContainer2/ActionLabel")
+focus_next = NodePath("../../VBoxContainer2/ActionLabel")
 focus_previous = NodePath("../GunFiredButton")
 text = "Gun Hit"
 
@@ -191,18 +213,25 @@ size_flags_horizontal = 3
 [node name="ActionLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=244821505]
 layout_mode = 2
 size_flags_vertical = 6
+focus_neighbor_left = NodePath("../../VBoxContainer/GunHitButton")
+focus_neighbor_top = NodePath("../../VBoxContainer/GunHitButton")
+focus_neighbor_right = NodePath("../EchoButton")
+focus_neighbor_bottom = NodePath("../EchoButton")
+focus_next = NodePath("../EchoButton")
+focus_previous = NodePath("../../VBoxContainer/GunHitButton")
 focus_mode = 3
 text = "Actions"
+horizontal_alignment = 1
 
 [node name="EchoButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=68208935]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_left = NodePath("../../VBoxContainer/GunHitButton")
-focus_neighbor_top = NodePath("../../VBoxContainer/GunHitButton")
+focus_neighbor_left = NodePath("../ActionLabel")
+focus_neighbor_top = NodePath("../ActionLabel")
 focus_neighbor_right = NodePath("../BiteButton")
 focus_neighbor_bottom = NodePath("../BiteButton")
 focus_next = NodePath("../BiteButton")
-focus_previous = NodePath("../../VBoxContainer/GunHitButton")
+focus_previous = NodePath("../ActionLabel")
 text = "Echolocate"
 
 [node name="BiteButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1655728841]
@@ -232,27 +261,34 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../DiveButton")
 focus_neighbor_top = NodePath("../DiveButton")
-focus_neighbor_right = NodePath("../ShipReturnButton")
-focus_neighbor_bottom = NodePath("../ShipReturnButton")
-focus_next = NodePath("../ShipReturnButton")
+focus_neighbor_right = NodePath("../SonarEchoLabel")
+focus_neighbor_bottom = NodePath("../SonarEchoLabel")
+focus_next = NodePath("../SonarEchoLabel")
 focus_previous = NodePath("../DiveButton")
 text = "Tail Slap"
 
 [node name="SonarEchoLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=747130602]
 layout_mode = 2
 size_flags_vertical = 6
+focus_neighbor_left = NodePath("../SlapButton")
+focus_neighbor_top = NodePath("../SlapButton")
+focus_neighbor_right = NodePath("../ShipReturnButton")
+focus_neighbor_bottom = NodePath("../ShipReturnButton")
+focus_next = NodePath("../ShipReturnButton")
+focus_previous = NodePath("../SlapButton")
 focus_mode = 3
 text = "Sonar Echoes	"
+horizontal_alignment = 1
 
 [node name="ShipReturnButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1178152634]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_left = NodePath("../SlapButton")
-focus_neighbor_top = NodePath("../SlapButton")
+focus_neighbor_left = NodePath("../SonarEchoLabel")
+focus_neighbor_top = NodePath("../SonarEchoLabel")
 focus_neighbor_right = NodePath("../RockReturnButton")
 focus_neighbor_bottom = NodePath("../RockReturnButton")
 focus_next = NodePath("../RockReturnButton")
-focus_previous = NodePath("../SlapButton")
+focus_previous = NodePath("../SonarEchoLabel")
 text = "Ship Echo"
 
 [node name="RockReturnButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1688137472]
@@ -298,9 +334,9 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../OrcaReturnButton")
 focus_neighbor_top = NodePath("../OrcaReturnButton")
-focus_neighbor_right = NodePath("../../VBoxContainer/YachtButton")
-focus_neighbor_bottom = NodePath("../../VBoxContainer/YachtButton")
-focus_next = NodePath("../../VBoxContainer/YachtButton")
+focus_neighbor_right = NodePath("../../../Title")
+focus_neighbor_bottom = NodePath("../../../Title")
+focus_next = NodePath("../../../Title")
 focus_previous = NodePath("../OrcaReturnButton")
 text = "Return"
 

@@ -33,9 +33,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1091792887]
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1091792887]
 layout_mode = 2
 size_flags_vertical = 0
+focus_neighbor_left = NodePath("../HBoxContainer/VBoxContainer2/InstructionsButton")
+focus_neighbor_top = NodePath("../HBoxContainer/VBoxContainer2/InstructionsButton")
+focus_neighbor_right = NodePath("../HBoxContainer/VBoxContainer/ContinueButton")
+focus_neighbor_bottom = NodePath("../HBoxContainer/VBoxContainer/ContinueButton")
+focus_next = NodePath("../HBoxContainer/VBoxContainer/ContinueButton")
+focus_previous = NodePath("../HBoxContainer/VBoxContainer2/InstructionsButton")
+focus_mode = 3
 theme_override_font_sizes/font_size = 64
 text = "Pause"
 horizontal_alignment = 1
@@ -120,9 +127,9 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../AudioLibraryButton")
 focus_neighbor_top = NodePath("../AudioLibraryButton")
-focus_neighbor_right = NodePath("../../VBoxContainer/ContinueButton")
-focus_neighbor_bottom = NodePath("../../VBoxContainer/ContinueButton")
-focus_next = NodePath("../../VBoxContainer/ContinueButton")
+focus_neighbor_right = NodePath("../../../Title")
+focus_neighbor_bottom = NodePath("../../../Title")
+focus_next = NodePath("../../../Title")
 focus_previous = NodePath("../AudioLibraryButton")
 theme_override_font_sizes/font_size = 48
 text = "Instructions"

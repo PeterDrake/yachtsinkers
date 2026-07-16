@@ -19,6 +19,6 @@ func close():
 func _on_visibility_changed() -> void:
 	if visible:
 		if get_tree().is_accessibility_enabled():
-			$VBoxContainer/Text.grab_focus()
+			$VBoxContainer/Title.grab_focus()
 		else:
 			$VBoxContainer/ReturnButton.grab_focus()

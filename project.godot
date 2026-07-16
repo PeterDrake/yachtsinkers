@@ -10,7 +10,6 @@ config_version=5
 
 [accessibility]
 
-general/accessibility_support=1
 general/updates_per_second=100
 
 [application]
