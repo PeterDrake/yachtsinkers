@@ -44,7 +44,9 @@ func _on_quit_button_pressed() -> void:
 func _on_settings_button_pressed() -> void:
 	occluded = true
 	hide()
-	yachtsinkers.find_child("SettingsMenu").show()
+	var screen = yachtsinkers.find_child("SettingsMenu")
+	screen.previous_screen = self
+	screen.show()
 
 func _on_audio_library_button_pressed() -> void:
 	occluded = true
