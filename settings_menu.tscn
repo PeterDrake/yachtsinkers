@@ -109,6 +109,9 @@ text = "Echolocation Width"
 [node name="EcholocationWidthSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=129740052]
 layout_mode = 2
 size_flags_vertical = 2
+min_value = 1.0
+max_value = 20.0
+value = 20.0
 
 [node name="HealthLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=707474870]
 layout_mode = 2
@@ -151,4 +154,5 @@ bus = &"sfx"
 playback_type = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer2/EcholocationWidthSlider" to="." method="_on_echolocation_width_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/ReturnButton" to="." method="_on_return_button_pressed"]

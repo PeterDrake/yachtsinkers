@@ -2,6 +2,8 @@ extends Node3D
 
 @onready var current_level
 
+var echolocation_width := 20.0
+
 func _ready():
 	current_level = load("res://level.tscn").instantiate()
 	add_child(current_level)

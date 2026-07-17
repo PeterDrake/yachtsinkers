@@ -13,13 +13,11 @@ func _process(_delta: float) -> void:
 				pause()
 
 func pause():
-	print("pause")
 	get_tree().paused = true
 	yachtsinkers.current_level.hide()
 	show()	
 
 func unpause():
-	print("unpause")
 	get_tree().paused = false
 	yachtsinkers.current_level.show()
 	hide()

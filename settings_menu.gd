@@ -1,6 +1,7 @@
 extends Control
 
 @onready var pause_menu = get_node("../PauseMenu")
+@onready var yachtsinkers := get_node("..")
 
 var previous_screen
 var _bus_index
@@ -43,3 +44,6 @@ func _on_sfx_value_changed(value: float) -> void:
 	_bus_index = AudioServer.get_bus_index("sfx")
 	AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value))
 	$SfxPlayer.play()
+
+func _on_echolocation_width_slider_value_changed(value: float) -> void:
+	yachtsinkers.echolocation_width = value
