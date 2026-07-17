@@ -75,6 +75,8 @@ text = "Sound Effects"
 [node name="SoundEffectsSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=80123608]
 layout_mode = 2
 size_flags_vertical = 2
+max_value = 1.0
+step = 0.1
 
 [node name="MusicLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=448819451]
 layout_mode = 2
@@ -85,6 +87,8 @@ text = "Music"
 [node name="MusicSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1020571673]
 layout_mode = 2
 size_flags_vertical = 2
+max_value = 1.0
+step = 0.1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=202048014]
 layout_mode = 2
@@ -139,6 +143,11 @@ text = "Return
 
 [node name="MasterPlayer" type="AudioStreamPlayer" parent="." unique_id=2026723307]
 stream = ExtResource("2_0cmel")
+playback_type = 1
+
+[node name="SfxPlayer" type="AudioStreamPlayer" parent="." unique_id=750409120]
+stream = ExtResource("2_0cmel")
+bus = &"sfx"
 playback_type = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
