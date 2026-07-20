@@ -61,7 +61,15 @@ focus_mode = 3
 theme_override_font_sizes/font_size = 22
 text = "Created during the July 2026 Making Games Accessible jam, YachtSinkers is meant to be as accessible as possible, including to blind players. It supports screenreaders.
 
-Deaf players should also be able to complete the game, as all necessary information is available visually, including subtitles."
+Deaf players should also be able to complete the game, as all necessary information is available visually, including subtitles.
+
+
+
+
+
+
+
+"
 autowrap_mode = 2
 
 [node name="ReturnButton" type="Button" parent="VBoxContainer" unique_id=1488913545]
