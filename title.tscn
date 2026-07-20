@@ -67,7 +67,6 @@ focus_neighbor_bottom = NodePath("../InstructionsButton")
 focus_next = NodePath("../InstructionsButton")
 focus_previous = NodePath("../../VBoxContainer2/Level3Button")
 theme_override_font_sizes/font_size = 48
-disabled = true
 text = "Accessibility"
 
 [node name="InstructionsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1038856797]

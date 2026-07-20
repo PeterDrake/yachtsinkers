@@ -39,7 +39,10 @@ func _on_instructions_button_pressed() -> void:
 	screen.show()
 
 func _on_accessibility_button_pressed() -> void:
-	pass # Replace with function body.
+	hide()
+	var screen := yachtsinkers.find_child("Accessibility")
+	screen.previous_screen = self
+	screen.show()
 
 func _on_level_1_button_pressed() -> void:
 	pause_menu.occluded = false
