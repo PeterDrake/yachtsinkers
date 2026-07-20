@@ -11,8 +11,11 @@ var game_speed := 1.0
 	#add_child(current_level)
 
 func restart_level():
-	if current_level:
-		current_level.queue_free()
+	end_level()
 	current_level = load("res://level.tscn").instantiate()
 	add_child(current_level)
+	get_tree().paused = false
 	
+func end_level():
+	if current_level:
+		current_level.queue_free()

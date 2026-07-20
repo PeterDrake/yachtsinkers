@@ -38,7 +38,9 @@ func _on_restart_button_pressed() -> void:
 	unpause()
 
 func _on_quit_button_pressed() -> void:
-	pass  # TODO
+	yachtsinkers.end_level()
+	hide()
+	yachtsinkers.find_child("Title", false).show()
 
 func _on_settings_button_pressed() -> void:
 	occluded = true

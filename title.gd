@@ -12,6 +12,7 @@ func _ready() -> void:
 				
 func _on_visibility_changed() -> void:
 	if visible and is_node_ready():
+		pause_menu.occluded = true
 		if get_tree().is_accessibility_enabled():
 			$VBoxContainer/Title.grab_focus()
 		else:
