@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cca0fudfwucjs"]
 
 [ext_resource type="Script" uid="uid://5arewfe6go3x" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="PackedScene" uid="uid://cgrmk4tbp1fnu" path="res://orca4.glb" id="2_dw050"]
+[ext_resource type="PackedScene" uid="uid://xm21s6en5m6w" path="res://models/orcaanimated.glb" id="2_dw050"]
 [ext_resource type="AudioStream" uid="uid://00akojavfg78" path="res://sonar.wav" id="2_onrkg"]
 [ext_resource type="AudioStream" uid="uid://duj0lby64epyr" path="res://yacht hit.wav" id="3_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://dl7algop8i21y" path="res://rudder_bite.wav" id="4_hqtel"]
@@ -22,8 +22,8 @@ points = PackedVector3Array(-1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, -20, -1, 20,
 transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.742278e-08, -7.642742e-15, -1, 0, 0, 0)
 script = ExtResource("1_4flbx")
 
-[node name="orca4" parent="." unique_id=728338892 instance=ExtResource("2_dw050")]
-transform = Transform3D(-0.6, 5.2453668e-08, 0, -5.2453668e-08, -0.6, 0, 0, 0, 0.6, -1.5402989e-08, -1.3465717e-15, -0.17618966)
+[node name="orcaanimated" parent="." unique_id=1547185181 instance=ExtResource("2_dw050")]
+transform = Transform3D(-0.4, -3.4969112e-08, 0, 3.4969112e-08, -0.4, -6.352747e-22, 0, 0, 0.4, -1.402297e-07, 0.40594885, -0.2000376)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=888322649]
 transform = Transform3D(1, 0, 3.284056e-15, 6.6814974e-22, -4.371139e-08, -1, 0, 1, -4.371139e-08, -8.731939e-08, -2.1822352e-08, -0.00076293945)

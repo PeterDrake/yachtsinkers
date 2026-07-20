@@ -1,4 +1,7 @@
 extends Node
 
 func _ready() -> void:
-	$AnimationPlayer.play("swim")
+	if get_parent().name == "Player":
+		$AnimationPlayer.play("Swim1_Animm")
+	else:
+		$AnimationPlayer.play("Idle_Anim")

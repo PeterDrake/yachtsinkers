@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="1_rsqnq"]
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="2_bj3yo"]
 [ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="2_h6xxa"]
+[ext_resource type="PackedScene" uid="uid://co4b3jo2ky0ft" path="res://models/elvis_yacht_the_catamaran.glb" id="2_ywhoy"]
 [ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="3_7e6i7"]
 [ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="4_m36ax"]
 [ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://gunshot.wav" id="6_6bq12"]
 [ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://reload.wav" id="7_ywhoy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o76c1"]
-size = Vector3(1, 3, 3)
+size = Vector3(1.598053, 1.9121094, 3.3225098)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dcxyd"]
 size = Vector3(1, 3, 3)
@@ -17,10 +18,15 @@ size = Vector3(1, 3, 3)
 [node name="Yacht" type="CharacterBody3D" unique_id=764160128]
 script = ExtResource("1_rsqnq")
 
+[node name="Sketchfab_Scene" parent="." unique_id=529316871 instance=ExtResource("2_ywhoy")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.627763, 0, 4.479006)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041656494, 0.5439453, 0.040649414)
 shape = SubResource("BoxShape3D_o76c1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=718199581]
+visible = false
 mesh = SubResource("BoxMesh_dcxyd")
 
 [node name="RudderSound" type="AudioStreamPlayer3D" parent="." unique_id=1659163169]

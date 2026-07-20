@@ -49,19 +49,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
 [node name="Speech" parent="." unique_id=106919617 instance=ExtResource("4_8cye3")]
 
 [node name="Rock" parent="." unique_id=1796733267 instance=ExtResource("5_2orkt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -9.581989)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -0.5819893)
 
 [node name="Mine1" parent="." unique_id=358636362 instance=ExtResource("6_aicyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.84251, 0, -4.4733734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.84251, 0, -4.4733734)
 
 [node name="Mine2" parent="." unique_id=2074796261 instance=ExtResource("6_aicyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.84251, 0, -4.4733734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.523342, 0, -0.6985111)
 
 [node name="Mine3" parent="." unique_id=1129290548 instance=ExtResource("6_aicyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.15749, 0, -9.473373)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.15749, 0, -1.4733734)
 
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("7_8b0r0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.890306, 0, 11.736488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.890306, 0, 11.361767)
 text = "You found another orca!
 GLADIS: Get in loser. We're going YachtSinking.
 DELILAH: Schweet.
@@ -70,7 +70,7 @@ DELILAH: Try to ram the yacht very very hard.
 Your ram damage has increased."
 
 [node name="PhilOrca" parent="." unique_id=1538291848 instance=ExtResource("7_8b0r0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.412863, 0, 11.526627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.412863, 0, 11.526627)
 text = "You found another orca!
 GLADIS: Phil, I need to slow these yachts down.
 PHIL: You could try biting the rudder off.
@@ -78,7 +78,7 @@ GLADIS: How would I do that?
 PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."
 
 [node name="ClaraOrca" parent="." unique_id=1831192771 instance=ExtResource("7_8b0r0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.285677, 0, 11.526627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.285677, 0, 11.526627)
 text = "You found another orca!
 GLADIS: Hey, Clara. We’re gonna sink another yacht.
 CLARA: Pod goals.
@@ -95,14 +95,14 @@ GLADIS: How’s that, Mary?
 MARY: As you approach the boat, press 2 to swim under it. The wave you make will wash over the boat, stopping the gunners for a while."
 
 [node name="HerbieOrca" parent="." unique_id=454965760 instance=ExtResource("7_8b0r0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.389141, 0, 11.526627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.389141, 0, 11.526627)
 text = "You found another orca!
 GLADIS: I wish I was as fast as you, Herbie!
 HERBIE: It’s all in the tail.
 Your speed has increased."
 
 [node name="GregOrca" parent="." unique_id=2034037131 instance=ExtResource("7_8b0r0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.389141, 0, 11.526627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.389141, 0, 11.526627)
 text = "You found another orca!
 GLADIS: They’ve put mines in the water!
 GREG: The arrogance. The sea is our domain!

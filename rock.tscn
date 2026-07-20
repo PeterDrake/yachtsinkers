@@ -2,18 +2,25 @@
 
 [ext_resource type="Script" uid="uid://dgpti0wp78lpe" path="res://rock.gd" id="1_o0qsl"]
 [ext_resource type="AudioStream" uid="uid://bnjrmkrxkkr8u" path="res://rock.wav" id="2_68h2w"]
+[ext_resource type="PackedScene" uid="uid://dyb35767htb4y" path="res://models/rock_pack_vol_01_g5n1k9t4l7.glb" id="2_wecdg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dcxyd"]
+size = Vector3(0.9289551, 0.39575195, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o0qsl"]
 
 [node name="Rock" type="StaticBody3D" unique_id=1796733267]
 script = ExtResource("1_o0qsl")
 
+[node name="Sketchfab_Scene" parent="." unique_id=1019648496 instance=ExtResource("2_wecdg")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, -0.29552352, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012573242, -0.044799805, 0)
 shape = SubResource("BoxShape3D_dcxyd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=718199581]
+visible = false
 mesh = SubResource("BoxMesh_o0qsl")
 
 [node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=692003736]
