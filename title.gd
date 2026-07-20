@@ -11,7 +11,7 @@ func _ready() -> void:
 			$VBoxContainer/HBoxContainer/VBoxContainer/AccessibilityButton.grab_focus()
 				
 func _on_visibility_changed() -> void:
-	if visible and ready:
+	if visible and is_node_ready():
 		if get_tree().is_accessibility_enabled():
 			$VBoxContainer/Title.grab_focus()
 		else:
