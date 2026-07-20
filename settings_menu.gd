@@ -29,21 +29,25 @@ func _ready() -> void:
 	_bus_index = AudioServer.get_bus_index("Master")
 	var master_slider = $VBoxContainer/HBoxContainer/VBoxContainer/MasterSlider
 	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
-	master_slider.value_changed.connect(_on_master_value_changed)
 	_bus_index = AudioServer.get_bus_index("sfx")
 	var sfx_slider = $VBoxContainer/HBoxContainer/VBoxContainer/SoundEffectsSlider
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
-	sfx_slider.value_changed.connect(_on_sfx_value_changed)
 
-func _on_master_value_changed(value: float) -> void:
+func _on_master_slider_value_changed(value: float) -> void:
 	_bus_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value))
 	$MasterPlayer.play()
 
-func _on_sfx_value_changed(value: float) -> void:
+func _on_sound_effects_slider_value_changed(value: float) -> void:
 	_bus_index = AudioServer.get_bus_index("sfx")
 	AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value))
 	$SfxPlayer.play()
 
+func _on_music_slider_value_changed(value: float) -> void:
+	pass # Replace with function body.
+
 func _on_echolocation_width_slider_value_changed(value: float) -> void:
 	yachtsinkers.echolocation_width = value
+
+func _on_health_slider_value_changed(value: float) -> void:
+	yachtsinkers.starting_health = value

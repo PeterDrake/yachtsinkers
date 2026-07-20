@@ -5,6 +5,7 @@ extends Node3D
 func _ready() -> void:
 	$Caption.grab_focus()
 	_update_echolocation_width()
+	_update_health()
 
 func _on_visibility_changed() -> void:
 	if visible:
@@ -21,3 +22,6 @@ func _update_echolocation_width() -> void:
 	a[6][0] = -w
 	a[7][0] = w
 	cast.shape.points = PackedVector3Array(a)
+
+func _update_health() -> void:
+	$Player.health = yachtsinkers.starting_health

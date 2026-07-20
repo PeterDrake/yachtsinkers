@@ -164,6 +164,9 @@ focus_neighbor_bottom = NodePath("../SpeedSlider")
 focus_next = NodePath("../SpeedSlider")
 focus_previous = NodePath("../EcholocationWidthSlider")
 accessibility_name = "Player health"
+min_value = 1.0
+max_value = 20.0
+value = 5.0
 
 [node name="SpeedLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1034203876]
 layout_mode = 2
@@ -209,5 +212,9 @@ bus = &"sfx"
 playback_type = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/SoundEffectsSlider" to="." method="_on_sound_effects_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer2/EcholocationWidthSlider" to="." method="_on_echolocation_width_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer2/HealthSlider" to="." method="_on_health_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/ReturnButton" to="." method="_on_return_button_pressed"]
