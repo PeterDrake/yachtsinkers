@@ -23,10 +23,10 @@ sky = SubResource("Sky_a0tk4")
 glow_enabled = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6jxr"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.24705882)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ix6xn"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.24705882)
 
 [node name="Level" type="Node3D" unique_id=84596190]
 script = ExtResource("1_n6hdu")
