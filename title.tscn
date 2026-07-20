@@ -106,6 +106,18 @@ theme_override_font_sizes/font_size = 48
 text = "Audio Library
 "
 
+[node name="CreditsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=35931465]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../SettingsButton")
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_right = NodePath("../../VBoxContainer2/Level1Button")
+focus_neighbor_bottom = NodePath("../../VBoxContainer2/Level1Button")
+focus_next = NodePath("../../VBoxContainer2/Level1Button")
+focus_previous = NodePath("../SettingsButton")
+theme_override_font_sizes/font_size = 48
+text = "Credits"
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=953045439]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -165,6 +177,7 @@ text = "QuitButton"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/InstructionsButton" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/AudioLibraryButton" to="." method="_on_audio_library_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/Level2Button" to="." method="_on_level_2_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/Level3Button" to="." method="_on_level_3_button_pressed"]

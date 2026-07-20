@@ -55,3 +55,9 @@ func _on_level_2_button_pressed() -> void:
 
 func _on_level_3_button_pressed() -> void:
 	pass # Replace with function body.
+
+func _on_credits_button_pressed() -> void:
+	hide()
+	var screen := yachtsinkers.find_child("Credits")
+	screen.previous_screen = self
+	screen.show()
