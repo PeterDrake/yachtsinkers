@@ -19,8 +19,10 @@ mesh = SubResource("SphereMesh_w3yfb")
 
 [node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=692003736]
 stream = ExtResource("2_i213m")
+bus = &"sfx"
 playback_type = 1
 
 [node name="DetonationSound" type="AudioStreamPlayer3D" parent="." unique_id=470503086]
 stream = ExtResource("3_vanlv")
+bus = &"sfx"
 playback_type = 1

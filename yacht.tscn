@@ -44,10 +44,12 @@ playback_type = 1
 
 [node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=1504693947]
 stream = ExtResource("3_7e6i7")
+bus = &"sfx"
 playback_type = 1
 
 [node name="DestructionSound" type="AudioStreamPlayer3D" parent="." unique_id=623671194]
 stream = ExtResource("4_m36ax")
+bus = &"sfx"
 playback_type = 1
 
 [node name="ShotTimer" type="Timer" parent="." unique_id=1776475871]
@@ -56,10 +58,12 @@ one_shot = true
 
 [node name="ShotSound" type="AudioStreamPlayer3D" parent="." unique_id=1373479092]
 stream = ExtResource("6_6bq12")
+bus = &"sfx"
 playback_type = 1
 
 [node name="ReloadSound" type="AudioStreamPlayer3D" parent="." unique_id=733171440]
 stream = ExtResource("7_ywhoy")
+bus = &"sfx"
 playback_type = 1
 
 [connection signal="finished" from="RudderSound" to="." method="_on_rudder_sound_finished"]
