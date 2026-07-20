@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://by57a2o4aix8g"]
+
+[ext_resource type="Script" uid="uid://bbb7t7jtiydm6" path="res://title.gd" id="1_y7k74"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
+bg_color = Color(0, 0.17626616, 0.31130394, 1)
+
+[node name="Title" type="Control" unique_id=290838109]
+process_mode = 2
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y7k74")
+
+[node name="Panel" type="Panel" parent="." unique_id=2144496260]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdmo1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1947849068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1091792887]
+layout_mode = 2
+size_flags_vertical = 0
+focus_neighbor_left = NodePath("../HBoxContainer/VBoxContainer2/Level3Button")
+focus_neighbor_top = NodePath("../HBoxContainer/VBoxContainer2/Level3Button")
+focus_neighbor_right = NodePath("../HBoxContainer/VBoxContainer/AccessibilityButton")
+focus_neighbor_bottom = NodePath("../HBoxContainer/VBoxContainer/AccessibilityButton")
+focus_next = NodePath("../HBoxContainer/VBoxContainer/AccessibilityButton")
+focus_previous = NodePath("../HBoxContainer/VBoxContainer2/Level3Button")
+focus_mode = 3
+accessibility_name = "YachtSinkers!"
+theme_override_font_sizes/font_size = 64
+text = "Yachtsinkers!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1156288268]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1221192663]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AccessibilityButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2049052619]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../VBoxContainer2/Level3Button")
+focus_neighbor_top = NodePath("../../VBoxContainer2/Level3Button")
+focus_neighbor_right = NodePath("../InstructionsButton")
+focus_neighbor_bottom = NodePath("../InstructionsButton")
+focus_next = NodePath("../InstructionsButton")
+focus_previous = NodePath("../../VBoxContainer2/Level3Button")
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Accessibility"
+
+[node name="InstructionsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1038856797]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../AccessibilityButton")
+focus_neighbor_top = NodePath("../AccessibilityButton")
+focus_neighbor_right = NodePath("../SettingsButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+focus_next = NodePath("../SettingsButton")
+focus_previous = NodePath("../AccessibilityButton")
+theme_override_font_sizes/font_size = 48
+text = "Instructions"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1365439469]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../InstructionsButton")
+focus_neighbor_top = NodePath("../InstructionsButton")
+focus_neighbor_right = NodePath("../../VBoxContainer2/Level1Button")
+focus_neighbor_bottom = NodePath("../../VBoxContainer2/Level1Button")
+focus_next = NodePath("../../VBoxContainer2/Level1Button")
+focus_previous = NodePath("../InstructionsButton")
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+
+[node name="AudioLibraryButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2139101270]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../InstructionsButton")
+focus_neighbor_top = NodePath("../InstructionsButton")
+focus_neighbor_right = NodePath("../../VBoxContainer2/Level1Button")
+focus_neighbor_bottom = NodePath("../../VBoxContainer2/Level1Button")
+focus_next = NodePath("../../VBoxContainer2/Level1Button")
+focus_previous = NodePath("../InstructionsButton")
+theme_override_font_sizes/font_size = 48
+text = "Audio Library
+"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=953045439]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Level1Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=912260969]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../VBoxContainer/SettingsButton")
+focus_neighbor_top = NodePath("../../VBoxContainer/SettingsButton")
+focus_neighbor_right = NodePath("../Level2Button")
+focus_neighbor_bottom = NodePath("../Level2Button")
+focus_next = NodePath("../Level2Button")
+focus_previous = NodePath("../../VBoxContainer/SettingsButton")
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617347346]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../Level1Button")
+focus_neighbor_top = NodePath("../Level1Button")
+focus_neighbor_right = NodePath("../Level3Button")
+focus_neighbor_bottom = NodePath("../Level3Button")
+focus_next = NodePath("../Level3Button")
+focus_previous = NodePath("../Level1Button")
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Level 2"
+
+[node name="Level3Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617886323]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../Level2Button")
+focus_neighbor_top = NodePath("../Level2Button")
+focus_neighbor_right = NodePath("../../../Title")
+focus_neighbor_bottom = NodePath("../../../Title")
+focus_next = NodePath("../../../Title")
+focus_previous = NodePath("../Level2Button")
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Level 3"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=438912334]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../Level2Button")
+focus_neighbor_top = NodePath("../Level2Button")
+focus_neighbor_right = NodePath("../../../Title")
+focus_neighbor_bottom = NodePath("../../../Title")
+focus_next = NodePath("../../../Title")
+focus_previous = NodePath("../Level2Button")
+theme_override_font_sizes/font_size = 48
+text = "QuitButton"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/AccessibilityButton" to="." method="_on_accessibility_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/InstructionsButton" to="." method="_on_instructions_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/AudioLibraryButton" to="." method="_on_audio_library_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/Level3Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
