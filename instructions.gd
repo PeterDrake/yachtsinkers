@@ -12,7 +12,6 @@ func _on_return_button_pressed() -> void:
 	close()
 
 func close():
-	pause_menu.occluded = false
 	previous_screen.show()
 	hide()
 		

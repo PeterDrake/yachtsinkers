@@ -1,9 +1,17 @@
 extends Control
 
 @onready var yachtsinkers := get_node("..")
+@onready var pause_menu := get_node("../PauseMenu")
 
-func _on_visibility_changed() -> void:
+func _ready() -> void:
 	if visible:
+		if get_tree().is_accessibility_enabled():
+			$VBoxContainer/Title.grab_focus()
+		else:
+			$VBoxContainer/HBoxContainer/VBoxContainer/AccessibilityButton.grab_focus()
+				
+func _on_visibility_changed() -> void:
+	if visible and ready:
 		if get_tree().is_accessibility_enabled():
 			$VBoxContainer/Title.grab_focus()
 		else:
@@ -34,7 +42,9 @@ func _on_accessibility_button_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_level_1_button_pressed() -> void:
-	pass # Replace with function body.
+	pause_menu.occluded = false
+	hide()
+	yachtsinkers.restart_level()
 
 func _on_level_2_button_pressed() -> void:
 	pass # Replace with function body.

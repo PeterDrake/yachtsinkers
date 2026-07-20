@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://73ld43bownb0" path="res://pause_menu.tscn" id="3_xpjbq"]
 [ext_resource type="PackedScene" uid="uid://dwn7377x8heyl" path="res://audio_library.tscn" id="4_o6jxr"]
 [ext_resource type="PackedScene" uid="uid://bvpb8ysdive6c" path="res://instructions.tscn" id="5_dcxyd"]
+[ext_resource type="PackedScene" uid="uid://by57a2o4aix8g" path="res://title.tscn" id="6_o76c1"]
 
 [node name="YachtSinkers" type="Node3D" unique_id=1044159240]
 script = ExtResource("1_dcxyd")
@@ -21,3 +22,5 @@ visible = false
 
 [node name="Instructions" parent="." unique_id=142671103 instance=ExtResource("5_dcxyd")]
 visible = false
+
+[node name="Title" parent="." unique_id=1055210633 instance=ExtResource("6_o76c1")]

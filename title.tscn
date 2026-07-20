@@ -6,7 +6,7 @@
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
 
 [node name="Title" type="Control" unique_id=290838109]
-process_mode = 2
+process_mode = 3
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
@@ -121,7 +121,6 @@ focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level2Button")
 focus_previous = NodePath("../../VBoxContainer/SettingsButton")
 theme_override_font_sizes/font_size = 48
-disabled = true
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617347346]
