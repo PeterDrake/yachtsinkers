@@ -51,3 +51,6 @@ func _on_echolocation_width_slider_value_changed(value: float) -> void:
 
 func _on_health_slider_value_changed(value: float) -> void:
 	yachtsinkers.starting_health = value
+
+func _on_speed_slider_value_changed(value: float) -> void:
+	yachtsinkers.game_speed = value
