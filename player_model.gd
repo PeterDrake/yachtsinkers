@@ -24,7 +24,10 @@ func animate_player():
 	for move in movement:
 		if Input.is_action_just_pressed(move):
 			$AnimationPlayer.speed_scale = 1.0
-			$AnimationPlayer.play("Swim1_Animm")
+			if get_parent().speed == 250.0:
+				$AnimationPlayer.play("Swim1_Animm")
+			else:
+				$AnimationPlayer.play("Swim3_Anim")
 	if not Input.is_anything_pressed() and not wait:
 		$AnimationPlayer.speed_scale = 1.0
 		$AnimationPlayer.play("Idle_Anim")
