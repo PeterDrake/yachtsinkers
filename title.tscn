@@ -170,7 +170,7 @@ focus_neighbor_bottom = NodePath("../../../Title")
 focus_next = NodePath("../../../Title")
 focus_previous = NodePath("../Level3Button")
 theme_override_font_sizes/font_size = 48
-text = "QuitButton"
+text = "Quit"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/AccessibilityButton" to="." method="_on_accessibility_button_pressed"]
