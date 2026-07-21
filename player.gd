@@ -62,11 +62,13 @@ func _process(_delta: float) -> void:
 			$ShapeCast3D.get_collider(i).sonar_return()
 	elif Input.is_action_just_pressed("bite") and bite_enabled and rudder.is_playing() and \
 			position.distance_to(rudder.global_position) < 3:
+		$orcaanimated.animate_ability("bite")
 		$BiteSound.play()
 		speech.say("Rudder bitten off.")
 		yacht.receive_bite()
-	elif Input.is_action_just_pressed("dive") and dive_enabled and position.distance_to(yacht.global_position) < 3 and \
+	elif Input.is_action_just_pressed("dive") and dive_enabled and position.distance_to(yacht.global_position) < 6 and \
 			$WaveTimer.is_stopped():
+		$orcaanimated.animate_ability("dive")
 		$DiveSound.play()
 		speech.say("Wave activated.")
 		$WaveTimer.start()
@@ -75,6 +77,7 @@ func _process(_delta: float) -> void:
 		for object in level.get_children():
 			if "Mine" in object.name and position.distance_to(object.global_position) < 10:
 				object.detonate(false)
+		$orcaanimated.animate_ability("slap")
 		$SlapSound.play()
 		speech.say("Tail slap activated.")
 		$SlapTimer.start()

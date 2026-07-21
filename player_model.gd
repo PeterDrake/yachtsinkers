@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 var movement = ["forward", "left", "right"]
 var wait := false
 
@@ -9,17 +9,12 @@ func _process(_delta: float) -> void:
 		animate_player()
 
 func animate_player():
-	if Input.is_action_pressed("bite") and get_parent().bite_enabled:
-		animate_ability("bite")
-	elif Input.is_action_pressed("dive") and get_parent().dive_enabled:
-		animate_ability("dive")
-	elif Input.is_action_pressed("slap") and get_parent().slap_enabled:
-		animate_ability("slap")
 	for move in movement:
 		if Input.is_action_just_pressed(move) and not wait:
 			animate_movement()
 	
 	if not $AnimationPlayer.is_playing():
+		wait = false
 		for move in movement:
 			if Input.is_action_pressed(move):
 				animate_movement()
@@ -41,11 +36,11 @@ func animate_ability(ability: String):
 		$AnimationPlayer.speed_scale = 2.0
 		$AnimationPlayer.play("Atack_Anim")
 	elif ability == "dive":
-		get_parent().get_child(0).position -= Vector3.DOWN * 0.03 #Go down for animation
+		position -= Vector3.DOWN * 0.03 #Go down for animation
 		$AnimationPlayer.speed_scale = 2.0
 		$AnimationPlayer.play("Breath_Animm")
 		await get_tree().create_timer(2.0).timeout
-		get_parent().get_child(0).position += Vector3.DOWN * 0.03 #Come back up
+		position += Vector3.DOWN * 0.03 #Come back up
 	elif ability == "slap":
 		$AnimationPlayer.speed_scale = 2.0
 		$AnimationPlayer.play("TailAtack_Anim")
