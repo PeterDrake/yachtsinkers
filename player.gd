@@ -61,13 +61,13 @@ func _process(_delta: float) -> void:
 		var count = $ShapeCast3D.get_collision_count()
 		for i in range(count):
 			$ShapeCast3D.get_collider(i).sonar_return()
-	elif Input.is_action_just_pressed("bite") and bite_enabled and rudder.is_playing() and \
+	elif Input.is_action_just_pressed("bite") and bite_enabled and rudder and rudder.is_playing() and \
 			position.distance_to(rudder.global_position) < 3:
 		$BiteSound.play()
 		speech.say("Rudder bitten off.")
 		yacht.receive_bite()
 		$orcaanimated.animate_ability("bite")
-	elif Input.is_action_just_pressed("dive") and dive_enabled and position.distance_to(yacht.global_position) < 6 and \
+	elif Input.is_action_just_pressed("dive") and dive_enabled and yacht and position.distance_to(yacht.global_position) < 6 and \
 			$WaveTimer.is_stopped():
 		$DiveSound.play()
 		speech.say("Wave activated.")
