@@ -15,7 +15,7 @@ var slap_enabled := false
 @onready var yacht := get_node("../Yacht")
 @onready var rudder := get_node("../Yacht/RudderSound")
 @onready var level := get_node("..")
-@onready var yachtsinkers := get_node("../..")
+@onready var yachtsinkers := get_node("../../..")
 
 func _physics_process(delta: float) -> void:
 	var rotation_input := Input.get_axis("left", "right")

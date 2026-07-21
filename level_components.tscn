@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://b2lldqx6plupy"]
+
+[ext_resource type="PackedScene" uid="uid://cca0fudfwucjs" path="res://player.tscn" id="1_jvp1j"]
+[ext_resource type="Script" uid="uid://dgndjh1ahdbf2" path="res://level_components.gd" id="1_wcufj"]
+[ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="2_wcufj"]
+[ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_mvxmv"]
+[ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_82ii5"]
+[ext_resource type="PackedScene" uid="uid://ckbk4fmtrrdii" path="res://mine.tscn" id="5_i58hh"]
+[ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="6_14vlg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
+sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
+sky_horizon_color = Color(0.3299445, 0.47842848, 0.7221412, 1)
+ground_bottom_color = Color(0.03829214, 0.026294347, 0.22173753, 1)
+ground_horizon_color = Color(0.32941177, 0.47843137, 0.72156864, 1)
+
+[sub_resource type="Sky" id="Sky_a0tk4"]
+sky_material = SubResource("ProceduralSkyMaterial_noarx")
+
+[sub_resource type="Environment" id="Environment_r3fl7"]
+background_mode = 2
+sky = SubResource("Sky_a0tk4")
+glow_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6jxr"]
+bg_color = Color(0, 0, 0, 0.24705882)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ix6xn"]
+bg_color = Color(0, 0, 0, 0.24705882)
+
+[node name="LevelComponents" type="Node3D" unique_id=1318053163]
+script = ExtResource("1_wcufj")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2121509279]
+environment = SubResource("Environment_r3fl7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1368038240]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=219399317 instance=ExtResource("1_jvp1j")]
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=551699705]
+transform = Transform3D(1, 0, 0, 0, -0.9227412, -0.38542044, 0, 0.38542044, -0.9227412, 0, -1.5978748, -1.1316499)
+current = true
+
+[node name="Yacht" parent="." unique_id=764160128 instance=ExtResource("2_wcufj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+
+[node name="Speech" parent="." unique_id=106919617 instance=ExtResource("3_mvxmv")]
+
+[node name="Rock" parent="." unique_id=1796733267 instance=ExtResource("4_82ii5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -0.5819893)
+
+[node name="Mine1" parent="." unique_id=482410204 instance=ExtResource("5_i58hh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.84251, 0, -4.4733734)
+
+[node name="Mine2" parent="." unique_id=1339844986 instance=ExtResource("5_i58hh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.523342, 0, -0.6985111)
+
+[node name="Mine3" parent="." unique_id=1029601041 instance=ExtResource("5_i58hh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.15749, 0, -1.4733734)
+
+[node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_14vlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.890306, 0, 11.361767)
+text = "You found another orca!
+GLADIS: Get in loser. We're going YachtSinking.
+DELILAH: Schweet.
+GLADIS: Any advice, Delilah?
+DELILAH: Try to ram the yacht very very hard.
+Your ram damage has increased."
+
+[node name="PhilOrca" parent="." unique_id=140575395 instance=ExtResource("6_14vlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.412863, 0, 11.526627)
+text = "You found another orca!
+GLADIS: Phil, I need to slow these yachts down.
+PHIL: You could try biting the rudder off.
+GLADIS: How would I do that?
+PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."
+
+[node name="ClaraOrca" parent="." unique_id=678986903 instance=ExtResource("6_14vlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.285677, 0, 11.526627)
+text = "You found another orca!
+GLADIS: Hey, Clara. We’re gonna sink another yacht.
+CLARA: Pod goals.
+GLADIS: This is tiring work. Got any fish?
+CLARA: Here, have a tuna.
+Your health has increased by 5."
+
+[node name="MaryOrca" parent="." unique_id=1982340808 instance=ExtResource("6_14vlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8425093, 0, 11.526627)
+text = "You found another orca!
+GLADIS: The crew of those yachts have guns!
+MARY: Oh, we can deal with that.
+GLADIS: How’s that, Mary?
+MARY: As you approach the boat, press 2 to swim under it. The wave you make will wash over the boat, stopping the gunners for a while."
+
+[node name="HerbieOrca" parent="." unique_id=361603609 instance=ExtResource("6_14vlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.389141, 0, 11.526627)
+text = "You found another orca!
+GLADIS: I wish I was as fast as you, Herbie!
+HERBIE: It’s all in the tail.
+Your speed has increased."
+
+[node name="GregOrca" parent="." unique_id=16804556 instance=ExtResource("6_14vlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.389141, 0, 11.526627)
+text = "You found another orca!
+GLADIS: They’ve put mines in the water!
+GREG: The arrogance. The sea is our domain!
+GLADIS: Damn straight.
+GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, safely detonating any nearby mines."
+
+[node name="Caption" type="Label" parent="." unique_id=120003237]
+custom_minimum_size = Vector2(100, -1)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+focus_mode = 2
+accessibility_live = 1
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6jxr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ix6xn")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
