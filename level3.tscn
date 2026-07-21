@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://odklnu8chp3j"]
 
 [ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_lyoih"]
+[ext_resource type="PackedScene" uid="uid://ckbk4fmtrrdii" path="res://mine.tscn" id="6_ymh28"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_7oc4e"]
 
 [node name="Level3" type="Node3D" unique_id=84596190]
@@ -21,6 +22,15 @@ GLADIS: They’ve put mines in the water!
 GREG: The arrogance. The sea is our domain!
 GLADIS: Damn straight.
 GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, safely detonating any nearby mines."
+
+[node name="Mine1" parent="." unique_id=1796733267 instance=ExtResource("6_ymh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.84251, 0, -4.4733734)
+
+[node name="Mine2" parent="." unique_id=44086338 instance=ExtResource("6_ymh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.523342, 0, -0.6985111)
+
+[node name="Mine3" parent="." unique_id=1590011789 instance=ExtResource("6_ymh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.15749, 0, -1.4733734)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 
