@@ -2,7 +2,7 @@ extends Control
 
 @onready var yachtsinkers := get_node("..")
 
-var occluded := false  # True if one of the other screens is in front of this
+var occluded := true  # True if one of the other screens is in front of this
 
 func _process(_delta: float) -> void:
 	if not occluded:
@@ -24,6 +24,7 @@ func unpause():
 
 func _on_visibility_changed() -> void:
 	if visible:
+		occluded = false
 		if get_tree().is_accessibility_enabled():
 			$VBoxContainer/Title.grab_focus()
 		else:
@@ -37,7 +38,9 @@ func _on_restart_button_pressed() -> void:
 	unpause()
 
 func _on_quit_button_pressed() -> void:
-	pass # Replace with function body.
+	yachtsinkers.end_level()
+	hide()
+	yachtsinkers.find_child("Title", false).show()
 
 func _on_settings_button_pressed() -> void:
 	occluded = true

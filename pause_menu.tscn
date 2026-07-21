@@ -90,7 +90,6 @@ focus_neighbor_bottom = NodePath("../../VBoxContainer2/SettingsButton")
 focus_next = NodePath("../../VBoxContainer2/SettingsButton")
 focus_previous = NodePath("../RestartButton")
 theme_override_font_sizes/font_size = 48
-disabled = true
 text = "Quit to Title"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=953045439]

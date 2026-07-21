@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
-@onready var speech := get_node("../Speech")
-@onready var player := get_node("../Player")
+@onready var speech := get_node('../Speech')
+@onready var player := get_node('../Player')
+@onready var yachtsinkers := get_node('../..')
 
 var health := 10
 var waypoint_index = 0
@@ -15,7 +16,7 @@ const GUN_RANGE := 10
 func _physics_process(delta: float) -> void:
 	if not sinking:
 		var destination = WAYPOINTS[waypoint_index]
-		velocity = position.direction_to(destination) * speed * delta
+		velocity = position.direction_to(destination) * speed * yachtsinkers.game_speed * delta
 		look_at(destination)
 		if position.distance_to(destination) < 1:
 			waypoint_index = (waypoint_index + 1) % len(WAYPOINTS)
@@ -32,7 +33,7 @@ func _process(_delta: float) -> void:
 			await get_tree().create_timer(2.0).timeout
 			if $ShotTimer.is_stopped(): # May have been started by a wave
 				$ShotSound.play()  # Shooting Sound
-				$ShotTimer.wait_time = 15.0
+				$ShotTimer.wait_time = 15.0 / yachtsinkers.game_speed
 				$ShotTimer.start()
 				if position.distance_to(player.position) < GUN_RANGE:
 					player.receive_bullet()

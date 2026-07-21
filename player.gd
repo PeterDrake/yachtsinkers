@@ -15,13 +15,14 @@ var slap_enabled := false
 @onready var yacht := get_node("../Yacht")
 @onready var rudder := get_node("../Yacht/RudderSound")
 @onready var level := get_node("..")
+@onready var yachtsinkers := get_node("../..")
 
 func _physics_process(delta: float) -> void:
 	var rotation_input := Input.get_axis("left", "right")
 	var rotation_direction := (transform.basis * Vector3(0, rotation_input, 0)).normalized()
 	rotation += rotation_direction * ROTATION_SPEED * delta
 	if Input.is_action_pressed("forward"):
-		velocity = global_transform.basis.z * speed * delta
+		velocity = global_transform.basis.z * speed * yachtsinkers.game_speed * delta
 	else:
 		velocity = Vector3.ZERO
 	move_and_slide()

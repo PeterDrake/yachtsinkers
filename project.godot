@@ -16,7 +16,7 @@ general/updates_per_second=100
 
 config/name="YachtSinkers"
 run/main_scene="uid://brmdlrm07bc3q"
-config/features=PackedStringArray("4.7", "Forward Plus")
+config/features=PackedStringArray("4.8", "Forward Plus")
 config/icon="res://icon.svg"
 
 [audio]
