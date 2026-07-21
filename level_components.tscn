@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_mvxmv"]
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_82ii5"]
 [ext_resource type="PackedScene" uid="uid://ckbk4fmtrrdii" path="res://mine.tscn" id="5_i58hh"]
-[ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="6_14vlg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
 sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
@@ -60,55 +59,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.523342, 0, -0.6985111)
 
 [node name="Mine3" parent="." unique_id=1029601041 instance=ExtResource("5_i58hh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.15749, 0, -1.4733734)
-
-[node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_14vlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.890306, 0, 11.361767)
-text = "You found another orca!
-GLADIS: Get in loser. We're going YachtSinking.
-DELILAH: Schweet.
-GLADIS: Any advice, Delilah?
-DELILAH: Try to ram the yacht very very hard.
-Your ram damage has increased."
-
-[node name="PhilOrca" parent="." unique_id=140575395 instance=ExtResource("6_14vlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.412863, 0, 11.526627)
-text = "You found another orca!
-GLADIS: Phil, I need to slow these yachts down.
-PHIL: You could try biting the rudder off.
-GLADIS: How would I do that?
-PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."
-
-[node name="ClaraOrca" parent="." unique_id=678986903 instance=ExtResource("6_14vlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.285677, 0, 11.526627)
-text = "You found another orca!
-GLADIS: Hey, Clara. We’re gonna sink another yacht.
-CLARA: Pod goals.
-GLADIS: This is tiring work. Got any fish?
-CLARA: Here, have a tuna.
-Your health has increased by 5."
-
-[node name="MaryOrca" parent="." unique_id=1982340808 instance=ExtResource("6_14vlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8425093, 0, 11.526627)
-text = "You found another orca!
-GLADIS: The crew of those yachts have guns!
-MARY: Oh, we can deal with that.
-GLADIS: How’s that, Mary?
-MARY: As you approach the boat, press 2 to swim under it. The wave you make will wash over the boat, stopping the gunners for a while."
-
-[node name="HerbieOrca" parent="." unique_id=361603609 instance=ExtResource("6_14vlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.389141, 0, 11.526627)
-text = "You found another orca!
-GLADIS: I wish I was as fast as you, Herbie!
-HERBIE: It’s all in the tail.
-Your speed has increased."
-
-[node name="GregOrca" parent="." unique_id=16804556 instance=ExtResource("6_14vlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.389141, 0, 11.526627)
-text = "You found another orca!
-GLADIS: They’ve put mines in the water!
-GREG: The arrogance. The sea is our domain!
-GLADIS: Damn straight.
-GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, safely detonating any nearby mines."
 
 [node name="Caption" type="Label" parent="." unique_id=120003237]
 custom_minimum_size = Vector2(100, -1)

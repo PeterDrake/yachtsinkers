@@ -1,9 +1,41 @@
 [gd_scene format=3 uid="uid://dqfklhq40nelj"]
 
 [ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_jwv3a"]
+[ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_n8vhr"]
 
 [node name="Level1" type="Node3D" unique_id=84596190]
 
 [node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_jwv3a")]
 
+[node name="ClaraOrca" parent="LevelComponents" index="11" unique_id=678986903]
+visible = false
+
+[node name="MaryOrca" parent="LevelComponents" index="12" unique_id=1982340808]
+visible = false
+
+[node name="HerbieOrca" parent="LevelComponents" index="13" unique_id=361603609]
+visible = false
+
+[node name="GregOrca" parent="LevelComponents" index="14" unique_id=16804556]
+visible = false
+
+[node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("7_n8vhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.890306, 0, 11.361767)
+text = "You found another orca!
+GLADIS: Get in loser. We're going YachtSinking.
+DELILAH: Schweet.
+GLADIS: Any advice, Delilah?
+DELILAH: Try to ram the yacht very very hard.
+Your ram damage has increased."
+
+[node name="PhilOrca" parent="." unique_id=116705150 instance=ExtResource("7_n8vhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.412863, 0, 11.526627)
+text = "You found another orca!
+GLADIS: Phil, I need to slow these yachts down.
+PHIL: You could try biting the rudder off.
+GLADIS: How would I do that?
+PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+
+[editable path="LevelComponents"]

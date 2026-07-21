@@ -1,9 +1,27 @@
 [gd_scene format=3 uid="uid://odklnu8chp3j"]
 
 [ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_lyoih"]
+[ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_7oc4e"]
 
 [node name="Level3" type="Node3D" unique_id=84596190]
 
 [node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_lyoih")]
 
+[node name="HerbieOrca" parent="." unique_id=744987695 instance=ExtResource("7_7oc4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.389141, 0, 11.526627)
+text = "You found another orca!
+GLADIS: I wish I was as fast as you, Herbie!
+HERBIE: It’s all in the tail.
+Your speed has increased."
+
+[node name="GregOrca" parent="." unique_id=17687419 instance=ExtResource("7_7oc4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.389141, 0, 11.526627)
+text = "You found another orca!
+GLADIS: They’ve put mines in the water!
+GREG: The arrogance. The sea is our domain!
+GLADIS: Damn straight.
+GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, safely detonating any nearby mines."
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+
+[editable path="LevelComponents"]

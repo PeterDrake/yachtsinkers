@@ -2,8 +2,8 @@ extends CharacterBody3D
 
 @export_multiline var text : String
 
-@onready var speech := get_node("../Speech")
-@onready var player := get_node("../Player")
+@onready var speech := get_node("../LevelComponents/Speech")
+@onready var player := get_node("../LevelComponents/Player")
 
 func play_dialog():
 	$OrcaSound.play()

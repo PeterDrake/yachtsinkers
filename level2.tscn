@@ -1,9 +1,41 @@
 [gd_scene format=3 uid="uid://c63ha665ap27w"]
 
 [ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_y0xe8"]
+[ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="2_r40rm"]
 
 [node name="Level2" type="Node3D" unique_id=84596190]
 
-[node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_y0xe8")]
+[node name="LevelComponents" parent="." unique_id=1318053163 instance=ExtResource("1_y0xe8")]
+
+[node name="DelilahOrca" parent="LevelComponents" index="9" unique_id=1879044386]
+visible = false
+
+[node name="PhilOrca" parent="LevelComponents" index="10" unique_id=140575395]
+visible = false
+
+[node name="HerbieOrca" parent="LevelComponents" index="13" unique_id=361603609]
+visible = false
+
+[node name="GregOrca" parent="LevelComponents" index="14" unique_id=16804556]
+visible = false
+
+[node name="ClaraOrca" parent="." unique_id=1608376578 instance=ExtResource("2_r40rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.285677, 0, 11.526627)
+text = "You found another orca!
+GLADIS: Hey, Clara. We’re gonna sink another yacht.
+CLARA: Pod goals.
+GLADIS: This is tiring work. Got any fish?
+CLARA: Here, have a tuna.
+Your health has increased by 5."
+
+[node name="MaryOrca" parent="." unique_id=458891903 instance=ExtResource("2_r40rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8425093, 0, 11.526627)
+text = "You found another orca!
+GLADIS: The crew of those yachts have guns!
+MARY: Oh, we can deal with that.
+GLADIS: How’s that, Mary?
+MARY: As you approach the boat, press 2 to swim under it. The wave you make will wash over the boat, stopping the gunners for a while."
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+
+[editable path="LevelComponents"]
