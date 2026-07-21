@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://br1a3kdte8j1h"]
+
+[ext_resource type="Script" uid="uid://judovvyrk1sv" path="res://settings_menu.gd" id="1_ufg0w"]
+[ext_resource type="AudioStream" uid="uid://cw413o1kb5ass" path="res://dive.wav" id="2_0cmel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
+bg_color = Color(0, 0.17626616, 0.31130394, 1)
+
+[node name="SettingsMenu" type="Control" unique_id=2122777761]
+process_mode = 3
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ufg0w")
+
+[node name="Panel" type="Panel" parent="." unique_id=2112466904]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oerog")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1127473715]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=735699599]
+layout_mode = 2
+focus_neighbor_left = NodePath("../HBoxContainer/VBoxContainer2/ReturnButton")
+focus_neighbor_top = NodePath("../HBoxContainer/VBoxContainer2/ReturnButton")
+focus_neighbor_right = NodePath("../HBoxContainer/VBoxContainer/MasterSlider")
+focus_neighbor_bottom = NodePath("../HBoxContainer/VBoxContainer/MasterSlider")
+focus_next = NodePath("../HBoxContainer/VBoxContainer/MasterSlider")
+focus_previous = NodePath("../HBoxContainer/VBoxContainer2/ReturnButton")
+focus_mode = 3
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=960856955]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1863789700]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=86986192]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
+text = "Volume"
+
+[node name="MasterLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1323698210]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1734606683]
+layout_mode = 2
+size_flags_vertical = 2
+focus_neighbor_left = NodePath("../../../Title")
+focus_neighbor_top = NodePath("../../../Title")
+focus_neighbor_right = NodePath("../SoundEffectsSlider")
+focus_neighbor_bottom = NodePath("../SoundEffectsSlider")
+focus_next = NodePath("../SoundEffectsSlider")
+focus_previous = NodePath("../../../Title")
+accessibility_name = "Master volume"
+max_value = 1.0
+step = 0.1
+
+[node name="SoundEffectsLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1777148410]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+text = "Sound Effects"
+
+[node name="SoundEffectsSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=80123608]
+layout_mode = 2
+size_flags_vertical = 2
+focus_neighbor_left = NodePath("../MasterSlider")
+focus_neighbor_top = NodePath("../MasterSlider")
+focus_neighbor_right = NodePath("../MusicSlider")
+focus_neighbor_bottom = NodePath("../MusicSlider")
+focus_next = NodePath("../MusicSlider")
+focus_previous = NodePath("../MasterSlider")
+accessibility_name = "Sound effects volume"
+max_value = 1.0
+step = 0.1
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=448819451]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1020571673]
+layout_mode = 2
+size_flags_vertical = 2
+focus_neighbor_left = NodePath("../SoundEffectsSlider")
+focus_neighbor_top = NodePath("../SoundEffectsSlider")
+focus_neighbor_right = NodePath("../../VBoxContainer2/EcholocationWidthSlider")
+focus_neighbor_bottom = NodePath("../../VBoxContainer2/EcholocationWidthSlider")
+focus_next = NodePath("../../VBoxContainer2/EcholocationWidthSlider")
+focus_previous = NodePath("../SoundEffectsSlider")
+accessibility_name = "Music volume"
+max_value = 1.0
+step = 0.1
+editable = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=202048014]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GameplayLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2043304423]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
+text = "Gameplay"
+
+[node name="EcholocationWidthLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2128631982]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+text = "Echolocation Width"
+
+[node name="EcholocationWidthSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=129740052]
+layout_mode = 2
+size_flags_vertical = 2
+focus_neighbor_left = NodePath("../../VBoxContainer/MusicSlider")
+focus_neighbor_top = NodePath("../../VBoxContainer/MusicSlider")
+focus_neighbor_right = NodePath("../HealthSlider")
+focus_neighbor_bottom = NodePath("../HealthSlider")
+focus_next = NodePath("../HealthSlider")
+focus_previous = NodePath("../../VBoxContainer/MusicSlider")
+accessibility_name = "Echolocation width"
+max_value = 20.0
+value = 20.0
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=707474870]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+text = "Player Health"
+
+[node name="HealthSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1147721975]
+layout_mode = 2
+size_flags_vertical = 2
+focus_neighbor_left = NodePath("../EcholocationWidthSlider")
+focus_neighbor_top = NodePath("../EcholocationWidthSlider")
+focus_neighbor_right = NodePath("../SpeedSlider")
+focus_neighbor_bottom = NodePath("../SpeedSlider")
+focus_next = NodePath("../SpeedSlider")
+focus_previous = NodePath("../EcholocationWidthSlider")
+accessibility_name = "Player health"
+min_value = 1.0
+max_value = 20.0
+value = 5.0
+
+[node name="SpeedLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1034203876]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+text = "Game Speed"
+
+[node name="SpeedSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2089424175]
+layout_mode = 2
+size_flags_vertical = 2
+focus_neighbor_left = NodePath("../HealthSlider")
+focus_neighbor_top = NodePath("../HealthSlider")
+focus_neighbor_right = NodePath("../ReturnButton")
+focus_neighbor_bottom = NodePath("../ReturnButton")
+focus_next = NodePath("../ReturnButton")
+focus_previous = NodePath("../HealthSlider")
+accessibility_name = "Game speed"
+min_value = 0.1
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="Spacer" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=571513730]
+layout_mode = 2
+size_flags_vertical = 6
+text = " "
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=180227928]
+layout_mode = 2
+focus_neighbor_left = NodePath("../SpeedSlider")
+focus_neighbor_top = NodePath("../SpeedSlider")
+focus_neighbor_right = NodePath("../../../Title")
+focus_neighbor_bottom = NodePath("../../../Title")
+focus_next = NodePath("../../../Title")
+focus_previous = NodePath("../SpeedSlider")
+theme_override_font_sizes/font_size = 24
+text = "Return
+"
+
+[node name="MasterPlayer" type="AudioStreamPlayer" parent="." unique_id=2026723307]
+stream = ExtResource("2_0cmel")
+playback_type = 1
+
+[node name="SfxPlayer" type="AudioStreamPlayer" parent="." unique_id=750409120]
+stream = ExtResource("2_0cmel")
+bus = &"sfx"
+playback_type = 1
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/SoundEffectsSlider" to="." method="_on_sound_effects_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer2/EcholocationWidthSlider" to="." method="_on_echolocation_width_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer2/HealthSlider" to="." method="_on_health_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer2/SpeedSlider" to="." method="_on_speed_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/ReturnButton" to="." method="_on_return_button_pressed"]

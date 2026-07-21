@@ -11,17 +11,18 @@ var bite_enabled := false
 var dive_enabled := false
 var slap_enabled := false
 
-@onready var speech := get_node("/root/YachtSinkers/Speech")
-@onready var yacht := get_node("/root/YachtSinkers/Yacht")
-@onready var rudder := get_node("/root/YachtSinkers/Yacht/RudderSound")
-@onready var yachtsinkers := get_node("/root/YachtSinkers")
+@onready var speech := get_node("../Speech")
+@onready var yacht := get_node("../Yacht")
+@onready var rudder := get_node("../Yacht/RudderSound")
+@onready var level := get_node("..")
+@onready var yachtsinkers := get_node("../..")
 
 func _physics_process(delta: float) -> void:
 	var rotation_input := Input.get_axis("left", "right")
 	var rotation_direction := (transform.basis * Vector3(0, rotation_input, 0)).normalized()
 	rotation += rotation_direction * ROTATION_SPEED * delta
 	if Input.is_action_pressed("forward"):
-		velocity = global_transform.basis.z * speed * delta
+		velocity = global_transform.basis.z * speed * yachtsinkers.game_speed * delta
 	else:
 		velocity = Vector3.ZERO
 	move_and_slide()
@@ -65,19 +66,25 @@ func _process(_delta: float) -> void:
 		$BiteSound.play()
 		speech.say("Rudder bitten off.")
 		yacht.receive_bite()
-	elif Input.is_action_just_pressed("dive") and dive_enabled and position.distance_to(yacht.global_position) < 3 and \
+		$orcaanimated.animate_ability("bite")
+	elif Input.is_action_just_pressed("dive") and dive_enabled and position.distance_to(yacht.global_position) < 6 and \
 			$WaveTimer.is_stopped():
 		$DiveSound.play()
 		speech.say("Wave activated.")
 		$WaveTimer.start()
 		yacht.receive_wave()
+		$orcaanimated.position -= Vector3.DOWN * 1.0 #Go down for animation
+		$orcaanimated.animate_ability("dive")
+		await get_tree().create_timer(1.0).timeout
+		$orcaanimated.position += Vector3.DOWN * 1.0 #Come back up
 	elif Input.is_action_just_pressed("slap") and slap_enabled and $SlapTimer.is_stopped():
-		for object in yachtsinkers.get_children():
+		for object in level.get_children():
 			if "Mine" in object.name and position.distance_to(object.global_position) < 10:
 				object.detonate(false)
 		$SlapSound.play()
 		speech.say("Tail slap activated.")
 		$SlapTimer.start()
+		$orcaanimated.animate_ability("slap")
 
 func receive_bullet():
 	await get_tree().create_timer(0.3).timeout

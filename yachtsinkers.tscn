@@ -1,131 +1,34 @@
 [gd_scene format=3 uid="uid://brmdlrm07bc3q"]
 
 [ext_resource type="Script" uid="uid://dmhyjjxiggt3j" path="res://yachtsinkers.gd" id="1_dcxyd"]
-[ext_resource type="PackedScene" uid="uid://cca0fudfwucjs" path="res://player.tscn" id="1_djnc4"]
-[ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="2_xpjbq"]
-[ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_xpjbq"]
-[ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_o6jxr"]
-[ext_resource type="PackedScene" uid="uid://ckbk4fmtrrdii" path="res://mine.tscn" id="6_lmnw4"]
-[ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="6_o76c1"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
-sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
-sky_horizon_color = Color(0.3299445, 0.47842848, 0.7221412, 1)
-ground_bottom_color = Color(0.03829214, 0.026294347, 0.22173753, 1)
-ground_horizon_color = Color(0.32941177, 0.47843137, 0.72156864, 1)
-
-[sub_resource type="Sky" id="Sky_a0tk4"]
-sky_material = SubResource("ProceduralSkyMaterial_noarx")
-
-[sub_resource type="Environment" id="Environment_r3fl7"]
-background_mode = 2
-sky = SubResource("Sky_a0tk4")
-glow_enabled = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6jxr"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ix6xn"]
-bg_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://br1a3kdte8j1h" path="res://settings_menu.tscn" id="3_o6jxr"]
+[ext_resource type="PackedScene" uid="uid://73ld43bownb0" path="res://pause_menu.tscn" id="3_xpjbq"]
+[ext_resource type="PackedScene" uid="uid://dwn7377x8heyl" path="res://audio_library.tscn" id="4_o6jxr"]
+[ext_resource type="PackedScene" uid="uid://bvpb8ysdive6c" path="res://instructions.tscn" id="5_dcxyd"]
+[ext_resource type="PackedScene" uid="uid://by57a2o4aix8g" path="res://title.tscn" id="6_o76c1"]
+[ext_resource type="PackedScene" uid="uid://iogcu7fx8wuf" path="res://accessibility.tscn" id="7_lmnw4"]
+[ext_resource type="PackedScene" uid="uid://baued2vk3lh46" path="res://credits.tscn" id="8_drepu"]
 
 [node name="YachtSinkers" type="Node3D" unique_id=1044159240]
 script = ExtResource("1_dcxyd")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=470058384]
-environment = SubResource("Environment_r3fl7")
+[node name="PauseMenu" parent="." unique_id=290838109 instance=ExtResource("3_xpjbq")]
+process_mode = 3
+visible = false
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=982052187]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
+[node name="SettingsMenu" parent="." unique_id=2122777761 instance=ExtResource("3_o6jxr")]
+visible = false
 
-[node name="Player" parent="." unique_id=219399317 instance=ExtResource("1_djnc4")]
+[node name="AudioLibrary" parent="." unique_id=1995060213 instance=ExtResource("4_o6jxr")]
+visible = false
 
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1221709577]
-transform = Transform3D(1, 0, 0, 0, -0.9227412, -0.38542044, 0, 0.38542044, -0.9227412, 0, -1.5978748, -1.1316499)
+[node name="Instructions" parent="." unique_id=142671103 instance=ExtResource("5_dcxyd")]
+visible = false
 
-[node name="Yacht" parent="." unique_id=210908673 instance=ExtResource("2_xpjbq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+[node name="Title" parent="." unique_id=1055210633 instance=ExtResource("6_o76c1")]
 
-[node name="Speech" parent="." unique_id=106919617 instance=ExtResource("3_xpjbq")]
+[node name="Accessibility" parent="." unique_id=1810153033 instance=ExtResource("7_lmnw4")]
+visible = false
 
-[node name="Rock" parent="." unique_id=1808236213 instance=ExtResource("4_o6jxr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -9.581989)
-
-[node name="Mine1" parent="." unique_id=1796733267 instance=ExtResource("6_lmnw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.84251, 0, -4.4733734)
-
-[node name="Mine2" parent="." unique_id=53341935 instance=ExtResource("6_lmnw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.84251, 0, -4.4733734)
-
-[node name="Mine3" parent="." unique_id=1779207562 instance=ExtResource("6_lmnw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.15749, 0, -9.473373)
-
-[node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("6_o76c1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.890306, 0, 11.736488)
-text = "You found another orca!
-GLADIS: Get in, loser. We're going YachtSinking.
-DELILAH: Schweet.
-GLADIS: Any advice, Delilah?
-DELILAH: Try to ram the yacht very, very hard.
-Your ram damage has increased."
-
-[node name="PhilOrca" parent="." unique_id=213966905 instance=ExtResource("6_o76c1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.412863, 0, 11.526627)
-text = "You found another orca!
-GLADIS: Phil, I need to slow these yachts down.
-PHIL: You could try biting the rudder off.
-GLADIS: How would I do that?
-PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."
-
-[node name="ClaraOrca" parent="." unique_id=1485497090 instance=ExtResource("6_o76c1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.285677, 0, 11.526627)
-text = "You found another orca!
-GLADIS: Hey, Clara. We’re gonna sink another yacht.
-CLARA: Pod goals.
-GLADIS: This is tiring work. Got any fish?
-CLARA: Here, have a tuna.
-Your health has increased by 5."
-
-[node name="MaryOrca" parent="." unique_id=117862570 instance=ExtResource("6_o76c1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8425093, 0, 11.526627)
-text = "You found another orca!
-GLADIS: The crew of those yachts have guns!
-MARY: Oh, we can deal with that.
-GLADIS: How’s that, Mary?
-MARY: As you approach the boat, press 2 to swim under it. The wave you make will wash over the boat, stopping the gunners for a while."
-
-[node name="HerbieOrca" parent="." unique_id=483332389 instance=ExtResource("6_o76c1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.389141, 0, 11.526627)
-text = "You found another orca!
-GLADIS: I wish I was as fast as you, Herbie!
-HERBIE: It’s all in the tail.
-Your speed has increased."
-
-[node name="GregOrca" parent="." unique_id=2050400485 instance=ExtResource("6_o76c1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.389141, 0, 11.526627)
-text = "You found another orca!
-GLADIS: They’ve put mines in the water!
-GREG: The arrogance. The sea is our domain!
-GLADIS: Damn straight.
-GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, safely detonating any nearby mines."
-
-[node name="Caption" type="Label" parent="." unique_id=1334498009]
-custom_minimum_size = Vector2(100, -1)
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -45.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 10
-focus_mode = 2
-accessibility_live = 2
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_o6jxr")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ix6xn")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
+[node name="Credits" parent="." unique_id=850317792 instance=ExtResource("8_drepu")]
+visible = false
