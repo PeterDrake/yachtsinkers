@@ -22,6 +22,7 @@ dest_files=["res://.godot/imported/yacht2_0.jpg-e8b45ef3d1bb96b980cba539d3ee1109
 
 compress/mode=2
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

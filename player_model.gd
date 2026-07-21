@@ -13,7 +13,7 @@ func animate_player():
 		if Input.is_action_just_pressed(move) and not wait:
 			animate_movement()
 	
-	if not $AnimationPlayer.is_playing():
+	if not $AnimationPlayer.is_playing() and $AnimationPlayer:
 		wait = false
 		for move in movement:
 			if Input.is_action_pressed(move):
