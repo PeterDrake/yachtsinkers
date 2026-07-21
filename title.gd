@@ -48,13 +48,20 @@ func _on_accessibility_button_pressed() -> void:
 func _on_level_1_button_pressed() -> void:
 	pause_menu.occluded = false
 	hide()
+	yachtsinkers.current_level_number = 1
 	yachtsinkers.restart_level()
 
 func _on_level_2_button_pressed() -> void:
-	pass # Replace with function body.
+	pause_menu.occluded = false
+	hide()
+	yachtsinkers.current_level_number = 2
+	yachtsinkers.restart_level()
 
 func _on_level_3_button_pressed() -> void:
-	pass # Replace with function body.
+	pause_menu.occluded = false
+	hide()
+	yachtsinkers.current_level_number = 3
+	yachtsinkers.restart_level()
 
 func _on_credits_button_pressed() -> void:
 	hide()

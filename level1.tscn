@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dqfklhq40nelj"]
+
+[ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_jwv3a"]
+
+[node name="Level1" type="Node3D" unique_id=84596190]
+
+[node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_jwv3a")]
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
