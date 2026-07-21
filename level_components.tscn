@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cca0fudfwucjs" path="res://player.tscn" id="1_jvp1j"]
 [ext_resource type="Script" uid="uid://dgndjh1ahdbf2" path="res://level_components.gd" id="1_wcufj"]
-[ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="2_wcufj"]
 [ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_mvxmv"]
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_82ii5"]
 
@@ -41,9 +40,6 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=551699705]
 transform = Transform3D(1, 0, 0, 0, -0.9227412, -0.38542044, 0, 0.38542044, -0.9227412, 0, -1.5978748, -1.1316499)
 current = true
-
-[node name="Yacht" parent="." unique_id=764160128 instance=ExtResource("2_wcufj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
 
 [node name="Speech" parent="." unique_id=106919617 instance=ExtResource("3_mvxmv")]
 
