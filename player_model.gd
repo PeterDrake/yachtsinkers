@@ -36,11 +36,13 @@ func animate_ability(ability: String):
 		$AnimationPlayer.speed_scale = 2.0
 		$AnimationPlayer.play("Atack_Anim")
 	elif ability == "dive":
+		print("down")
 		position -= Vector3.DOWN * 0.03 #Go down for animation
-		$AnimationPlayer.speed_scale = 2.0
+		$AnimationPlayer.speed_scale = 3.0
 		$AnimationPlayer.play("Breath_Animm")
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(1.0).timeout
+		print("up")
 		position += Vector3.DOWN * 0.03 #Come back up
 	elif ability == "slap":
-		$AnimationPlayer.speed_scale = 2.0
+		$AnimationPlayer.speed_scale = 3.0
 		$AnimationPlayer.play("TailAtack_Anim")
