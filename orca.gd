@@ -20,7 +20,7 @@ func play_dialog():
 	elif my_name == "Mary":
 		yachtsinkers.dive_enabled = true
 	elif my_name == "Herbie":
-		yachtsinkers.speed = 500.0
+		yachtsinkers.player_speed = 500.0
 	elif my_name == "Greg":
 		yachtsinkers.slap_enabled = true
 	await get_tree().create_timer(2.0).timeout

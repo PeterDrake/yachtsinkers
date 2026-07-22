@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://gunshot.wav" id="8_r8rrl"]
 [ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://reload.wav" id="9_lwvnx"]
 [ext_resource type="PackedScene" uid="uid://cahjcikw4k8qd" path="res://models/yacht2.glb" id="10_4ou0f"]
+[ext_resource type="PackedScene" uid="uid://br4wdelphw7yr" path="res://border.tscn" id="13_s8oj7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o76c1"]
 size = Vector3(2.4352846, 1.9121094, 11.308273)
@@ -124,6 +125,18 @@ playback_type = 1
 
 [node name="FAB converted" parent="Yacht" unique_id=778134472 instance=ExtResource("10_4ou0f")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -1, 0)
+
+[node name="BorderLeft" parent="." unique_id=72152200 instance=ExtResource("13_s8oj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 20)
+
+[node name="BorderRight" parent="." unique_id=876166601 instance=ExtResource("13_s8oj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
+
+[node name="BorderTop" parent="." unique_id=1200793450 instance=ExtResource("13_s8oj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -40)
+
+[node name="BorderBottom" parent="." unique_id=1622650223 instance=ExtResource("13_s8oj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 80)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="finished" from="Yacht/RudderSound" to="Yacht" method="_on_rudder_sound_finished"]

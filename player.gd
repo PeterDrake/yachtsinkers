@@ -38,6 +38,8 @@ func _check_for_collisions():
 			if "Rock" in collider.name:
 				$CollisionSound.play()
 				take_damage("You collided with a rock.")
+			elif "Border" in collider.name:
+				$CollisionSound.play()
 			elif collider.name == "Yacht":
 				if not collider.sinking:
 					$CollisionSound.play()

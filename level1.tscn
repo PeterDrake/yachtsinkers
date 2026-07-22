@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dyfpeqgab0brf" path="res://level.gd" id="1_v38iq"]
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="2_v38iq"]
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="3_usj0q"]
+[ext_resource type="PackedScene" uid="uid://br4wdelphw7yr" path="res://border.tscn" id="4_crycw"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_n8vhr"]
 
 [node name="Level1" type="Node3D" unique_id=84596190]
@@ -22,6 +23,18 @@ transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, 17, 
 
 [node name="Rock3" parent="LevelComponents" unique_id=457282380 instance=ExtResource("2_v38iq")]
 transform = Transform3D(-2.2981331, 0, 1.9283628, 0, 3, 0, -1.9283628, 0, -2.2981331, 13, 0, 24.999992)
+
+[node name="BorderLeft" parent="." unique_id=72152200 instance=ExtResource("4_crycw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 20)
+
+[node name="BorderRight" parent="." unique_id=273882586 instance=ExtResource("4_crycw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
+
+[node name="BorderTop" parent="." unique_id=550258228 instance=ExtResource("4_crycw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -40)
+
+[node name="BorderBottom" parent="." unique_id=1260132624 instance=ExtResource("4_crycw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 80)
 
 [node name="Yacht" parent="." unique_id=764160128 instance=ExtResource("3_usj0q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
