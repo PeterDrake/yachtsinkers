@@ -3,16 +3,15 @@ extends CharacterBody3D
 @onready var speech := get_node('../LevelComponents/Speech')
 @onready var player := get_node('../LevelComponents/Player')
 @onready var yachtsinkers := get_node('../..')
-@onready var level := get_node('..')
 
-var health := 10
+@export var health : int
+@export var gun_range : int
 var waypoint_index = 0
 var sinking := false
 var shooting := false
 var speed := 150
 
 const WAYPOINTS := [Vector3(-20, 0, -20), Vector3(-20, 0, 20), Vector3(20, 0, 20), Vector3(20, 0, -20)]
-const GUN_RANGE := 10
 
 func _physics_process(delta: float) -> void:
 	if not sinking:
@@ -26,8 +25,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	if $ShotTimer.is_stopped() and level.name != 'Level1':
-		if not shooting and player and position.distance_to(player.position) < GUN_RANGE:
+	if $ShotTimer.is_stopped():
+		if not shooting and player and position.distance_to(player.position) < gun_range:
 			shooting = true
 			$ReloadSound.play()  # Loading Sound
 			speech.say("Loading gun...")
@@ -36,7 +35,7 @@ func _process(_delta: float) -> void:
 				$ShotSound.play()  # Shooting Sound
 				$ShotTimer.wait_time = 15.0 / yachtsinkers.game_speed
 				$ShotTimer.start()
-				if position.distance_to(player.position) < GUN_RANGE:
+				if position.distance_to(player.position) < gun_range:
 					player.receive_bullet()
 				else:
 					speech.say("Gun missed.")
