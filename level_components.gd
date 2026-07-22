@@ -14,7 +14,6 @@ func _ready() -> void:
 	yachtsinkers.slap_enabled = false
 	yachtsinkers.player_speed = 250.0
 	_update_health()
-	restore_level()
 
 func restore_level() -> void:
 	$Caption.grab_focus()
