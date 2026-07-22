@@ -62,7 +62,8 @@ func _process(_delta: float) -> void:
 		$SonarSound.play()
 		var count = $ShapeCast3D.get_collision_count()
 		for i in range(count):
-			$ShapeCast3D.get_collider(i).sonar_return()
+			if not $ShapeCast3D.get_collider(i).name.begins_with("Border"):
+				$ShapeCast3D.get_collider(i).sonar_return()
 	elif Input.is_action_just_pressed("bite") and yachtsinkers.bite_enabled and rudder and rudder.is_playing() and \
 			position.distance_to(rudder.global_position) < 3:
 		$BiteSound.play()
@@ -80,7 +81,9 @@ func _process(_delta: float) -> void:
 		await get_tree().create_timer(1.0).timeout
 		$orcaanimated.position += Vector3.DOWN * 1.0 #Come back up
 	elif Input.is_action_just_pressed("slap") and yachtsinkers.slap_enabled and $SlapTimer.is_stopped():
-		for object in level.get_children():
+		print("slap!")
+		for object in level.get_parent().get_children():
+			print("> " + object.name)
 			if "Mine" in object.name and position.distance_to(object.global_position) < 10:
 				object.detonate(false)
 		$SlapSound.play()
