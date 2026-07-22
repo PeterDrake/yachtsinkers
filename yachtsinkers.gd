@@ -7,6 +7,15 @@ var echolocation_width := 20.0
 var starting_health := 5.0
 var game_speed := 1.0
 
+# These things can be changed by finding other orcas. They're here, rather than
+# in player, because they stay changed unless you restart the same or a lower
+# level.
+var player_speed := 250.0
+var ram_damage := 1
+var bite_enabled := false
+var dive_enabled := false
+var slap_enabled := false
+
 #func _ready():
 	#current_level = load("res://level.tscn").instantiate()
 	#add_child(current_level)

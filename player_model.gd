@@ -2,6 +2,8 @@ extends Node3D
 var movement = ["forward", "left", "right"]
 var wait := false
 
+@onready var yachtsinkers := get_node("../../../..")
+
 func _process(_delta: float) -> void:
 	if get_parent().name != "Player":
 		$AnimationPlayer.play("Idle_Anim")
@@ -25,7 +27,7 @@ func animate_player():
 func animate_movement():
 	wait = false
 	$AnimationPlayer.speed_scale = 1.0
-	if get_parent().speed == 250.0:
+	if yachtsinkers.player_speed == 250.0:
 		$AnimationPlayer.play("Swim1_Animm")
 	else:
 		$AnimationPlayer.play("Swim3_Anim")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://odklnu8chp3j"]
 
 [ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_lyoih"]
+[ext_resource type="Script" uid="uid://dyfpeqgab0brf" path="res://level.gd" id="1_ymh28"]
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="4_sotx7"]
 [ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="5_ymh28"]
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="6_7oc4e"]
@@ -19,6 +20,7 @@ size = Vector3(4.0272126, 1.9121094, 20.713238)
 size = Vector3(1, 3, 3)
 
 [node name="Level3" type="Node3D" unique_id=84596190]
+script = ExtResource("1_ymh28")
 
 [node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_lyoih")]
 

@@ -3,17 +3,15 @@ extends Node3D
 @onready var yachtsinkers := get_node("../..")
 
 func _ready() -> void:
+	_update_health()
+	restore_level()
+
+func restore_level() -> void:
 	$Caption.grab_focus()
 	_update_echolocation_width()
-	_update_health()
-
-func _on_visibility_changed() -> void:
-	if visible:
-		$Caption.grab_focus()
-		_update_echolocation_width()
-		$Player/CollisionTimer.wait_time = 1.0 / yachtsinkers.game_speed
-		$Player/WaveTimer.wait_time = 20.0 / yachtsinkers.game_speed
-		$Player/SlapTimer.wait_time = 5.0 / yachtsinkers.game_speed
+	$Player/CollisionTimer.wait_time = 1.0 / yachtsinkers.game_speed
+	$Player/WaveTimer.wait_time = 20.0 / yachtsinkers.game_speed
+	$Player/SlapTimer.wait_time = 5.0 / yachtsinkers.game_speed
 
 ## Adjust the distant width of the echolocation ShapeCast
 func _update_echolocation_width() -> void:
