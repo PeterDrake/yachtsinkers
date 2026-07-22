@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dqfklhq40nelj"]
 
 [ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_jwv3a"]
+[ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="2_v38iq"]
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="3_usj0q"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_n8vhr"]
 
@@ -8,11 +9,23 @@
 
 [node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_jwv3a")]
 
+[node name="Player" parent="LevelComponents" index="2" unique_id=219399317]
+transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.742278e-08, -7.642742e-15, -1, 0, 0, 58)
+
+[node name="Rock" parent="LevelComponents" index="4" unique_id=1796733267]
+transform = Transform3D(9.659258, 0, -2.5881906, 0, 10, 0, 2.5881906, 0, 9.659258, -12, 0, 39)
+
+[node name="Rock2" parent="LevelComponents" unique_id=1200073297 instance=ExtResource("2_v38iq")]
+transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, 17, 0, 29)
+
+[node name="Rock3" parent="LevelComponents" unique_id=457282380 instance=ExtResource("2_v38iq")]
+transform = Transform3D(-2.2981331, 0, 1.9283628, 0, 3, 0, -1.9283628, 0, -2.2981331, 13, 0, 24.999992)
+
 [node name="Yacht" parent="." unique_id=764160128 instance=ExtResource("3_usj0q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
 
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("7_n8vhr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.890306, 0, 11.361767)
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 10, 0, 38)
 text = "You found another orca!
 GLADIS: Get in loser. We're going YachtSinking.
 DELILAH: Schweet.
@@ -21,7 +34,7 @@ DELILAH: Try to ram the yacht very very hard.
 Your ram damage has increased."
 
 [node name="PhilOrca" parent="." unique_id=116705150 instance=ExtResource("7_n8vhr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.412863, 0, 11.526627)
+transform = Transform3D(0.49999997, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, 0.49999997, -12, 0, 30)
 text = "You found another orca!
 GLADIS: Phil, I need to slow these yachts down.
 PHIL: You could try biting the rudder off.

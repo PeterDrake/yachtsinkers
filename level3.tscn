@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://odklnu8chp3j"]
 
 [ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_lyoih"]
+[ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="2_ymh28"]
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="4_sotx7"]
 [ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="5_ymh28"]
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="6_7oc4e"]
@@ -22,29 +23,62 @@ size = Vector3(1, 3, 3)
 
 [node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_lyoih")]
 
+[node name="DirectionalLight3D" parent="LevelComponents" index="1" unique_id=1368038240]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 51)
+
+[node name="Player" parent="LevelComponents" index="2" unique_id=219399317]
+transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.742278e-08, -7.642742e-15, -1, 0, 0, 51)
+
+[node name="Rock" parent="LevelComponents" index="4" unique_id=1796733267]
+transform = Transform3D(4.330127, 0, -2.5, 0, 5, 0, 2.5, 0, 4.330127, -8.552256, 4.7683716e-07, 42.41801)
+
+[node name="Rock2" parent="LevelComponents" unique_id=2115460905 instance=ExtResource("2_ymh28")]
+transform = Transform3D(-6.0621777, 0, -3.4999998, 0, 7, 0, 3.4999998, 0, -6.0621777, 10, 0, 35)
+
+[node name="Rock3" parent="LevelComponents" unique_id=770365321 instance=ExtResource("2_ymh28")]
+transform = Transform3D(-2.5000002, 0, 4.330127, 0, 5, 0, -4.330127, 0, -2.5000002, 11, 0, 14)
+
+[node name="Rock4" parent="LevelComponents" unique_id=293522253 instance=ExtResource("2_ymh28")]
+transform = Transform3D(6.0621777, 0, 3.5, 0, 7, 0, -3.5, 0, 6.0621777, -12, 0, 11)
+
+[node name="Rock5" parent="LevelComponents" unique_id=1635260772 instance=ExtResource("2_ymh28")]
+transform = Transform3D(7.071068, 0, 7.071068, 0, 10, 0, -7.071068, 0, 7.071068, 31, 0, -3)
+
+[node name="Rock6" parent="LevelComponents" unique_id=569612248 instance=ExtResource("2_ymh28")]
+transform = Transform3D(4.9999995, 0, -8.6602545, 0, 10, 0, 8.6602545, 0, 4.9999995, -14, 0, -30)
+
+[node name="Rock7" parent="LevelComponents" unique_id=841849313 instance=ExtResource("2_ymh28")]
+transform = Transform3D(-2.1213202, 0, -2.1213202, 0, 3, 0, 2.1213202, 0, -2.1213202, -16, 0, 15)
+
+[node name="Rock8" parent="LevelComponents" unique_id=314944419 instance=ExtResource("2_ymh28")]
+transform = Transform3D(-1.5000005, 0, -2.5980763, 0, 3, 0, 2.5980763, 0, -1.5000005, 14, 0, 32)
+
+[node name="Rock9" parent="LevelComponents" unique_id=1494785617 instance=ExtResource("2_ymh28")]
+transform = Transform3D(-2.500001, 0, -4.330127, 0, 4.9999995, 0, 4.330127, 0, -2.500001, -26, 0, -27)
+
+[node name="Mine1" parent="LevelComponents" unique_id=1010764336 instance=ExtResource("6_ymh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1574898, 0, -2.4733734)
+
+[node name="Mine2" parent="LevelComponents" unique_id=44086338 instance=ExtResource("6_ymh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+
+[node name="Mine3" parent="LevelComponents" unique_id=1590011789 instance=ExtResource("6_ymh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 31)
+
 [node name="HerbieOrca" parent="." unique_id=744987695 instance=ExtResource("7_7oc4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.389141, 0, 11.526627)
+transform = Transform3D(0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.258819, 29.610859, 0, -13.473373)
 text = "You found another orca!
 GLADIS: I wish I was as fast as you, Herbie!
 HERBIE: It’s all in the tail.
 Your speed has increased."
 
 [node name="GregOrca" parent="." unique_id=17687419 instance=ExtResource("7_7oc4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.389141, 0, 11.526627)
+transform = Transform3D(0.25881907, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, 0.25881907, -12.389141, 0, 5.5266266)
 text = "You found another orca!
 GLADIS: They’ve put mines in the water!
 GREG: The arrogance. The sea is our domain!
 GLADIS: Damn straight.
 GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, safely detonating any nearby mines."
-
-[node name="Mine1" parent="." unique_id=1796733267 instance=ExtResource("6_ymh28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.84251, 0, -4.4733734)
-
-[node name="Mine2" parent="." unique_id=44086338 instance=ExtResource("6_ymh28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.523342, 0, -0.6985111)
-
-[node name="Mine3" parent="." unique_id=1590011789 instance=ExtResource("6_ymh28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.15749, 0, -1.4733734)
 
 [node name="Yacht" type="CharacterBody3D" parent="." unique_id=1278287188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dyb35767htb4y" path="res://models/rock_pack_vol_01_g5n1k9t4l7.glb" id="2_wecdg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dcxyd"]
-size = Vector3(0.9289551, 0.39575195, 1)
+size = Vector3(0.8531723, 0.39575195, 0.9797363)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o0qsl"]
 
@@ -16,7 +16,7 @@ script = ExtResource("1_o0qsl")
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, -0.29552352, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012573242, -0.044799805, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0036354065, -0.044799805, 0.00012207031)
 shape = SubResource("BoxShape3D_dcxyd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=718199581]
