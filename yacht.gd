@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var yachtsinkers := get_node('../..')
 @onready var level := get_node('..')
 
-var health := 10
+@export var health : int
 var waypoint_index = 0
 var sinking := false
 var shooting := false
