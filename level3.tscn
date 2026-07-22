@@ -110,7 +110,7 @@ visible = false
 mesh = SubResource("BoxMesh_bs5pn")
 
 [node name="RudderSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1759068914]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 1.8778776)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 8.415629)
 stream = ExtResource("5_ymh28")
 attenuation_model = 3
 unit_size = 5.0
