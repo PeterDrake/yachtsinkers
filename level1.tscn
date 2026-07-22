@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dqfklhq40nelj"]
 
 [ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_jwv3a"]
+[ext_resource type="Script" uid="uid://dyfpeqgab0brf" path="res://level.gd" id="1_v38iq"]
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="2_v38iq"]
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="3_usj0q"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_n8vhr"]
 
 [node name="Level1" type="Node3D" unique_id=84596190]
+script = ExtResource("1_v38iq")
 
 [node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_jwv3a")]
 
@@ -23,6 +25,7 @@ transform = Transform3D(-2.2981331, 0, 1.9283628, 0, 3, 0, -1.9283628, 0, -2.298
 
 [node name="Yacht" parent="." unique_id=764160128 instance=ExtResource("3_usj0q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+health = 10
 
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("7_n8vhr")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 10, 0, 38)
