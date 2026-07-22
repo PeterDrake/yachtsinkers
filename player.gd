@@ -5,17 +5,13 @@ const ROTATION_SPEED := 1.5
 var degrees := 0
 var health := 5
 
-#var speed := 250.0
-#var ram_damage := 1
-#var bite_enabled := false
-#var dive_enabled := false
-#var slap_enabled := false
-
 @onready var speech := get_node("../Speech")
 @onready var yacht := get_node("../../Yacht")
 @onready var rudder := get_node("../../Yacht/RudderSound")
 @onready var level := get_node("..")
 @onready var yachtsinkers := get_node("../../..")
+
+const SLAP_RANGE := 20
 
 func _physics_process(delta: float) -> void:
 	var rotation_input := Input.get_axis("left", "right")
@@ -81,10 +77,8 @@ func _process(_delta: float) -> void:
 		await get_tree().create_timer(1.0).timeout
 		$orcaanimated.position += Vector3.DOWN * 1.0 #Come back up
 	elif Input.is_action_just_pressed("slap") and yachtsinkers.slap_enabled and $SlapTimer.is_stopped():
-		print("slap!")
 		for object in level.get_parent().get_children():
-			print("> " + object.name)
-			if "Mine" in object.name and position.distance_to(object.global_position) < 10:
+			if "Mine" in object.name and position.distance_to(object.global_position) < SLAP_RANGE:
 				object.detonate(false)
 		$SlapSound.play()
 		speech.say("Tail slap activated.")
