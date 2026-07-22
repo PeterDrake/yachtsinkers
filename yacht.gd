@@ -1,8 +1,9 @@
 extends CharacterBody3D
 
-@onready var speech := get_node('../Speech')
-@onready var player := get_node('../Player')
+@onready var speech := get_node('../LevelComponents/Speech')
+@onready var player := get_node('../LevelComponents/Player')
 @onready var yachtsinkers := get_node('../..')
+@onready var level := get_node('..')
 
 var health := 10
 var waypoint_index = 0
@@ -25,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	if $ShotTimer.is_stopped():
+	if $ShotTimer.is_stopped() and level.name != 'Level1':
 		if not shooting and player and position.distance_to(player.position) < GUN_RANGE:
 			shooting = true
 			$ReloadSound.play()  # Loading Sound

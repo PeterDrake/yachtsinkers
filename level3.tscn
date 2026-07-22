@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://odklnu8chp3j"]
+
+[ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_lyoih"]
+[ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="4_sotx7"]
+[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="5_ymh28"]
+[ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="6_7oc4e"]
+[ext_resource type="PackedScene" uid="uid://ckbk4fmtrrdii" path="res://mine.tscn" id="6_ymh28"]
+[ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_7oc4e"]
+[ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="7_siwpi"]
+[ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="8_0m7xm"]
+[ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://gunshot.wav" id="9_qoi87"]
+[ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://reload.wav" id="10_i6w5t"]
+[ext_resource type="PackedScene" uid="uid://13ia6j0wrl6j" path="res://models/yacht1.glb" id="11_l2pgs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2272n"]
+size = Vector3(4.0272126, 1.9121094, 20.713238)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bs5pn"]
+size = Vector3(1, 3, 3)
+
+[node name="Level3" type="Node3D" unique_id=84596190]
+
+[node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_lyoih")]
+
+[node name="HerbieOrca" parent="." unique_id=744987695 instance=ExtResource("7_7oc4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.389141, 0, 11.526627)
+text = "You found another orca!
+GLADIS: I wish I was as fast as you, Herbie!
+HERBIE: It’s all in the tail.
+Your speed has increased."
+
+[node name="GregOrca" parent="." unique_id=17687419 instance=ExtResource("7_7oc4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.389141, 0, 11.526627)
+text = "You found another orca!
+GLADIS: They’ve put mines in the water!
+GREG: The arrogance. The sea is our domain!
+GLADIS: Damn straight.
+GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, safely detonating any nearby mines."
+
+[node name="Mine1" parent="." unique_id=1796733267 instance=ExtResource("6_ymh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.84251, 0, -4.4733734)
+
+[node name="Mine2" parent="." unique_id=44086338 instance=ExtResource("6_ymh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.523342, 0, -0.6985111)
+
+[node name="Mine3" parent="." unique_id=1590011789 instance=ExtResource("6_ymh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.15749, 0, -1.4733734)
+
+[node name="Yacht" type="CharacterBody3D" parent="." unique_id=1278287188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+script = ExtResource("4_sotx7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Yacht" unique_id=1048988864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08423805, 0.5439453, -1.9534435)
+shape = SubResource("BoxShape3D_2272n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Yacht" unique_id=1061553488]
+visible = false
+mesh = SubResource("BoxMesh_bs5pn")
+
+[node name="RudderSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1759068914]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 1.8778776)
+stream = ExtResource("5_ymh28")
+attenuation_model = 3
+unit_size = 5.0
+autoplay = true
+max_distance = 4.0
+bus = &"rudder"
+playback_type = 1
+emission_angle_degrees = 36.0
+emission_angle_filter_attenuation_db = -70.0
+
+[node name="BoatSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1340667044]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+stream = ExtResource("6_7oc4e")
+autoplay = true
+bus = &"boat"
+playback_type = 1
+
+[node name="SonarSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1313164315]
+stream = ExtResource("7_siwpi")
+bus = &"sfx"
+playback_type = 1
+
+[node name="DestructionSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1999066241]
+stream = ExtResource("8_0m7xm")
+bus = &"sfx"
+playback_type = 1
+
+[node name="ShotTimer" type="Timer" parent="Yacht" unique_id=405497224]
+wait_time = 15.0
+one_shot = true
+
+[node name="ShotSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=525655297]
+stream = ExtResource("9_qoi87")
+bus = &"sfx"
+playback_type = 1
+
+[node name="ReloadSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=587138337]
+stream = ExtResource("10_i6w5t")
+bus = &"sfx"
+playback_type = 1
+
+[node name="FAB converted" parent="Yacht" unique_id=215462717 instance=ExtResource("11_l2pgs")]
+transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 0, -1, 0)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="finished" from="Yacht/RudderSound" to="Yacht" method="_on_rudder_sound_finished"]
+[connection signal="finished" from="Yacht/BoatSound" to="Yacht" method="_on_buoy_sound_finished"]
+
+[editable path="LevelComponents"]

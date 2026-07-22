@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://c63ha665ap27w"]
+
+[ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_y0xe8"]
+[ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="2_r40rm"]
+[ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="3_jifot"]
+[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="4_3opl0"]
+[ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="5_dc5vx"]
+[ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="6_s8oj7"]
+[ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="7_mw4xc"]
+[ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://gunshot.wav" id="8_r8rrl"]
+[ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://reload.wav" id="9_lwvnx"]
+[ext_resource type="PackedScene" uid="uid://cahjcikw4k8qd" path="res://models/yacht2.glb" id="10_4ou0f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o76c1"]
+size = Vector3(2.4352846, 1.9121094, 11.308273)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dcxyd"]
+size = Vector3(1, 3, 3)
+
+[node name="Level2" type="Node3D" unique_id=84596190]
+
+[node name="LevelComponents" parent="." unique_id=1318053163 instance=ExtResource("1_y0xe8")]
+
+[node name="ClaraOrca" parent="." unique_id=1608376578 instance=ExtResource("2_r40rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.285677, 0, 11.526627)
+text = "You found another orca!
+GLADIS: Hey, Clara. We’re gonna sink another yacht.
+CLARA: Pod goals.
+GLADIS: This is tiring work. Got any fish?
+CLARA: Here, have a tuna.
+Your health has increased by 5."
+
+[node name="MaryOrca" parent="." unique_id=458891903 instance=ExtResource("2_r40rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8425093, 0, 11.526627)
+text = "You found another orca!
+GLADIS: The crew of those yachts have guns!
+MARY: Oh, we can deal with that.
+GLADIS: How’s that, Mary?
+MARY: As you approach the boat, press 2 to swim under it. The wave you make will wash over the boat, stopping the gunners for a while."
+
+[node name="Yacht" type="CharacterBody3D" parent="." unique_id=764160128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+script = ExtResource("3_jifot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Yacht" unique_id=1733591117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027788162, 0.5439453, 0.25388336)
+shape = SubResource("BoxShape3D_o76c1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Yacht" unique_id=718199581]
+visible = false
+mesh = SubResource("BoxMesh_dcxyd")
+
+[node name="RudderSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1659163169]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 1.8778776)
+stream = ExtResource("4_3opl0")
+attenuation_model = 3
+unit_size = 5.0
+autoplay = true
+max_distance = 4.0
+bus = &"rudder"
+playback_type = 1
+emission_angle_degrees = 36.0
+emission_angle_filter_attenuation_db = -70.0
+
+[node name="BoatSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1197138728]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+stream = ExtResource("5_dc5vx")
+autoplay = true
+bus = &"boat"
+playback_type = 1
+
+[node name="SonarSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1504693947]
+stream = ExtResource("6_s8oj7")
+bus = &"sfx"
+playback_type = 1
+
+[node name="DestructionSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=623671194]
+stream = ExtResource("7_mw4xc")
+bus = &"sfx"
+playback_type = 1
+
+[node name="ShotTimer" type="Timer" parent="Yacht" unique_id=1776475871]
+wait_time = 15.0
+one_shot = true
+
+[node name="ShotSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1373479092]
+stream = ExtResource("8_r8rrl")
+bus = &"sfx"
+playback_type = 1
+
+[node name="ReloadSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=733171440]
+stream = ExtResource("9_lwvnx")
+bus = &"sfx"
+playback_type = 1
+
+[node name="FAB converted" parent="Yacht" unique_id=778134472 instance=ExtResource("10_4ou0f")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -1, 0)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="finished" from="Yacht/RudderSound" to="Yacht" method="_on_rudder_sound_finished"]
+[connection signal="finished" from="Yacht/BoatSound" to="Yacht" method="_on_buoy_sound_finished"]
+
+[editable path="LevelComponents"]

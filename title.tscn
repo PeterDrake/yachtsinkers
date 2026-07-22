@@ -144,7 +144,6 @@ focus_neighbor_bottom = NodePath("../Level3Button")
 focus_next = NodePath("../Level3Button")
 focus_previous = NodePath("../Level1Button")
 theme_override_font_sizes/font_size = 48
-disabled = true
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617886323]
@@ -157,7 +156,6 @@ focus_neighbor_bottom = NodePath("../QuitButton")
 focus_next = NodePath("../QuitButton")
 focus_previous = NodePath("../Level2Button")
 theme_override_font_sizes/font_size = 48
-disabled = true
 text = "Level 3"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=438912334]
