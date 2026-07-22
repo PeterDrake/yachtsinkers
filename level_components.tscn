@@ -25,6 +25,13 @@ bg_color = Color(0, 0, 0, 0.24705882)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ix6xn"]
 bg_color = Color(0, 0, 0, 0.24705882)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4splp"]
+transparency = 1
+albedo_color = Color(0.03529412, 0.23529412, 0.31764707, 0.7490196)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3qxw5"]
+material = SubResource("StandardMaterial3D_4splp")
+
 [node name="LevelComponents" type="Node3D" unique_id=1318053163]
 script = ExtResource("1_wcufj")
 
@@ -66,3 +73,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1374695697]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_3qxw5")
