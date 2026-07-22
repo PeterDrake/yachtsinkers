@@ -4,17 +4,13 @@ extends Node3D
 @onready var level := get_node("..")
 
 func _ready() -> void:
-	print("ready")
 	var level_number := int(level.name.substr(level.name.length() - 1))
-	
-	print("Level number: " + str(level_number))
 	if level_number <= 1:
 		yachtsinkers.bite_enabled = false
 		yachtsinkers.ram_damage = 1
 	if level_number <= 2:
 		yachtsinkers.dive_enabled = false
 		yachtsinkers.starting_health = 5.0
-		print("In ready, updated sh to " + str(yachtsinkers.starting_health))
 	yachtsinkers.slap_enabled = false
 	yachtsinkers.player_speed = 250.0
 	_update_health()
