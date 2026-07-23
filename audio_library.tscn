@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="2_xoeck"]
 [ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="3_m12ct"]
 [ext_resource type="AudioStream" uid="uid://c1vn2xcm881w1" path="res://hit.wav" id="4_8eh6q"]
+[ext_resource type="AudioStream" uid="uid://dcmddl2n1bvft" path="res://bubbles.wav" id="4_veo6m"]
 [ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="5_5v0lx"]
 [ext_resource type="AudioStream" uid="uid://bnjrmkrxkkr8u" path="res://rock.wav" id="6_xt7e3"]
 [ext_resource type="AudioStream" uid="uid://dxg81ughajoui" path="res://mine_explosion.wav" id="7_lfina"]
@@ -99,21 +100,33 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../YachtButton")
 focus_neighbor_top = NodePath("../YachtButton")
+focus_neighbor_right = NodePath("../RockButton")
+focus_neighbor_bottom = NodePath("../RockButton")
+focus_next = NodePath("../RockButton")
+focus_previous = NodePath("../YachtButton")
+text = "Rudder"
+
+[node name="RockButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1228060139]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../RudderButton")
+focus_neighbor_top = NodePath("../RudderButton")
 focus_neighbor_right = NodePath("../EventLabel")
 focus_neighbor_bottom = NodePath("../EventLabel")
 focus_next = NodePath("../EventLabel")
-focus_previous = NodePath("../YachtButton")
-text = "Rudder"
+focus_previous = NodePath("../RudderButton")
+text = "Rock
+"
 
 [node name="EventLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=892529959]
 layout_mode = 2
 size_flags_vertical = 6
-focus_neighbor_left = NodePath("../RudderButton")
-focus_neighbor_top = NodePath("../RudderButton")
+focus_neighbor_left = NodePath("../RockButton")
+focus_neighbor_top = NodePath("../RockButton")
 focus_neighbor_right = NodePath("../RamButton")
 focus_neighbor_bottom = NodePath("../RamButton")
 focus_next = NodePath("../RamButton")
-focus_previous = NodePath("../RudderButton")
+focus_previous = NodePath("../RockButton")
 focus_mode = 3
 text = "Events"
 horizontal_alignment = 1
@@ -352,6 +365,11 @@ stream = ExtResource("3_m12ct")
 bus = &"rudder"
 playback_type = 1
 
+[node name="RockPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=438116995]
+stream = ExtResource("4_veo6m")
+bus = &"rudder"
+playback_type = 1
+
 [node name="RamPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=2094028573]
 stream = ExtResource("4_8eh6q")
 bus = &"sfx"
@@ -435,6 +453,7 @@ playback_type = 1
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/YachtButton" to="." method="_on_yacht_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/RudderButton" to="." method="_on_rudder_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/RockButton" to="." method="_on_rock_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/RamButton" to="." method="_on_ram_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/DestroyedButton" to="." method="_on_destroyed_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HitRockButton" to="." method="_on_hit_rock_button_pressed"]

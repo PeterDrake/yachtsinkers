@@ -30,6 +30,9 @@ func _on_yacht_button_pressed() -> void:
 func _on_rudder_button_pressed() -> void:
 	$Sounds/RudderPlayer.play()
 
+func _on_rock_button_pressed() -> void:
+	$Sounds/RockPlayer.play()
+
 func _on_ram_button_pressed() -> void:
 	$Sounds/RamPlayer.play()
 
