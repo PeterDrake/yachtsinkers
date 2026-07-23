@@ -63,4 +63,7 @@ PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 
 [editable path="LevelComponents"]
+[editable path="LevelComponents/Rock"]
+[editable path="LevelComponents/Rock2"]
+[editable path="LevelComponents/Rock3"]
 [editable path="Yacht"]
