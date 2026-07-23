@@ -62,7 +62,7 @@ func _process(_delta: float) -> void:
 		for i in range(count):
 			if not $ShapeCast3D.get_collider(i).name.begins_with("Border"):
 				$ShapeCast3D.get_collider(i).sonar_return()
-	elif Input.is_action_just_pressed("bite") and yachtsinkers.bite_enabled and rudder and rudder.is_playing() and \
+	elif Input.is_action_just_pressed("bite") and yachtsinkers.bite_enabled and rudder and \
 			position.distance_to(rudder.global_position) < 3:
 		$BiteSound.play()
 		speech.say("Rudder bitten off.")

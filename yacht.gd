@@ -64,7 +64,7 @@ func receive_hit(damage) -> void:
 			speech.say("Yacht health: " + str(health))
 
 func receive_bite() -> void:
-	$RudderSound.stop()
+	$RudderSound.queue_free()
 	speed = 75
 
 func receive_wave() -> void:
