@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://13ia6j0wrl6j" path="res://models/yacht1.glb" id="11_l2pgs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2272n"]
-size = Vector3(4.5095654, 1.9121094, 19.544132)
+size = Vector3(4.039499, 1.9121094, 19.08239)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bs5pn"]
 size = Vector3(1, 3, 3)
@@ -72,14 +72,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 60)
 
 [node name="HerbieOrca" parent="." unique_id=744987695 instance=ExtResource("7_7oc4e")]
-transform = Transform3D(0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.258819, 39.61086, 0, 6.5266266)
+transform = Transform3D(0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.258819, 34.587383, 0, 9.118359)
 text = "You found another orca!
 GLADIS: I wish I was as fast as you, Herbie!
 HERBIE: It’s all in the tail.
 Your speed has increased."
 
 [node name="GregOrca" parent="." unique_id=17687419 instance=ExtResource("7_7oc4e")]
-transform = Transform3D(0.25881907, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, 0.25881907, -19.389141, 0, 30.526627)
+transform = Transform3D(0.25881907, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, 0.25881907, -19.389141, 0, 39.888714)
 text = "You found another orca!
 GLADIS: They’ve put mines in the water!
 GREG: The arrogance. The sea is our domain!
@@ -93,7 +93,7 @@ health = 30
 gun_range = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Yacht" unique_id=1048988864]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012355804, 0.5439453, -1.1978207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027780533, 0.5439453, -1.2762489)
 shape = SubResource("BoxShape3D_2272n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Yacht" unique_id=1061553488]
