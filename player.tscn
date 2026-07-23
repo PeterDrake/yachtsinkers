@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://c1vn2xcm881w1" path="res://hit.wav" id="5_sweqy"]
 [ext_resource type="AudioStream" uid="uid://cw413o1kb5ass" path="res://dive.wav" id="6_2hs0m"]
 [ext_resource type="AudioStream" uid="uid://d7ys7j0pjc3y" path="res://tail_slap.wav" id="7_1jxqw"]
+[ext_resource type="AudioStream" uid="uid://dsb4518bjwx0o" path="res://invalid_action.wav" id="9_b26j0"]
+[ext_resource type="AudioStream" uid="uid://0bexov74irxr" path="res://border.wav" id="9_n7ghd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t7gb3"]
 radius = 0.3852539
@@ -83,3 +85,14 @@ one_shot = true
 [node name="SlapTimer" type="Timer" parent="." unique_id=2062571930]
 wait_time = 5.0
 one_shot = true
+
+[node name="BorderSound" type="AudioStreamPlayer3D" parent="." unique_id=1780750870]
+transform = Transform3D(1, 6.6814974e-22, 0, 6.6814974e-22, 1, 0, 0, 0, 1, 0, 0, 0)
+stream = ExtResource("9_n7ghd")
+bus = &"sfx"
+playback_type = 1
+
+[node name="InvalidActionSound" type="AudioStreamPlayer3D" parent="." unique_id=49997351]
+stream = ExtResource("9_b26j0")
+bus = &"sfx"
+playback_type = 1

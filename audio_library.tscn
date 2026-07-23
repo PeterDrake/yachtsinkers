@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="2_xoeck"]
 [ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="3_m12ct"]
 [ext_resource type="AudioStream" uid="uid://c1vn2xcm881w1" path="res://hit.wav" id="4_8eh6q"]
-[ext_resource type="AudioStream" uid="uid://dcmddl2n1bvft" path="res://bubbles.wav" id="4_veo6m"]
+[ext_resource type="AudioStream" uid="uid://c3xvspbjxnp6c" path="res://bubbles_lib.wav" id="4_veo6m"]
 [ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="5_5v0lx"]
 [ext_resource type="AudioStream" uid="uid://bnjrmkrxkkr8u" path="res://rock.wav" id="6_xt7e3"]
 [ext_resource type="AudioStream" uid="uid://dxg81ughajoui" path="res://mine_explosion.wav" id="7_lfina"]

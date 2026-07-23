@@ -34,8 +34,8 @@ func _check_for_collisions():
 			if "Rock" in collider.name and velocity != Vector3.ZERO:
 				$CollisionSound.play()
 				take_damage("You collided with a rock.")
-			elif "Border" in collider.name:
-				$CollisionSound.play()
+			elif "Border" in collider.name and velocity != Vector3.ZERO:
+				$BorderSound.play()
 			elif collider.name == "Yacht":
 				if not collider.sinking:
 					$CollisionSound.play()
@@ -67,6 +67,8 @@ func _process(_delta: float) -> void:
 		speech.say("Rudder bitten off.")
 		yacht.receive_bite()
 		$orcaanimated.animate_ability("bite")
+	elif Input.is_action_just_pressed("bite"):
+		$InvalidActionSound.play()
 	elif Input.is_action_just_pressed("dive") and yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 6 and \
 			$WaveTimer.is_stopped():
 		$DiveSound.play()
@@ -77,6 +79,8 @@ func _process(_delta: float) -> void:
 		$orcaanimated.animate_ability("dive")
 		await get_tree().create_timer(1.0).timeout
 		$orcaanimated.position += Vector3.DOWN * 1.0 #Come back up
+	elif Input.is_action_just_pressed("dive"):
+		$InvalidActionSound.play()
 	elif Input.is_action_just_pressed("slap") and yachtsinkers.slap_enabled and $SlapTimer.is_stopped():
 		for object in level.get_parent().get_children():
 			if "Mine" in object.name and position.distance_to(object.global_position) < SLAP_RANGE:
@@ -85,6 +89,8 @@ func _process(_delta: float) -> void:
 		speech.say("Tail slap activated.")
 		$SlapTimer.start()
 		$orcaanimated.animate_ability("slap")
+	elif Input.is_action_just_pressed("slap"):
+		$InvalidActionSound.play()
 
 func receive_bullet():
 	await get_tree().create_timer(0.3).timeout
