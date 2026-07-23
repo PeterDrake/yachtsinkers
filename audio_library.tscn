@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bnjrmkrxkkr8u" path="res://rock.wav" id="6_xt7e3"]
 [ext_resource type="AudioStream" uid="uid://dxg81ughajoui" path="res://mine_explosion.wav" id="7_lfina"]
 [ext_resource type="AudioStream" uid="uid://b712tq17m41dn" path="res://orca_1.wav" id="8_aqb5m"]
+[ext_resource type="AudioStream" uid="uid://0bexov74irxr" path="res://border.wav" id="8_lqow2"]
 [ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://reload.wav" id="9_ywc62"]
 [ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://gunshot.wav" id="10_yyc0e"]
 [ext_resource type="AudioStream" uid="uid://00akojavfg78" path="res://sonar.wav" id="11_vfd73"]
@@ -17,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://d7ys7j0pjc3y" path="res://tail_slap.wav" id="14_veo6m"]
 [ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="15_tdr1m"]
 [ext_resource type="AudioStream" uid="uid://b4k8kooos1qfl" path="res://mine_ping.wav" id="16_3digw"]
+[ext_resource type="AudioStream" uid="uid://dsb4518bjwx0o" path="res://invalid_action.wav" id="17_cdhnc"]
 [ext_resource type="AudioStream" uid="uid://dacvfe2gfta3c" path="res://orca_ping.wav" id="17_veo6m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
@@ -140,7 +142,7 @@ focus_neighbor_right = NodePath("../DestroyedButton")
 focus_neighbor_bottom = NodePath("../DestroyedButton")
 focus_next = NodePath("../DestroyedButton")
 focus_previous = NodePath("../EventLabel")
-text = "Ram Yacht"
+text = "Rammed Yacht"
 
 [node name="DestroyedButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1227209316]
 layout_mode = 2
@@ -158,21 +160,32 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../DestroyedButton")
 focus_neighbor_top = NodePath("../DestroyedButton")
-focus_neighbor_right = NodePath("../MineExplosionButton")
-focus_neighbor_bottom = NodePath("../MineExplosionButton")
-focus_next = NodePath("../MineExplosionButton")
+focus_neighbor_right = NodePath("../HitBorderButton")
+focus_neighbor_bottom = NodePath("../HitBorderButton")
+focus_next = NodePath("../HitBorderButton")
 focus_previous = NodePath("../DestroyedButton")
 text = "Hit Rock"
 
-[node name="MineExplosionButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1289736579]
+[node name="HitBorderButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1105805690]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../HitRockButton")
 focus_neighbor_top = NodePath("../HitRockButton")
+focus_neighbor_right = NodePath("../MineExplosionButton")
+focus_neighbor_bottom = NodePath("../MineExplosionButton")
+focus_next = NodePath("../MineExplosionButton")
+focus_previous = NodePath("../HitRockButton")
+text = "Hit Level Border"
+
+[node name="MineExplosionButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1289736579]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../HitBorderButton")
+focus_neighbor_top = NodePath("../HitBorderButton")
 focus_neighbor_right = NodePath("../MetOrcaButton")
 focus_neighbor_bottom = NodePath("../MetOrcaButton")
 focus_next = NodePath("../MetOrcaButton")
-focus_previous = NodePath("../HitRockButton")
+focus_previous = NodePath("../HitBorderButton")
 text = "Mine Explosion"
 
 [node name="MetOrcaButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=804641210]
@@ -274,21 +287,32 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../DiveButton")
 focus_neighbor_top = NodePath("../DiveButton")
+focus_neighbor_right = NodePath("../InvalidActionButton")
+focus_neighbor_bottom = NodePath("../InvalidActionButton")
+focus_next = NodePath("../InvalidActionButton")
+focus_previous = NodePath("../DiveButton")
+text = "Tail Slap"
+
+[node name="InvalidActionButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1746513586]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../SlapButton")
+focus_neighbor_top = NodePath("../SlapButton")
 focus_neighbor_right = NodePath("../SonarEchoLabel")
 focus_neighbor_bottom = NodePath("../SonarEchoLabel")
 focus_next = NodePath("../SonarEchoLabel")
-focus_previous = NodePath("../DiveButton")
-text = "Tail Slap"
+focus_previous = NodePath("../SlapButton")
+text = "InvalidAction"
 
 [node name="SonarEchoLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=747130602]
 layout_mode = 2
 size_flags_vertical = 6
-focus_neighbor_left = NodePath("../SlapButton")
-focus_neighbor_top = NodePath("../SlapButton")
+focus_neighbor_left = NodePath("../InvalidActionButton")
+focus_neighbor_top = NodePath("../InvalidActionButton")
 focus_neighbor_right = NodePath("../ShipReturnButton")
 focus_neighbor_bottom = NodePath("../ShipReturnButton")
 focus_next = NodePath("../ShipReturnButton")
-focus_previous = NodePath("../SlapButton")
+focus_previous = NodePath("../InvalidActionButton")
 focus_mode = 3
 text = "Sonar Echoes	"
 horizontal_alignment = 1
@@ -385,6 +409,11 @@ stream = ExtResource("6_xt7e3")
 bus = &"sfx"
 playback_type = 1
 
+[node name="HitBorderPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=367524152]
+stream = ExtResource("8_lqow2")
+bus = &"sfx"
+playback_type = 1
+
 [node name="MineExplosionPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=687865260]
 stream = ExtResource("7_lfina")
 bus = &"sfx"
@@ -430,6 +459,11 @@ stream = ExtResource("14_veo6m")
 bus = &"sfx"
 playback_type = 1
 
+[node name="InvalidActionPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=608997313]
+stream = ExtResource("17_cdhnc")
+bus = &"sfx"
+playback_type = 1
+
 [node name="ShipReturnPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=279810552]
 stream = ExtResource("15_tdr1m")
 bus = &"sfx"
@@ -457,6 +491,7 @@ playback_type = 1
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/RamButton" to="." method="_on_ram_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/DestroyedButton" to="." method="_on_destroyed_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HitRockButton" to="." method="_on_hit_rock_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HitBorderButton" to="." method="_on_hit_border_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/MineExplosionButton" to="." method="_on_mine_explosion_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/MetOrcaButton" to="." method="_on_met_orca_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/GunLoadButton" to="." method="_on_gun_load_button_pressed"]
@@ -466,6 +501,7 @@ playback_type = 1
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/BiteButton" to="." method="_on_bite_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/DiveButton" to="." method="_on_dive_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/SlapButton" to="." method="_on_slap_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/InvalidActionButton" to="." method="_on_invalid_action_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/ShipReturnButton" to="." method="_on_ship_return_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/RockReturnButton" to="." method="_on_rock_return_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/MineReturnButton" to="." method="_on_mine_return_button_pressed"]

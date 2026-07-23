@@ -42,6 +42,9 @@ func _on_destroyed_button_pressed() -> void:
 func _on_hit_rock_button_pressed() -> void:
 	$Sounds/HitRockPlayer.play()
 
+func _on_hit_border_button_pressed() -> void:
+	$Sounds/HitBorderPlayer.play()
+
 func _on_mine_explosion_button_pressed() -> void:
 	$Sounds/MineExplosionPlayer.play()
 
@@ -69,6 +72,9 @@ func _on_dive_button_pressed() -> void:
 func _on_slap_button_pressed() -> void:
 	$Sounds/SlapPlayer.play()
 
+func _on_invalid_action_button_pressed() -> void:
+	$Sounds/InvalidActionPlayer.play()
+	
 func _on_ship_return_button_pressed() -> void:
 	$Sounds/ShipReturnPlayer.play()
 
