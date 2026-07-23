@@ -54,7 +54,28 @@ func take_damage(reason: String):
 	else:
 		speech.say(reason + "\nYour health: " + str(health))
 
+func _update_proximity_detectors() -> void:
+	var count = $ShapeCast3D.get_collision_count()
+	print("LEFT:")
+	var shortest_distance := -1.0
+	var closest_object = null
+	print(str(count) + " objects to the left")
+	for i in range(count):
+		var c = $ShapeCast3D.get_collider(i)
+		if c != null:  # It might have ceased to exist since I counted collisions
+			if not c.name.begins_with("Border"):
+				print(c.name)
+				var distance = global_position.distance_to(c.global_position)
+				if i == 0 or distance < shortest_distance:
+					shortest_distance = distance
+					closest_object = c
+	if closest_object != null:
+		print(shortest_distance)
+		#print(closest_object.name + " at distance " + str(shortest_distance))
+				
+				
 func _process(_delta: float) -> void:
+	_update_proximity_detectors()
 	if Input.is_action_just_pressed("space"):
 		$SonarSound.play()
 		var count = $ShapeCast3D.get_collision_count()
@@ -67,7 +88,7 @@ func _process(_delta: float) -> void:
 		speech.say("Rudder bitten off.")
 		yacht.receive_bite()
 		$orcaanimated.animate_ability("bite")
-	elif Input.is_action_just_pressed("dive") and yachtsinkers.dive_enabled and yacht and position.distance_to(yacht.global_position) < 6 and \
+	elif Input.is_action_just_pressed("dive") and yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 6 and \
 			$WaveTimer.is_stopped():
 		$DiveSound.play()
 		speech.say("Wave activated.")

@@ -12,6 +12,7 @@ func _ready() -> void:
 			$VBoxContainer/HBoxContainer/VBoxContainer/AccessibilityButton.grab_focus()
 				
 func _on_visibility_changed() -> void:
+	await get_tree().create_timer(0.1).timeout
 	if visible:
 		$AudioStreamPlayer.play()
 	else:
