@@ -53,29 +53,8 @@ func take_damage(reason: String):
 		queue_free()
 	else:
 		speech.say(reason + "\nYour health: " + str(health))
-
-func _update_proximity_detectors() -> void:
-	var count = $ShapeCast3D.get_collision_count()
-	print("LEFT:")
-	var shortest_distance := -1.0
-	var closest_object = null
-	print(str(count) + " objects to the left")
-	for i in range(count):
-		var c = $ShapeCast3D.get_collider(i)
-		if c != null:  # It might have ceased to exist since I counted collisions
-			if not c.name.begins_with("Border"):
-				print(c.name)
-				var distance = global_position.distance_to(c.global_position)
-				if i == 0 or distance < shortest_distance:
-					shortest_distance = distance
-					closest_object = c
-	if closest_object != null:
-		print(shortest_distance)
-		#print(closest_object.name + " at distance " + str(shortest_distance))
-				
-				
+			
 func _process(_delta: float) -> void:
-	_update_proximity_detectors()
 	if Input.is_action_just_pressed("space"):
 		$SonarSound.play()
 		var count = $ShapeCast3D.get_collision_count()
@@ -111,3 +90,6 @@ func receive_bullet():
 	await get_tree().create_timer(0.3).timeout
 	$GunHitSound.play()
 	take_damage("You were hit by a bullet.")
+
+func _on_left_bubbles_finished() -> void:
+	$LeftBubbles.play()

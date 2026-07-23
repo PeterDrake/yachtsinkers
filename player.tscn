@@ -18,9 +18,6 @@ height = 3.1809692
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4flbx"]
 points = PackedVector3Array(-1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, -20, -1, 20, 20, -1, 20, -20, 1, 20, 20, 1, 20)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_75mfb"]
-size = Vector3(20, 1, 20)
-
 [node name="Player" type="CharacterBody3D" unique_id=219399317]
 transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.742278e-08, -7.642742e-15, -1, 0, 0, 0)
 script = ExtResource("1_4flbx")
@@ -86,7 +83,3 @@ one_shot = true
 [node name="SlapTimer" type="Timer" parent="." unique_id=2062571930]
 wait_time = 5.0
 one_shot = true
-
-[node name="LeftProximity" type="ShapeCast3D" parent="." unique_id=1002099434]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
-shape = SubResource("BoxShape3D_75mfb")
