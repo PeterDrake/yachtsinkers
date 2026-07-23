@@ -4,7 +4,6 @@ extends StaticBody3D
 @onready var player := get_node("../Player")
 
 func _ready() -> void:
-	print(name + str(-10 + linear_to_db(scale.x / 10.0)))
 	$Bubbles.volume_db = -10 + linear_to_db(scale.x / 10.0)
 	
 func sonar_return() -> void:
