@@ -49,6 +49,7 @@ func take_damage(reason: String):
 	health -= 1
 	if health == 0:
 		speech.say(reason + "\nYou have died")
+		yachtsinkers.display_defeat()
 		queue_free()
 	else:
 		speech.say(reason + "\nYour health: " + str(health))

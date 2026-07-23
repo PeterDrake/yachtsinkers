@@ -2,6 +2,7 @@ extends Control
 
 @onready var yachtsinkers := get_node("..")
 @onready var victory_screen := get_node("../Victory")
+@onready var defeat_screen := get_node("../Defeat")
 
 var occluded := true  # True if one of the other screens is in front of this
 
@@ -10,7 +11,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("pause"):
 			if visible:
 				unpause()
-			elif not victory_screen.visible:
+			elif not victory_screen.visible and not defeat_screen.visible:
 				pause()
 
 func pause():

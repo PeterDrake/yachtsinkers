@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://iogcu7fx8wuf" path="res://accessibility.tscn" id="7_lmnw4"]
 [ext_resource type="PackedScene" uid="uid://baued2vk3lh46" path="res://credits.tscn" id="8_drepu"]
 [ext_resource type="PackedScene" uid="uid://icd46btl30pd" path="res://victory.tscn" id="9_qlfxw"]
+[ext_resource type="PackedScene" uid="uid://1kcegvvxlcc7" path="res://defeat.tscn" id="10_kmbtd"]
 
 [node name="YachtSinkers" type="Node3D" unique_id=1044159240]
 script = ExtResource("1_dcxyd")
@@ -35,4 +36,7 @@ visible = false
 visible = false
 
 [node name="Victory" parent="." unique_id=1101839549 instance=ExtResource("9_qlfxw")]
+visible = false
+
+[node name="Defeat" parent="." unique_id=46144632 instance=ExtResource("10_kmbtd")]
 visible = false

@@ -29,6 +29,10 @@ func end_level():
 	if current_level:
 		current_level.queue_free()
 
-func advance_level():
+func display_victory():
 	end_level()
 	$Victory.show()
+
+func display_defeat():
+	end_level()
+	$Defeat.show()
