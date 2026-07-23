@@ -90,7 +90,7 @@ GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
 script = ExtResource("4_sotx7")
 health = 30
-gun_range = 30
+gun_range = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Yacht" unique_id=1048988864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012355804, 0.5439453, -1.1978207)

@@ -1,8 +1,8 @@
 extends Node3D
 
 @onready var current_level = null
-var current_level_number : int
 
+var current_level_number : int
 var echolocation_width := 20.0
 var game_speed := 1.0
 
