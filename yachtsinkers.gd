@@ -28,3 +28,7 @@ func restart_level():
 func end_level():
 	if current_level:
 		current_level.queue_free()
+
+func advance_level():
+	end_level()
+	$Victory.show()

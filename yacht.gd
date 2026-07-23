@@ -58,6 +58,7 @@ func receive_hit(damage) -> void:
 			$DestructionSound.play()
 			sinking = true
 			await get_tree().create_timer(2.0).timeout
+			yachtsinkers.advance_level()
 			queue_free()
 		else:
 			speech.say("Yacht health: " + str(health))

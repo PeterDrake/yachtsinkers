@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://icd46btl30pd"]
+
+[ext_resource type="Script" uid="uid://bik4e6fau351b" path="res://victory.gd" id="1_7bnjr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
+bg_color = Color(0, 0.17626616, 0.31130394, 1)
+
+[node name="Victory" type="Control" unique_id=2122777761]
+process_mode = 3
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7bnjr")
+
+[node name="Panel" type="Panel" parent="." unique_id=2112466904]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oerog")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1598158506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=735699599]
+layout_mode = 2
+size_flags_vertical = 6
+focus_neighbor_left = NodePath("../AdvanceButton")
+focus_neighbor_top = NodePath("../AdvanceButton")
+focus_neighbor_right = NodePath("../Text")
+focus_neighbor_bottom = NodePath("../Text")
+focus_next = NodePath("../Text")
+focus_previous = NodePath("../AdvanceButton")
+focus_mode = 3
+theme_override_font_sizes/font_size = 64
+text = "Victory: Level 1"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="VBoxContainer" unique_id=25926822]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 6
+focus_neighbor_left = NodePath("../Title")
+focus_neighbor_top = NodePath("../Title")
+focus_neighbor_right = NodePath("../AdvanceButton")
+focus_neighbor_bottom = NodePath("../AdvanceButton")
+focus_next = NodePath("../AdvanceButton")
+focus_previous = NodePath("../Title")
+focus_mode = 3
+theme_override_font_sizes/font_size = 22
+text = "Congratulations -- you sank the yacht!"
+autowrap_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="VBoxContainer" unique_id=1488913545]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../Text")
+focus_neighbor_top = NodePath("../Text")
+focus_neighbor_right = NodePath("../Title")
+focus_neighbor_bottom = NodePath("../Title")
+focus_next = NodePath("../Title")
+focus_previous = NodePath("../Text")
+theme_override_font_sizes/font_size = 24
+text = "Continue to Level 2"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="VBoxContainer/AdvanceButton" to="." method="_on_advance_button_pressed"]
