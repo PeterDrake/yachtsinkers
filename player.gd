@@ -36,6 +36,7 @@ func _check_for_collisions():
 				take_damage("You collided with a rock.")
 			elif "Border" in collider.name and velocity != Vector3.ZERO:
 				$BorderSound.play()
+				speech.say("[Hitting Border]")
 			elif collider.name == "Yacht":
 				if not collider.sinking:
 					$CollisionSound.play()
