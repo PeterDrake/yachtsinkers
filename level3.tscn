@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://13ia6j0wrl6j" path="res://models/yacht1.glb" id="11_l2pgs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2272n"]
-size = Vector3(4.0272126, 1.9121094, 20.713238)
+size = Vector3(4.5095654, 1.9121094, 19.544132)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bs5pn"]
 size = Vector3(1, 3, 3)
@@ -36,37 +36,28 @@ transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.
 transform = Transform3D(4.330127, 0, -2.5, 0, 5, 0, 2.5, 0, 4.330127, -8.552256, 4.7683716e-07, 42.41801)
 
 [node name="Rock2" parent="LevelComponents" unique_id=2115460905 instance=ExtResource("2_ymh28")]
-transform = Transform3D(-6.0621777, 0, -3.4999998, 0, 7, 0, 3.4999998, 0, -6.0621777, 10, 0, 35)
+transform = Transform3D(-6.0621777, 0, -3.4999998, 0, 7, 0, 3.4999998, 0, -6.0621777, 13, 0, 33)
 
 [node name="Rock3" parent="LevelComponents" unique_id=770365321 instance=ExtResource("2_ymh28")]
-transform = Transform3D(-2.5000002, 0, 4.330127, 0, 5, 0, -4.330127, 0, -2.5000002, 11, 0, 14)
+transform = Transform3D(-2.5000002, 0, 4.330127, 0, 5, 0, -4.330127, 0, -2.5000002, 7, 0, 14)
 
 [node name="Rock4" parent="LevelComponents" unique_id=293522253 instance=ExtResource("2_ymh28")]
-transform = Transform3D(6.0621777, 0, 3.5, 0, 7, 0, -3.5, 0, 6.0621777, -12, 0, 11)
+transform = Transform3D(6.0621777, 0, 3.5, 0, 7, 0, -3.5, 0, 6.0621777, -12, 0, 8)
 
 [node name="Rock5" parent="LevelComponents" unique_id=1635260772 instance=ExtResource("2_ymh28")]
 transform = Transform3D(7.071068, 0, 7.071068, 0, 10, 0, -7.071068, 0, 7.071068, 31, 0, -3)
 
 [node name="Rock6" parent="LevelComponents" unique_id=569612248 instance=ExtResource("2_ymh28")]
-transform = Transform3D(4.9999995, 0, -8.6602545, 0, 10, 0, 8.6602545, 0, 4.9999995, -14, 0, -30)
-
-[node name="Rock7" parent="LevelComponents" unique_id=841849313 instance=ExtResource("2_ymh28")]
-transform = Transform3D(-2.1213202, 0, -2.1213202, 0, 3, 0, 2.1213202, 0, -2.1213202, -16, 0, 15)
-
-[node name="Rock8" parent="LevelComponents" unique_id=314944419 instance=ExtResource("2_ymh28")]
-transform = Transform3D(-1.5000005, 0, -2.5980763, 0, 3, 0, 2.5980763, 0, -1.5000005, 14, 0, 32)
-
-[node name="Rock9" parent="LevelComponents" unique_id=1494785617 instance=ExtResource("2_ymh28")]
-transform = Transform3D(-2.500001, 0, -4.330127, 0, 4.9999995, 0, 4.330127, 0, -2.500001, -26, 0, -27)
+transform = Transform3D(4.9999995, 0, -8.6602545, 0, 10, 0, 8.6602545, 0, 4.9999995, -14, 0, -37)
 
 [node name="Mine1" parent="." unique_id=1010764336 instance=ExtResource("6_ymh28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1574898, 0, -2.4733734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1574898, 0, -4.4733734)
 
 [node name="Mine2" parent="." unique_id=44086338 instance=ExtResource("6_ymh28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
 
 [node name="Mine3" parent="." unique_id=1590011789 instance=ExtResource("6_ymh28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 31)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 24)
 
 [node name="BorderLeft" parent="." unique_id=72152200 instance=ExtResource("5_siwpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
@@ -81,14 +72,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 60)
 
 [node name="HerbieOrca" parent="." unique_id=744987695 instance=ExtResource("7_7oc4e")]
-transform = Transform3D(0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.258819, 29.610859, 0, -13.473373)
+transform = Transform3D(0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.258819, 39.61086, 0, 6.5266266)
 text = "You found another orca!
 GLADIS: I wish I was as fast as you, Herbie!
 HERBIE: It’s all in the tail.
 Your speed has increased."
 
 [node name="GregOrca" parent="." unique_id=17687419 instance=ExtResource("7_7oc4e")]
-transform = Transform3D(0.25881907, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, 0.25881907, -12.389141, 0, 5.5266266)
+transform = Transform3D(0.25881907, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, 0.25881907, -19.389141, 0, 30.526627)
 text = "You found another orca!
 GLADIS: They’ve put mines in the water!
 GREG: The arrogance. The sea is our domain!
@@ -102,7 +93,7 @@ health = 30
 gun_range = 30
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Yacht" unique_id=1048988864]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08423805, 0.5439453, -1.9534435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012355804, 0.5439453, -1.1978207)
 shape = SubResource("BoxShape3D_2272n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Yacht" unique_id=1061553488]
