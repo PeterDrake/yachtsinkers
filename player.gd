@@ -6,6 +6,7 @@ var degrees := 0
 var health := 5
 
 @onready var speech := get_node("../Speech")
+@onready var visual_hint := get_node("../VisualHint")
 @onready var yacht := get_node("../../Yacht")
 @onready var rudder := get_node("../../Yacht/RudderSound")
 @onready var level := get_node("..")
@@ -55,16 +56,22 @@ func take_damage(reason: String):
 		queue_free()
 	else:
 		speech.say(reason + "\nYour health: " + str(health))
-			
+
+func _rudder_bite_available() -> bool:
+	return yachtsinkers.bite_enabled and rudder and global_position.distance_to(rudder.global_position) < 3
+
 func _process(_delta: float) -> void:
+	if _rudder_bite_available():
+		visual_hint.text = "Press 1 to bite rudder now!"
+	else:
+		visual_hint.text = ""
 	if Input.is_action_just_pressed("space"):
 		$SonarSound.play()
 		var count = $ShapeCast3D.get_collision_count()
 		for i in range(count):
 			if not $ShapeCast3D.get_collider(i).name.begins_with("Border"):
 				$ShapeCast3D.get_collider(i).sonar_return()
-	elif Input.is_action_just_pressed("bite") and yachtsinkers.bite_enabled and rudder and \
-			position.distance_to(rudder.global_position) < 3:
+	elif Input.is_action_just_pressed("bite") and _rudder_bite_available():
 		$BiteSound.play()
 		speech.say("Rudder bitten off.")
 		yacht.receive_bite()
