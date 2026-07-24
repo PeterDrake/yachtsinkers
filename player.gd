@@ -50,6 +50,7 @@ func take_damage(reason: String):
 	health -= 1
 	if health == 0:
 		speech.say(reason + "\nYou have died")
+		await get_tree().create_timer(2.0).timeout
 		yachtsinkers.display_defeat()
 		queue_free()
 	else:
