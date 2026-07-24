@@ -9,6 +9,10 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_w3yfb"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_75mfb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4splp"]
+
 [node name="Mine" type="StaticBody3D" unique_id=1796733267]
 script = ExtResource("1_i6hay")
 
@@ -31,3 +35,12 @@ playback_type = 1
 stream = ExtResource("3_vanlv")
 bus = &"sfx"
 playback_type = 1
+
+[node name="Explosion" type="MeshInstance3D" parent="." unique_id=1292429377]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 0, 0, 0)
+mesh = SubResource("SphereMesh_75mfb")
+surface_material_override/0 = SubResource("StandardMaterial3D_4splp")
+
+[node name="ExplosionTimer" type="Timer" parent="." unique_id=122181636]
+wait_time = 2.0
+one_shot = true
