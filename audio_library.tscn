@@ -281,7 +281,7 @@ focus_neighbor_right = NodePath("../SlapButton")
 focus_neighbor_bottom = NodePath("../SlapButton")
 focus_next = NodePath("../SlapButton")
 focus_previous = NodePath("../BiteButton")
-text = "Dive / Splash"
+text = "Dive"
 
 [node name="SlapButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1190859781]
 layout_mode = 2
@@ -303,7 +303,7 @@ focus_neighbor_right = NodePath("../SonarEchoLabel")
 focus_neighbor_bottom = NodePath("../SonarEchoLabel")
 focus_next = NodePath("../SonarEchoLabel")
 focus_previous = NodePath("../SlapButton")
-text = "InvalidAction"
+text = "Invalid Action"
 
 [node name="SonarEchoLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=747130602]
 layout_mode = 2
