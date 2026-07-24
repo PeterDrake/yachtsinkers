@@ -39,7 +39,7 @@ func _check_for_collisions():
 				speech.say("[Hitting Border]")
 			elif collider.name == "Yacht":
 				if not collider.sinking:
-					$CollisionSound.play()
+					$YachtHitSound.play()
 				collider.receive_hit(yachtsinkers.ram_damage)
 			elif "Orca" in collider.name:
 				collider.play_dialog()
