@@ -28,7 +28,8 @@ func play_dialog():
 	elif my_name == "Greg":
 		yachtsinkers.slap_enabled = true
 	velocity = Vector3(0, -1, 0)  # So orca descends into the depths
-	await get_tree().create_timer(2.0).timeout
+	$orcaanimated.npc_idle = false
+	await get_tree().create_timer(4.0).timeout
 	queue_free()
 
 func sonar_return() -> void:

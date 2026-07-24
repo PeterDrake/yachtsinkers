@@ -1,12 +1,15 @@
 extends Node3D
 var movement = ["forward", "left", "right"]
 var wait := false
+var npc_idle := true
 
 @onready var yachtsinkers := get_node("../../../..")
 
 func _process(_delta: float) -> void:
-	if get_parent().name != "Player":
+	if get_parent().name != "Player" and npc_idle:
 		$AnimationPlayer.play("Idle_Anim")
+	elif get_parent().name != "Player" and not npc_idle:
+		$AnimationPlayer.play("Jump_Anim")
 	else:
 		animate_player()
 
