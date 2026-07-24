@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://c1vn2xcm881w1" path="res://hit.wav" id="4_8eh6q"]
 [ext_resource type="AudioStream" uid="uid://c3xvspbjxnp6c" path="res://bubbles_lib.wav" id="4_veo6m"]
 [ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="5_5v0lx"]
+[ext_resource type="AudioStream" uid="uid://2nncsav4dav7" path="res://audio/hit_yacht.wav" id="5_cdhnc"]
 [ext_resource type="AudioStream" uid="uid://bnjrmkrxkkr8u" path="res://rock.wav" id="6_xt7e3"]
 [ext_resource type="AudioStream" uid="uid://dxg81ughajoui" path="res://mine_explosion.wav" id="7_lfina"]
 [ext_resource type="AudioStream" uid="uid://b712tq17m41dn" path="res://orca_1.wav" id="8_aqb5m"]
@@ -395,7 +396,7 @@ bus = &"rudder"
 playback_type = 1
 
 [node name="RamPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=2094028573]
-stream = ExtResource("4_8eh6q")
+stream = ExtResource("5_cdhnc")
 bus = &"sfx"
 playback_type = 1
 
