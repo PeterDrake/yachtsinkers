@@ -85,7 +85,7 @@ func _process(_delta: float) -> void:
 		$orcaanimated.animate_ability("bite")
 	elif Input.is_action_just_pressed("bite"):
 		_report_action_unavailable()
-	elif Input.is_action_just_pressed("dive") and yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 6 and \
+	elif Input.is_action_just_pressed("dive") and yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 10 and \
 			$WaveTimer.is_stopped():
 		$DiveSound.play()
 		speech.say("Wave activated.")
