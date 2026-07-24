@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwn7377x8heyl"]
 
 [ext_resource type="Script" uid="uid://s7y2v0fpd7jk" path="res://audio_library.gd" id="1_twe8u"]
-[ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="2_xoeck"]
+[ext_resource type="AudioStream" uid="uid://o5xdtxyhg1ps" path="res://audio/yacht_lib.wav" id="2_cdhnc"]
 [ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="3_m12ct"]
 [ext_resource type="AudioStream" uid="uid://c1vn2xcm881w1" path="res://hit.wav" id="4_8eh6q"]
 [ext_resource type="AudioStream" uid="uid://c3xvspbjxnp6c" path="res://bubbles_lib.wav" id="4_veo6m"]
@@ -381,7 +381,7 @@ text = "Return"
 [node name="Sounds" type="Node" parent="." unique_id=673090245]
 
 [node name="YachtPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1701002381]
-stream = ExtResource("2_xoeck")
+stream = ExtResource("2_cdhnc")
 bus = &"boat"
 playback_type = 1
 
