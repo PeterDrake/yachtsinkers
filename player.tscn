@@ -23,6 +23,7 @@ points = PackedVector3Array(-1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, -20, -1, 20,
 
 [node name="Player" type="CharacterBody3D" unique_id=219399317]
 transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.742278e-08, -7.642742e-15, -1, 0, 0, 0)
+axis_lock_linear_y = true
 script = ExtResource("1_4flbx")
 
 [node name="orcaanimated" parent="." unique_id=1547185181 instance=ExtResource("2_dw050")]
