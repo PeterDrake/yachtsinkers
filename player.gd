@@ -101,16 +101,20 @@ func _process(_delta: float) -> void:
 				_report_with_visual_hint("Dive recharging")
 		else:
 			_report_with_visual_hint("Dive unavailable")
-	elif Input.is_action_just_pressed("slap") and yachtsinkers.slap_enabled and $SlapTimer.is_stopped():
-		for object in level.get_parent().get_children():
-			if "Mine" in object.name and position.distance_to(object.global_position) < SLAP_RANGE:
-				object.detonate(false)
-		$SlapSound.play()
-		speech.say("Tail slap activated.")
-		$SlapTimer.start()
-		$orcaanimated.animate_ability("slap")
 	elif Input.is_action_just_pressed("slap"):
-		_report_with_visual_hint("Tail slap unavailable")
+		if yachtsinkers.slap_enabled:
+			if $SlapTimer.is_stopped():
+				for object in level.get_parent().get_children():
+					if "Mine" in object.name and position.distance_to(object.global_position) < SLAP_RANGE:
+						object.detonate(false)
+				$SlapSound.play()
+				speech.say("Tail slap activated.")
+				$SlapTimer.start()
+				$orcaanimated.animate_ability("slap")
+			else:
+				_report_with_visual_hint("Tail slap recharging")
+		else:
+			_report_with_visual_hint("Tail slap unavailable")
 
 func receive_bullet():
 	await get_tree().create_timer(0.3).timeout
