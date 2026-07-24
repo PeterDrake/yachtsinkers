@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var speech := get_node('../LevelComponents/Speech')
 @onready var player := get_node('../LevelComponents/Player')
 @onready var yachtsinkers := get_node('../..')
+@onready var level := get_node("..")
 
 @export var health : int
 @export var gun_range : int
@@ -74,4 +75,5 @@ func receive_wave() -> void:
 func sonar_return() -> void:
 	var distance := position.distance_to(player.position)
 	await get_tree().create_timer(distance / 10.0).timeout
+	level.report_with_visual_hint("...yacht")
 	$SonarSound.play()

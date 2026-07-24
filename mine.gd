@@ -2,12 +2,14 @@ extends StaticBody3D
 
 @onready var speech := get_node("../LevelComponents/Speech")
 @onready var player := get_node("../LevelComponents/Player")
+@onready var level := get_node("..")
 
 var exploding := false
 
 func sonar_return() -> void:
 	var distance := position.distance_to(player.position)
 	await get_tree().create_timer(distance / 10.0).timeout
+	level.report_with_visual_hint("...mine")
 	$SonarSound.play()
 
 func detonate(hit := true) -> void:

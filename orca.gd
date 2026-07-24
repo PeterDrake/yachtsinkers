@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var speech := get_node("../LevelComponents/Speech")
 @onready var player := get_node("../LevelComponents/Player")
 @onready var yachtsinkers := get_node("../..")
+@onready var level := get_node("..")
 
 func play_dialog():
 	$OrcaSound.play()
@@ -29,4 +30,5 @@ func play_dialog():
 func sonar_return() -> void:
 	var distance := position.distance_to(player.position)
 	await get_tree().create_timer(distance / 10.0).timeout
+	level.report_with_visual_hint("...orca")
 	$SonarSound.play()
