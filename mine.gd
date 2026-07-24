@@ -25,11 +25,11 @@ func detonate(hit := true) -> void:
 		queue_free()
 
 func _physics_process(delta: float) -> void:
-	if exploding and $Explosion:
+	if exploding and $Explosion.visible:
 		var x = $Explosion.scale.x
 		x += EXPLOSION_SPEED * delta
 		if x > 3:
-			$Explosion.queue_free()
+			$Explosion.hide()
 			$"FAB converted".queue_free()
 		else:
 			$Explosion.scale = Vector3(x, x, x)
