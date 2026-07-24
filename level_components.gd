@@ -35,3 +35,6 @@ func _update_echolocation_width() -> void:
 
 func _update_health() -> void:
 	$Player.health = yachtsinkers.starting_health
+
+func _on_visual_hint_timer_timeout() -> void:
+	$VisualHint.text = ""

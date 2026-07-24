@@ -88,3 +88,8 @@ grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 64
+
+[node name="VisualHintTimer" type="Timer" parent="." unique_id=1565260650]
+one_shot = true
+
+[connection signal="timeout" from="VisualHintTimer" to="." method="_on_visual_hint_timer_timeout"]
