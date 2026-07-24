@@ -104,13 +104,14 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("slap"):
 		if yachtsinkers.slap_enabled:
 			if $SlapTimer.is_stopped():
-				for object in level.get_children():
-					if "Mine" in object.name and position.distance_to(object.global_position) < SLAP_RANGE:
-						object.detonate(false)
 				$SlapSound.play()
 				speech.say("Tail slap activated.")
 				$SlapTimer.start()
 				$orcaanimated.animate_ability("slap")
+				await get_tree().create_timer(1.0).timeout
+				for object in level.get_children():
+					if "Mine" in object.name and position.distance_to(object.global_position) < SLAP_RANGE:
+						object.detonate(false)
 			else:
 				_signify_invalid_action("Tail slap recharging")
 		else:
