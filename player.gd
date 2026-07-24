@@ -108,6 +108,9 @@ func _process(_delta: float) -> void:
 				speech.say("Tail slap activated.")
 				$SlapTimer.start()
 				$orcaanimated.animate_ability("slap")
+				for object in level.get_children():
+					if "Mine" in object.name and position.distance_to(object.global_position) < SLAP_RANGE:
+						object.find_child("CollisionShape3D").disabled = true  # So we can't outrun our own shockwave
 				await get_tree().create_timer(1.0).timeout
 				for object in level.get_children():
 					if "Mine" in object.name and position.distance_to(object.global_position) < SLAP_RANGE:
