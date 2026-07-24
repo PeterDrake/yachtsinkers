@@ -7,6 +7,9 @@ extends CharacterBody3D
 @onready var yachtsinkers := get_node("../..")
 @onready var level := get_node("..")
 
+func _physics_process(delta: float) -> void:
+	move_and_slide()
+		
 func play_dialog():
 	$OrcaSound.play()
 	speech.say(text)
@@ -24,6 +27,7 @@ func play_dialog():
 		yachtsinkers.player_speed = 500.0
 	elif my_name == "Greg":
 		yachtsinkers.slap_enabled = true
+	velocity = Vector3(0, -1, 0)  # So orca descends into the depths
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
