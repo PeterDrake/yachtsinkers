@@ -2,25 +2,26 @@
 
 [ext_resource type="Script" uid="uid://s7y2v0fpd7jk" path="res://audio_library.gd" id="1_twe8u"]
 [ext_resource type="AudioStream" uid="uid://o5xdtxyhg1ps" path="res://audio/yacht_lib.wav" id="2_cdhnc"]
-[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="3_m12ct"]
-[ext_resource type="AudioStream" uid="uid://c1vn2xcm881w1" path="res://hit.wav" id="4_8eh6q"]
-[ext_resource type="AudioStream" uid="uid://c3xvspbjxnp6c" path="res://bubbles_lib.wav" id="4_veo6m"]
-[ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="5_5v0lx"]
+[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://audio/rudder.wav" id="3_m12ct"]
+[ext_resource type="AudioStream" uid="uid://c1vn2xcm881w1" path="res://audio/gun_hit.wav" id="4_8eh6q"]
+[ext_resource type="AudioStream" uid="uid://c3xvspbjxnp6c" path="res://audio/bubbles_lib.wav" id="4_veo6m"]
 [ext_resource type="AudioStream" uid="uid://2nncsav4dav7" path="res://audio/hit_yacht.wav" id="5_cdhnc"]
-[ext_resource type="AudioStream" uid="uid://bnjrmkrxkkr8u" path="res://rock.wav" id="6_xt7e3"]
-[ext_resource type="AudioStream" uid="uid://dxg81ughajoui" path="res://mine_explosion.wav" id="7_lfina"]
-[ext_resource type="AudioStream" uid="uid://b712tq17m41dn" path="res://orca_1.wav" id="8_aqb5m"]
-[ext_resource type="AudioStream" uid="uid://0bexov74irxr" path="res://border.wav" id="8_lqow2"]
-[ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://reload.wav" id="9_ywc62"]
-[ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://gunshot.wav" id="10_yyc0e"]
-[ext_resource type="AudioStream" uid="uid://00akojavfg78" path="res://sonar.wav" id="11_vfd73"]
-[ext_resource type="AudioStream" uid="uid://dl7algop8i21y" path="res://rudder_bite.wav" id="12_3jke3"]
-[ext_resource type="AudioStream" uid="uid://cw413o1kb5ass" path="res://dive.wav" id="13_3digw"]
-[ext_resource type="AudioStream" uid="uid://d7ys7j0pjc3y" path="res://tail_slap.wav" id="14_veo6m"]
-[ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="15_tdr1m"]
-[ext_resource type="AudioStream" uid="uid://b4k8kooos1qfl" path="res://mine_ping.wav" id="16_3digw"]
-[ext_resource type="AudioStream" uid="uid://dsb4518bjwx0o" path="res://invalid_action.wav" id="17_cdhnc"]
-[ext_resource type="AudioStream" uid="uid://dacvfe2gfta3c" path="res://orca_ping.wav" id="17_veo6m"]
+[ext_resource type="AudioStream" uid="uid://brut1flk7i3f6" path="res://audio/yacht_destruction.wav" id="6_cdhnc"]
+[ext_resource type="AudioStream" uid="uid://dso7idymd43as" path="res://audio/hit_rock.wav" id="7_apy86"]
+[ext_resource type="AudioStream" uid="uid://w1u0uuph7aii" path="res://audio/hit_border.wav" id="8_apy86"]
+[ext_resource type="AudioStream" uid="uid://b712tq17m41dn" path="res://audio/hit_orca.wav" id="8_aqb5m"]
+[ext_resource type="AudioStream" uid="uid://da3ounl8en8bb" path="res://audio/hit_mine.wav" id="9_apy86"]
+[ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://audio/gun_reload.wav" id="9_ywc62"]
+[ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://audio/gun_shot.wav" id="10_yyc0e"]
+[ext_resource type="AudioStream" uid="uid://00akojavfg78" path="res://audio/sonar.wav" id="11_vfd73"]
+[ext_resource type="AudioStream" uid="uid://q1nrmoj4u8r2" path="res://audio/ability_bite.wav" id="15_cdhnc"]
+[ext_resource type="AudioStream" uid="uid://djd2qhenh6kb3" path="res://audio/ability_dive.wav" id="16_apy86"]
+[ext_resource type="AudioStream" uid="uid://h5imp02wx577" path="res://audio/ability_slap.wav" id="17_apy86"]
+[ext_resource type="AudioStream" uid="uid://dsb4518bjwx0o" path="res://audio/invalid_action.wav" id="17_cdhnc"]
+[ext_resource type="AudioStream" uid="uid://dacvfe2gfta3c" path="res://audio/sonar_orca.wav" id="17_veo6m"]
+[ext_resource type="AudioStream" uid="uid://dffcb3yearue3" path="res://audio/sonar_yacht.wav" id="19_apy86"]
+[ext_resource type="AudioStream" uid="uid://bylreoh14petr" path="res://audio/sonar_rock.wav" id="20_apy86"]
+[ext_resource type="AudioStream" uid="uid://ulxime631q1u" path="res://audio/sonar_mine.wav" id="21_apy86"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
@@ -401,22 +402,22 @@ bus = &"sfx"
 playback_type = 1
 
 [node name="DestroyedPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=490770111]
-stream = ExtResource("5_5v0lx")
+stream = ExtResource("6_cdhnc")
 bus = &"sfx"
 playback_type = 1
 
 [node name="HitRockPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=862867037]
-stream = ExtResource("6_xt7e3")
+stream = ExtResource("7_apy86")
 bus = &"sfx"
 playback_type = 1
 
 [node name="HitBorderPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=367524152]
-stream = ExtResource("8_lqow2")
+stream = ExtResource("8_apy86")
 bus = &"sfx"
 playback_type = 1
 
 [node name="MineExplosionPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=687865260]
-stream = ExtResource("7_lfina")
+stream = ExtResource("9_apy86")
 bus = &"sfx"
 playback_type = 1
 
@@ -446,17 +447,17 @@ bus = &"sfx"
 playback_type = 1
 
 [node name="BitePlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=2005491964]
-stream = ExtResource("12_3jke3")
+stream = ExtResource("15_cdhnc")
 bus = &"sfx"
 playback_type = 1
 
 [node name="DivePlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=179821586]
-stream = ExtResource("13_3digw")
+stream = ExtResource("16_apy86")
 bus = &"sfx"
 playback_type = 1
 
 [node name="SlapPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=806270900]
-stream = ExtResource("14_veo6m")
+stream = ExtResource("17_apy86")
 bus = &"sfx"
 playback_type = 1
 
@@ -466,17 +467,17 @@ bus = &"sfx"
 playback_type = 1
 
 [node name="ShipReturnPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=279810552]
-stream = ExtResource("15_tdr1m")
+stream = ExtResource("19_apy86")
 bus = &"sfx"
 playback_type = 1
 
 [node name="RockReturnPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1286678712]
-stream = ExtResource("6_xt7e3")
+stream = ExtResource("20_apy86")
 bus = &"sfx"
 playback_type = 1
 
 [node name="MineReturnPlayer" type="AudioStreamPlayer" parent="Sounds" unique_id=1925101052]
-stream = ExtResource("16_3digw")
+stream = ExtResource("21_apy86")
 bus = &"sfx"
 playback_type = 1
 

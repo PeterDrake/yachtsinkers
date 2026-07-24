@@ -5,15 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="2_ymh28"]
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="4_sotx7"]
 [ext_resource type="PackedScene" uid="uid://br4wdelphw7yr" path="res://border.tscn" id="5_siwpi"]
-[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="5_ymh28"]
-[ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="6_7oc4e"]
+[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://audio/rudder.wav" id="5_ymh28"]
+[ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://audio/yacht.wav" id="6_7oc4e"]
 [ext_resource type="PackedScene" uid="uid://ckbk4fmtrrdii" path="res://mine.tscn" id="6_ymh28"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_7oc4e"]
-[ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="7_siwpi"]
-[ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="8_0m7xm"]
-[ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://gunshot.wav" id="9_qoi87"]
-[ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://reload.wav" id="10_i6w5t"]
+[ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://audio/gun_shot.wav" id="9_qoi87"]
+[ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://audio/gun_reload.wav" id="10_i6w5t"]
+[ext_resource type="AudioStream" uid="uid://dffcb3yearue3" path="res://audio/sonar_yacht.wav" id="10_siwpi"]
 [ext_resource type="PackedScene" uid="uid://13ia6j0wrl6j" path="res://models/yacht1.glb" id="11_l2pgs"]
+[ext_resource type="AudioStream" uid="uid://brut1flk7i3f6" path="res://audio/yacht_destruction.wav" id="11_siwpi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2272n"]
 size = Vector3(4.039499, 1.9121094, 19.08239)
@@ -120,12 +120,12 @@ bus = &"boat"
 playback_type = 1
 
 [node name="SonarSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1313164315]
-stream = ExtResource("7_siwpi")
+stream = ExtResource("10_siwpi")
 bus = &"sfx"
 playback_type = 1
 
 [node name="DestructionSound" type="AudioStreamPlayer3D" parent="Yacht" unique_id=1999066241]
-stream = ExtResource("8_0m7xm")
+stream = ExtResource("11_siwpi")
 bus = &"sfx"
 playback_type = 1
 

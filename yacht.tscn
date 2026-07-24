@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://baaiohuuwnua8"]
 
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="1_rsqnq"]
-[ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://yacht.wav" id="2_bj3yo"]
-[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://rudder.wav" id="2_h6xxa"]
+[ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://audio/yacht.wav" id="2_bj3yo"]
+[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://audio/rudder.wav" id="2_h6xxa"]
 [ext_resource type="PackedScene" uid="uid://co4b3jo2ky0ft" path="res://models/elvis_yacht_the_catamaran.glb" id="2_ywhoy"]
-[ext_resource type="AudioStream" uid="uid://b6lhdrbvp7w4u" path="res://buoy.wav" id="3_7e6i7"]
-[ext_resource type="AudioStream" uid="uid://dciw02s0fl8cs" path="res://yacht_destruction.wav" id="4_m36ax"]
-[ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://gunshot.wav" id="6_6bq12"]
-[ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://reload.wav" id="7_ywhoy"]
+[ext_resource type="AudioStream" uid="uid://dffcb3yearue3" path="res://audio/sonar_yacht.wav" id="5_ywhoy"]
+[ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://audio/gun_shot.wav" id="6_6bq12"]
+[ext_resource type="AudioStream" uid="uid://brut1flk7i3f6" path="res://audio/yacht_destruction.wav" id="6_ywhoy"]
+[ext_resource type="AudioStream" uid="uid://b7ktik2tkgeq0" path="res://audio/gun_reload.wav" id="7_ywhoy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o76c1"]
 size = Vector3(1.4824289, 1.9121094, 3.1605024)
@@ -49,12 +49,12 @@ bus = &"boat"
 playback_type = 1
 
 [node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=1504693947]
-stream = ExtResource("3_7e6i7")
+stream = ExtResource("5_ywhoy")
 bus = &"sfx"
 playback_type = 1
 
 [node name="DestructionSound" type="AudioStreamPlayer3D" parent="." unique_id=623671194]
-stream = ExtResource("4_m36ax")
+stream = ExtResource("6_ywhoy")
 bus = &"sfx"
 playback_type = 1
 

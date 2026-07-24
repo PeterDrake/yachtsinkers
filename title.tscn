@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://by57a2o4aix8g"]
 
 [ext_resource type="Script" uid="uid://bbb7t7jtiydm6" path="res://title.gd" id="1_y7k74"]
-[ext_resource type="AudioStream" uid="uid://dik4ydd8sy2u" path="res://Yacht_Sinking.wav" id="2_oyqm6"]
+[ext_resource type="AudioStream" uid="uid://be83caw0b8qaa" path="res://audio/1.Yacht_Sinking.wav" id="2_oyqm6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)

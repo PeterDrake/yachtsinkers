@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://br1a3kdte8j1h"]
 
 [ext_resource type="Script" uid="uid://judovvyrk1sv" path="res://settings_menu.gd" id="1_ufg0w"]
-[ext_resource type="AudioStream" uid="uid://cw413o1kb5ass" path="res://dive.wav" id="2_0cmel"]
-[ext_resource type="AudioStream" uid="uid://co2y24h7hl0g2" path="res://Yacht_Sinking_slider.wav" id="3_mlw3h"]
+[ext_resource type="AudioStream" uid="uid://cba184lmg4ati" path="res://audio/volume.wav" id="2_mlw3h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
@@ -207,16 +206,16 @@ text = "Return
 "
 
 [node name="MasterPlayer" type="AudioStreamPlayer" parent="." unique_id=2026723307]
-stream = ExtResource("2_0cmel")
+stream = ExtResource("2_mlw3h")
 playback_type = 1
 
 [node name="SfxPlayer" type="AudioStreamPlayer" parent="." unique_id=750409120]
-stream = ExtResource("2_0cmel")
+stream = ExtResource("2_mlw3h")
 bus = &"sfx"
 playback_type = 1
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=326786531]
-stream = ExtResource("3_mlw3h")
+stream = ExtResource("2_mlw3h")
 bus = &"music"
 playback_type = 1
 
