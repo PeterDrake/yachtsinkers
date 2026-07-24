@@ -60,9 +60,9 @@ func take_damage(reason: String):
 func _rudder_bite_available() -> bool:
 	return yachtsinkers.bite_enabled and rudder and global_position.distance_to(rudder.global_position) < 3
 
-func _report_action_unavailable() -> void:
+func _report_with_visual_hint(text: String) -> void:
 	$InvalidActionSound.play()
-	visual_hint.text = "Action unavailable"	
+	visual_hint.text = text	
 	$"../VisualHintTimer".start()
 	
 func _process(_delta: float) -> void:
@@ -78,25 +78,29 @@ func _process(_delta: float) -> void:
 		for i in range(count):
 			if not $ShapeCast3D.get_collider(i).name.begins_with("Border"):
 				$ShapeCast3D.get_collider(i).sonar_return()
-	elif Input.is_action_just_pressed("bite") and _rudder_bite_available():
-		$BiteSound.play()
-		speech.say("Rudder bitten off.")
-		yacht.receive_bite()
-		$orcaanimated.animate_ability("bite")
 	elif Input.is_action_just_pressed("bite"):
-		_report_action_unavailable()
-	elif Input.is_action_just_pressed("dive") and yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 10 and \
-			$WaveTimer.is_stopped():
-		$DiveSound.play()
-		speech.say("Wave activated.")
-		$WaveTimer.start()
-		yacht.receive_wave()
-		$orcaanimated.position -= Vector3.DOWN * 1.0 #Go down for animation
-		$orcaanimated.animate_ability("dive")
-		await get_tree().create_timer(1.0).timeout
-		$orcaanimated.position += Vector3.DOWN * 1.0 #Come back up
+		if _rudder_bite_available():
+			$BiteSound.play()
+			speech.say("Rudder bitten off.")
+			yacht.receive_bite()
+			$orcaanimated.animate_ability("bite")
+		else:
+			_report_with_visual_hint("Bite unavailable")
 	elif Input.is_action_just_pressed("dive"):
-		_report_action_unavailable()
+		if yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 10:
+			if $WaveTimer.is_stopped():
+				$DiveSound.play()
+				speech.say("Wave activated.")
+				$WaveTimer.start()
+				yacht.receive_wave()
+				$orcaanimated.position -= Vector3.DOWN * 1.0 #Go down for animation
+				$orcaanimated.animate_ability("dive")
+				await get_tree().create_timer(1.0).timeout
+				$orcaanimated.position += Vector3.DOWN * 1.0 #Come back up
+			else:
+				_report_with_visual_hint("Dive recharging")
+		else:
+			_report_with_visual_hint("Dive unavailable")
 	elif Input.is_action_just_pressed("slap") and yachtsinkers.slap_enabled and $SlapTimer.is_stopped():
 		for object in level.get_parent().get_children():
 			if "Mine" in object.name and position.distance_to(object.global_position) < SLAP_RANGE:
@@ -106,7 +110,7 @@ func _process(_delta: float) -> void:
 		$SlapTimer.start()
 		$orcaanimated.animate_ability("slap")
 	elif Input.is_action_just_pressed("slap"):
-		_report_action_unavailable()
+		_report_with_visual_hint("Tail slap unavailable")
 
 func receive_bullet():
 	await get_tree().create_timer(0.3).timeout
