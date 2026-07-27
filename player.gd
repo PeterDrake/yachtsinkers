@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	_check_for_collisions()
 
 func _check_for_collisions():
-	if $CollisionTimer.is_stopped():
+	if not level.level_over and $CollisionTimer.is_stopped():
 		var collision_count = get_slide_collision_count()
 		if collision_count > 0:
 			$CollisionTimer.start()
@@ -48,14 +48,16 @@ func _check_for_collisions():
 				collider.detonate(true)
 
 func take_damage(reason: String):
-	health -= 1
-	if health == 0:
-		speech.say(reason + "\nYou have died")
-		await get_tree().create_timer(2.0).timeout
-		yachtsinkers.display_defeat()
-		queue_free()
-	else:
-		speech.say(reason + "\nYour health: " + str(health))
+	if not level.level_over:
+		health -= 1
+		if health == 0:
+			level.level_over = true
+			speech.say(reason + "\nYou have died")
+			await get_tree().create_timer(2.0).timeout
+			yachtsinkers.display_defeat()
+			queue_free()
+		else:
+			speech.say(reason + "\nYour health: " + str(health))
 
 func _rudder_bite_available() -> bool:
 	return yachtsinkers.bite_enabled and rudder and global_position.distance_to(rudder.global_position) < 3
@@ -121,9 +123,10 @@ func _process(_delta: float) -> void:
 			_signify_invalid_action("Tail slap unavailable")
 
 func receive_bullet():
-	await get_tree().create_timer(0.3).timeout
-	$GunHitSound.play()
-	take_damage("You were hit by a bullet.")
+	if not level.level_over:
+		await get_tree().create_timer(0.3).timeout
+		$GunHitSound.play()
+		take_damage("You were hit by a bullet.")
 
 func _on_left_bubbles_finished() -> void:
 	$LeftBubbles.play()
