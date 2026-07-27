@@ -58,6 +58,7 @@ func receive_hit(damage) -> void:
 			$BoatSound.stop()
 			$DestructionSound.play()
 			sinking = true
+			axis_lock_linear_y = false
 			await get_tree().create_timer(2.0).timeout
 			yachtsinkers.display_victory()
 			queue_free()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="1_rsqnq"]
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://audio/yacht.wav" id="2_bj3yo"]
-[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://audio/rudder.wav" id="2_h6xxa"]
+[ext_resource type="AudioStream" uid="uid://8cuyxv7bq1m0" path="res://audio/rudder.wav" id="2_h6xxa"]
 [ext_resource type="PackedScene" uid="uid://co4b3jo2ky0ft" path="res://models/elvis_yacht_the_catamaran.glb" id="2_ywhoy"]
 [ext_resource type="AudioStream" uid="uid://dffcb3yearue3" path="res://audio/sonar_yacht.wav" id="5_ywhoy"]
 [ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://audio/gun_shot.wav" id="6_6bq12"]
@@ -16,6 +16,7 @@ size = Vector3(1.4824289, 1.9121094, 3.1605024)
 size = Vector3(1, 3, 3)
 
 [node name="Yacht" type="CharacterBody3D" unique_id=764160128]
+axis_lock_linear_y = true
 script = ExtResource("1_rsqnq")
 
 [node name="Sketchfab_Scene" parent="." unique_id=529316871 instance=ExtResource("2_ywhoy")]

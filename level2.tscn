@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="2_3opl0"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="2_r40rm"]
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="3_jifot"]
-[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://audio/rudder.wav" id="4_3opl0"]
+[ext_resource type="AudioStream" uid="uid://8cuyxv7bq1m0" path="res://audio/rudder.wav" id="4_3opl0"]
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://audio/yacht.wav" id="5_dc5vx"]
 [ext_resource type="AudioStream" uid="uid://doa3kj8nchg1d" path="res://audio/gun_shot.wav" id="8_r8rrl"]
 [ext_resource type="AudioStream" uid="uid://dffcb3yearue3" path="res://audio/sonar_yacht.wav" id="8_s8oj7"]
@@ -65,6 +65,7 @@ MARY: As you approach the boat, press 2 to swim under it. The wave you make will
 
 [node name="Yacht" type="CharacterBody3D" parent="." unique_id=764160128]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+axis_lock_linear_y = true
 script = ExtResource("3_jifot")
 health = 20
 gun_range = 15

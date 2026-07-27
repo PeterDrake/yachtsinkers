@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="2_ymh28"]
 [ext_resource type="Script" uid="uid://m6b13ya6itnw" path="res://yacht.gd" id="4_sotx7"]
 [ext_resource type="PackedScene" uid="uid://br4wdelphw7yr" path="res://border.tscn" id="5_siwpi"]
-[ext_resource type="AudioStream" uid="uid://bp3o8fsib7i6l" path="res://audio/rudder.wav" id="5_ymh28"]
+[ext_resource type="AudioStream" uid="uid://8cuyxv7bq1m0" path="res://audio/rudder.wav" id="5_ymh28"]
 [ext_resource type="AudioStream" uid="uid://ddfbxxqx8hy2i" path="res://audio/yacht.wav" id="6_7oc4e"]
 [ext_resource type="PackedScene" uid="uid://ckbk4fmtrrdii" path="res://mine.tscn" id="6_ymh28"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_7oc4e"]
@@ -88,6 +88,7 @@ GREG: Okay, hear me out. Press 3 to slap your tail on the surface of the water, 
 
 [node name="Yacht" type="CharacterBody3D" parent="." unique_id=1278287188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+axis_lock_linear_y = true
 script = ExtResource("4_sotx7")
 health = 30
 gun_range = 20
