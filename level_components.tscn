@@ -92,4 +92,20 @@ theme_override_font_sizes/font_size = 64
 [node name="VisualHintTimer" type="Timer" parent="." unique_id=1565260650]
 one_shot = true
 
+[node name="Dialogue" type="Button" parent="." unique_id=472846714]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "fsdsf"
+autowrap_mode = 2
+
 [connection signal="timeout" from="VisualHintTimer" to="." method="_on_visual_hint_timer_timeout"]
+[connection signal="pressed" from="Dialogue" to="." method="_on_dialogue_pressed"]

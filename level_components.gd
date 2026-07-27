@@ -3,6 +3,9 @@ extends Node3D
 @onready var yachtsinkers := get_node("../..")
 @onready var level := get_node("..")
 
+var lines
+var line_index
+
 func _ready() -> void:
 	var level_number := int(level.name.substr(level.name.length() - 1))
 	if level_number <= 1:
@@ -38,3 +41,25 @@ func _update_health() -> void:
 
 func _on_visual_hint_timer_timeout() -> void:
 	$VisualHint.text = ""
+
+func display_dialogue(lines) -> void:
+	$Dialogue.focus_mode = 2
+	$Caption.focus_mode = 0
+	$Dialogue.show()
+	$Dialogue.grab_focus()
+	self.lines = lines
+	line_index = 0
+	_display_next_line()
+
+func _display_next_line() -> void:
+	$Dialogue.text = lines[line_index]
+	line_index += 1 
+
+func _on_dialogue_pressed() -> void:
+	if line_index < lines.size():
+		_display_next_line()
+	else:
+		$Dialogue.focus_mode = 0
+		$Caption.focus_mode = 2
+		$Dialogue.hide()
+		$Caption.grab_focus()

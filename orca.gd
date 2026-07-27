@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export_multiline var text : String
+@export var lines : Array[String]
 
 @onready var speech := get_node("../LevelComponents/Speech")
 @onready var player := get_node("../LevelComponents/Player")
@@ -12,7 +12,7 @@ func _physics_process(_delta: float) -> void:
 		
 func play_dialog():
 	$OrcaSound.play()
-	speech.say(text)
+	level.find_child("LevelComponents").display_dialogue(lines)
 	var my_name = name.substr(0, name.find("Orca"))
 	if my_name == "Delilah":
 		yachtsinkers.ram_damage = 2

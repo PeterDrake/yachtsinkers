@@ -11,6 +11,7 @@ var health := 5
 @onready var rudder := get_node("../../Yacht/RudderSound")
 @onready var level := get_node("../..")
 @onready var yachtsinkers := get_node("../../..")
+@onready var dialogue := get_node("../../LevelComponents/Dialogue")
 
 const SLAP_RANGE := 20
 
@@ -73,7 +74,7 @@ func _process(_delta: float) -> void:
 	elif visual_hint.text == "Press 1 to bite rudder now!":
 		visual_hint.text = ""
 		$"../VisualHintTimer".stop()
-	if Input.is_action_just_pressed("space"):
+	if Input.is_action_just_pressed("space") and not dialogue.visible:
 		level.report_with_visual_hint("Echolocating...")
 		$SonarSound.play()
 		var count = $ShapeCast3D.get_collision_count()

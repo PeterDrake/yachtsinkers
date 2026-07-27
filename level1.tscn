@@ -51,6 +51,7 @@ DELILAH: Schweet.
 GLADIS: Any advice, Delilah?
 DELILAH: Try to ram the yacht very very hard.
 Your ram damage has increased."
+lines = Array[String](["GLADIS: Get in loser. We're going YachtSinking.", "DELILAH: Schweet.", "GLADIS: Any advice, Delilah?", "DELILAH: Try to ram the yacht very very hard.", "Your ram damage has increased."])
 
 [node name="PhilOrca" parent="." unique_id=116705150 instance=ExtResource("7_n8vhr")]
 transform = Transform3D(0.49999997, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, 0.49999997, -12, 0, 30)
@@ -59,6 +60,7 @@ GLADIS: Phil, I need to slow these yachts down.
 PHIL: You could try biting the rudder off.
 GLADIS: How would I do that?
 PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."
+lines = Array[String](["GLADIS: Phil, I need to slow these yachts down.", "PHIL: You could try biting the rudder off.", "GLADIS: How would I do that?", "PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."])
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 
