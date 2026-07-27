@@ -99,9 +99,9 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../SettingsButton")
 focus_neighbor_top = NodePath("../SettingsButton")
-focus_neighbor_right = NodePath("../../VBoxContainer2/Level1Button")
-focus_neighbor_bottom = NodePath("../../VBoxContainer2/Level1Button")
-focus_next = NodePath("../../VBoxContainer2/Level1Button")
+focus_neighbor_right = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
 focus_previous = NodePath("../SettingsButton")
 theme_override_font_sizes/font_size = 48
 text = "Audio Library
@@ -110,12 +110,12 @@ text = "Audio Library
 [node name="CreditsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=35931465]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_left = NodePath("../SettingsButton")
-focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_left = NodePath("../AudioLibraryButton")
+focus_neighbor_top = NodePath("../AudioLibraryButton")
 focus_neighbor_right = NodePath("../../VBoxContainer2/Level1Button")
 focus_neighbor_bottom = NodePath("../../VBoxContainer2/Level1Button")
 focus_next = NodePath("../../VBoxContainer2/Level1Button")
-focus_previous = NodePath("../SettingsButton")
+focus_previous = NodePath("../AudioLibraryButton")
 theme_override_font_sizes/font_size = 48
 text = "Credits"
 
@@ -126,12 +126,12 @@ size_flags_horizontal = 3
 [node name="Level1Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=912260969]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_left = NodePath("../../VBoxContainer/AudioLibraryButton")
-focus_neighbor_top = NodePath("../../VBoxContainer/AudioLibraryButton")
+focus_neighbor_left = NodePath("../../VBoxContainer/CreditsButton")
+focus_neighbor_top = NodePath("../../VBoxContainer/CreditsButton")
 focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level2Button")
-focus_previous = NodePath("../../VBoxContainer/AudioLibraryButton")
+focus_previous = NodePath("../../VBoxContainer/CreditsButton")
 theme_override_font_sizes/font_size = 48
 text = "Level 1"
 
