@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cgr2k4ygw56la" path="res://accessibility.gd" id="1_x62nd"]
 [ext_resource type="Theme" uid="uid://bi14d5k5kfkal" path="res://UI.tres" id="2_dsp45"]
+[ext_resource type="StyleBox" uid="uid://3ry3a7e2dkyv" path="res://UI_text.tres" id="2_i1t6q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
-bg_color = Color(0, 0.17626616, 0.31130394, 1)
+bg_color = Color(0, 0.1764706, 0.30980393, 1)
 
 [node name="Accessibility" type="Control" unique_id=2122777761]
 process_mode = 3
@@ -60,11 +61,15 @@ focus_next = NodePath("../ReturnButton")
 focus_previous = NodePath("../Title")
 focus_mode = 3
 theme_override_font_sizes/font_size = 22
-text = "Created during the July 2026 Making Games Accessible jam, YachtSinkers! is meant to be as accessible as possible, including to blind players. It supports screenreaders.
+theme_override_styles/normal = ExtResource("2_i1t6q")
+theme_override_styles/focus = ExtResource("2_i1t6q")
+text = "Created during the July 2026 Making Games Accessible jam, YachtSinkers! is meant to be as accessible as possible.
 
-Deaf players should also be able to complete the game, as all necessary information is available visually, including subtitles.
+Blind players should be able to play with a screen reader.
+Deaf players should be able to play with on-screen visuals.
+The game can be played without a mouse.
 
-The game can be played using only the keyboard.
+
 
 
 

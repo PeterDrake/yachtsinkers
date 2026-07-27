@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://be83caw0b8qaa" path="res://audio/1.Yacht_Sinking.wav" id="2_oyqm6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
-bg_color = Color(0, 0.17626616, 0.31130394, 1)
+bg_color = Color(0, 0.1764706, 0.30980393, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r55hg"]
 
@@ -60,6 +60,7 @@ metadata/_edit_use_anchors_ = true
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1156288268]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_kpexm")
 
 [node name="LeftPanel" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1322563917]
 custom_minimum_size = Vector2(125, 0)

@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://mh0mjn2a5xxw" path="res://instructions.gd" id="1_7ls63"]
 [ext_resource type="Theme" uid="uid://bi14d5k5kfkal" path="res://UI.tres" id="2_h8hbf"]
+[ext_resource type="StyleBox" uid="uid://3ry3a7e2dkyv" path="res://UI_text.tres" id="2_ne5nb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
-bg_color = Color(0, 0.17626616, 0.31130394, 1)
+bg_color = Color(0, 0.1764706, 0.30980393, 1)
 
 [node name="Instructions" type="Control" unique_id=2122777761]
 process_mode = 3
@@ -60,6 +61,8 @@ focus_next = NodePath("../ReturnButton")
 focus_previous = NodePath("../Title")
 focus_mode = 3
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("2_ne5nb")
+theme_override_styles/focus = ExtResource("2_ne5nb")
 text = "Your goal is to find the orcas in your pod while avoiding obstacles and then attack the yacht in the area by ramming into it until it sinks.
 Swim Forward: Up Arrow Key, W
 Rotate Left: Left Arrow Key, A

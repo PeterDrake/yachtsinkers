@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgr2k4ygw56la" path="res://accessibility.gd" id="1_nm7lk"]
 [ext_resource type="Theme" uid="uid://bi14d5k5kfkal" path="res://UI.tres" id="2_c1t8d"]
+[ext_resource type="StyleBox" uid="uid://3ry3a7e2dkyv" path="res://UI_text.tres" id="2_g4wvt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
@@ -60,6 +61,8 @@ focus_next = NodePath("../ReturnButton")
 focus_previous = NodePath("../Title")
 focus_mode = 3
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("2_g4wvt")
+theme_override_styles/focus = ExtResource("2_g4wvt")
 text = "Game Design: Peter Drake, Saph Leeper
 Programming: Peter Drake, Saph Leeper
 Accessibility Consultants: Chad Bouton, Eric Blackburn, Vjeran Bezik
