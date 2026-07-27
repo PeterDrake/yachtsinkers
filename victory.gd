@@ -17,7 +17,6 @@ func _on_visibility_changed() -> void:
 			$VBoxContainer/AdvanceButton.grab_focus()
 
 func _on_advance_button_pressed() -> void:
-	print("Advancing")
 	yachtsinkers.current_level_number += 1
 	if yachtsinkers.current_level_number > 3:
 		title_screen.show()
