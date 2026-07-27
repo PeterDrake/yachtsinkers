@@ -59,17 +59,17 @@ focus_next = NodePath("../ReturnButton")
 focus_previous = NodePath("../Title")
 focus_mode = 3
 theme_override_font_sizes/font_size = 22
-text = "You are an orca attacking billionaires' yachts. Why? Don't worry about it.
+text = "Your goal is to find the orcas in your pod while avoiding obstacles and then attack the yacht in the area by ramming into it until it sinks.
+Swim Forward: Up Arrow Key, W
+Rotate Left: Left Arrow Key, A
+Rotate Right: Right Arrow Key, D
+Echolocate: Space; allows you to hear the location of objects in front of you.
 
-Ram the yacht repeatedly to destroy it.
-
-Rotate with left and right arrow keys or A/D. Move forward with the up arrow or W. Press space to emit an echolocation pulse, which will produce echoes from objects in front of you.
-
-There are also rocks out there somewhere, as well as several friendly orcas who will give you advice for destroying the yacht.
-
-Hitting the rocks will damage (and eventually kill) you.
-
-Later levels introduce additional hazards and abilities."
+To talk to an orca, swim into it. While talking to an orca, you cannot perform other actions until the conversation is over. Certain orcas you talk to will give you new abilities activated with keys 1, 2, or 3.
+Continue Dialogue to Next Line: Space
+Bite Rudder: 1. Available when near a yacht’s rudder. Only usable once per yacht.
+Dive: 2. Available when near a yacht. Has a 20 second cooldown before usable again.
+Tail Slap: 3. Has a 5 second cooldown before usable again."
 autowrap_mode = 2
 
 [node name="ReturnButton" type="Button" parent="VBoxContainer" unique_id=1488913545]
