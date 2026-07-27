@@ -110,9 +110,9 @@ layout_mode = 2
 size_flags_vertical = 2
 focus_neighbor_left = NodePath("../SoundEffectsSlider")
 focus_neighbor_top = NodePath("../SoundEffectsSlider")
-focus_neighbor_right = NodePath("../../VBoxContainer2/EcholocationWidthSlider")
-focus_neighbor_bottom = NodePath("../../VBoxContainer2/EcholocationWidthSlider")
-focus_next = NodePath("../../VBoxContainer2/EcholocationWidthSlider")
+focus_neighbor_right = NodePath("../../VBoxContainer2/MineExplosionBox")
+focus_neighbor_bottom = NodePath("../../VBoxContainer2/MineExplosionBox")
+focus_next = NodePath("../../VBoxContainer2/MineExplosionBox")
 focus_previous = NodePath("../SoundEffectsSlider")
 accessibility_name = "Music volume"
 max_value = 1.0
@@ -122,7 +122,23 @@ step = 0.1
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="GameplayLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2043304423]
+[node name="AccessibilityLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2043304423]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
+text = "Accessibility"
+
+[node name="MineExplosionBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1686836247]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../VBoxContainer/MusicSlider")
+focus_neighbor_top = NodePath("../../VBoxContainer/MusicSlider")
+focus_neighbor_right = NodePath("../EcholocationWidthSlider")
+focus_neighbor_bottom = NodePath("../EcholocationWidthSlider")
+focus_next = NodePath("../EcholocationWidthSlider")
+focus_previous = NodePath("../../VBoxContainer/MusicSlider")
+text = "Enable mine explosions (may affect photosensitive players)"
+
+[node name="GameplayLabel2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=767926788]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 32
@@ -137,12 +153,12 @@ text = "Echolocation Width"
 [node name="EcholocationWidthSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=129740052]
 layout_mode = 2
 size_flags_vertical = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/MusicSlider")
-focus_neighbor_top = NodePath("../../VBoxContainer/MusicSlider")
+focus_neighbor_left = NodePath("../MineExplosionBox")
+focus_neighbor_top = NodePath("../MineExplosionBox")
 focus_neighbor_right = NodePath("../HealthSlider")
 focus_neighbor_bottom = NodePath("../HealthSlider")
 focus_next = NodePath("../HealthSlider")
-focus_previous = NodePath("../../VBoxContainer/MusicSlider")
+focus_previous = NodePath("../MineExplosionBox")
 accessibility_name = "Echolocation width"
 max_value = 20.0
 value = 20.0
