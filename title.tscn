@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://by57a2o4aix8g"]
 
 [ext_resource type="Script" uid="uid://bbb7t7jtiydm6" path="res://title.gd" id="1_y7k74"]
+[ext_resource type="Theme" uid="uid://bi14d5k5kfkal" path="res://UI.tres" id="2_kpexm"]
 [ext_resource type="AudioStream" uid="uid://be83caw0b8qaa" path="res://audio/1.Yacht_Sinking.wav" id="2_oyqm6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r55hg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_muum1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gj37"]
 
 [node name="Title" type="Control" unique_id=290838109]
 process_mode = 3
@@ -54,122 +61,164 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="LeftPanel" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1322563917]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r55hg")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1221192663]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 
 [node name="AccessibilityButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2049052619]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 5
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../../VBoxContainer2/QuitButton")
 focus_neighbor_top = NodePath("../../VBoxContainer2/QuitButton")
 focus_neighbor_right = NodePath("../InstructionsButton")
 focus_neighbor_bottom = NodePath("../InstructionsButton")
 focus_next = NodePath("../InstructionsButton")
 focus_previous = NodePath("../../VBoxContainer2/QuitButton")
+theme = ExtResource("2_kpexm")
 theme_override_font_sizes/font_size = 48
 text = "Accessibility"
 
 [node name="InstructionsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1038856797]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 5
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../AccessibilityButton")
 focus_neighbor_top = NodePath("../AccessibilityButton")
 focus_neighbor_right = NodePath("../SettingsButton")
 focus_neighbor_bottom = NodePath("../SettingsButton")
 focus_next = NodePath("../SettingsButton")
 focus_previous = NodePath("../AccessibilityButton")
+theme = ExtResource("2_kpexm")
 theme_override_font_sizes/font_size = 48
 text = "Instructions"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1365439469]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 5
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../InstructionsButton")
 focus_neighbor_top = NodePath("../InstructionsButton")
 focus_neighbor_right = NodePath("../AudioLibraryButton")
 focus_neighbor_bottom = NodePath("../AudioLibraryButton")
 focus_next = NodePath("../AudioLibraryButton")
 focus_previous = NodePath("../InstructionsButton")
+theme = ExtResource("2_kpexm")
 theme_override_font_sizes/font_size = 48
 text = "Settings"
 
 [node name="AudioLibraryButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2139101270]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 5
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../SettingsButton")
 focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_right = NodePath("../CreditsButton")
 focus_neighbor_bottom = NodePath("../CreditsButton")
 focus_next = NodePath("../CreditsButton")
 focus_previous = NodePath("../SettingsButton")
+theme = ExtResource("2_kpexm")
 theme_override_font_sizes/font_size = 48
 text = "Audio Library
 "
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=35931465]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 5
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../AudioLibraryButton")
 focus_neighbor_top = NodePath("../AudioLibraryButton")
 focus_neighbor_right = NodePath("../../VBoxContainer2/Level1Button")
 focus_neighbor_bottom = NodePath("../../VBoxContainer2/Level1Button")
 focus_next = NodePath("../../VBoxContainer2/Level1Button")
 focus_previous = NodePath("../AudioLibraryButton")
+theme = ExtResource("2_kpexm")
 theme_override_font_sizes/font_size = 48
 text = "Credits"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=953045439]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 
 [node name="Level1Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=912260969]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 5
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../../VBoxContainer/CreditsButton")
 focus_neighbor_top = NodePath("../../VBoxContainer/CreditsButton")
 focus_neighbor_right = NodePath("../Level2Button")
 focus_neighbor_bottom = NodePath("../Level2Button")
 focus_next = NodePath("../Level2Button")
 focus_previous = NodePath("../../VBoxContainer/CreditsButton")
+theme = ExtResource("2_kpexm")
 theme_override_font_sizes/font_size = 48
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617347346]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 5
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../Level1Button")
 focus_neighbor_top = NodePath("../Level1Button")
 focus_neighbor_right = NodePath("../Level3Button")
 focus_neighbor_bottom = NodePath("../Level3Button")
 focus_next = NodePath("../Level3Button")
 focus_previous = NodePath("../Level1Button")
+theme = ExtResource("2_kpexm")
 theme_override_font_sizes/font_size = 48
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617886323]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 5
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../Level2Button")
 focus_neighbor_top = NodePath("../Level2Button")
 focus_neighbor_right = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../QuitButton")
 focus_next = NodePath("../QuitButton")
 focus_previous = NodePath("../Level2Button")
+theme = ExtResource("2_kpexm")
 theme_override_font_sizes/font_size = 48
 text = "Level 3"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=438912334]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 5
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../Level3Button")
 focus_neighbor_top = NodePath("../Level3Button")
 focus_neighbor_right = NodePath("../../../Title")
 focus_neighbor_bottom = NodePath("../../../Title")
 focus_next = NodePath("../../../Title")
 focus_previous = NodePath("../Level3Button")
+theme = ExtResource("2_kpexm")
 theme_override_font_sizes/font_size = 48
 text = "Quit"
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2067488472]
+custom_minimum_size = Vector2(400, 110)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_muum1")
+
+[node name="RightPanel" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=359767740]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0gj37")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=920174777]
 stream = ExtResource("2_oyqm6")
