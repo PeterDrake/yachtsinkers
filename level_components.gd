@@ -42,12 +42,12 @@ func _update_health() -> void:
 func _on_visual_hint_timer_timeout() -> void:
 	$VisualHint.text = ""
 
-func display_dialogue(lines) -> void:
+func display_dialogue(this_orca_lines) -> void:
 	$Dialogue.focus_mode = 2
 	$Caption.focus_mode = 0
 	$Dialogue.show()
 	$Dialogue.grab_focus()
-	self.lines = lines
+	lines = this_orca_lines
 	line_index = 0
 	_display_next_line()
 
