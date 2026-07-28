@@ -5,12 +5,18 @@ extends Control
 
 func _ready() -> void:
 	if visible:
+		$AudioStreamPlayer.play()
 		if get_tree().is_accessibility_enabled():
 			$VBoxContainer/Title.grab_focus()
 		else:
 			$VBoxContainer/HBoxContainer/VBoxContainer/AccessibilityButton.grab_focus()
 				
 func _on_visibility_changed() -> void:
+	await get_tree().create_timer(0.1).timeout
+	if visible:
+		$AudioStreamPlayer.play()
+	else:
+		$AudioStreamPlayer.stop()
 	if visible and is_node_ready():
 		pause_menu.occluded = true
 		if get_tree().is_accessibility_enabled():
@@ -68,3 +74,8 @@ func _on_credits_button_pressed() -> void:
 	var screen := yachtsinkers.find_child("Credits")
 	screen.previous_screen = self
 	screen.show()
+
+
+func _on_audio_stream_player_finished() -> void:
+	if visible:
+		$AudioStreamPlayer.play()

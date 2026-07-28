@@ -1,19 +1,29 @@
 extends Node3D
 
 @onready var yachtsinkers := get_node("../..")
+@onready var level := get_node("..")
+
+var lines
+var line_index
 
 func _ready() -> void:
-	$Caption.grab_focus()
-	_update_echolocation_width()
+	var level_number := int(level.name.substr(level.name.length() - 1))
+	if level_number <= 1:
+		yachtsinkers.bite_enabled = false
+		yachtsinkers.ram_damage = 1
+	if level_number <= 2:
+		yachtsinkers.dive_enabled = false
+		yachtsinkers.starting_health = 5.0
+	yachtsinkers.slap_enabled = false
+	yachtsinkers.player_speed = 250.0
 	_update_health()
 
-func _on_visibility_changed() -> void:
-	if visible:
-		$Caption.grab_focus()
-		_update_echolocation_width()
-		$Player/CollisionTimer.wait_time = 1.0 / yachtsinkers.game_speed
-		$Player/WaveTimer.wait_time = 20.0 / yachtsinkers.game_speed
-		$Player/SlapTimer.wait_time = 5.0 / yachtsinkers.game_speed
+func restore_level() -> void:
+	$Caption.grab_focus()
+	_update_echolocation_width()
+	$Player/CollisionTimer.wait_time = 1.0 / yachtsinkers.game_speed
+	$Player/WaveTimer.wait_time = 20.0 / yachtsinkers.game_speed
+	$Player/SlapTimer.wait_time = 5.0 / yachtsinkers.game_speed
 
 ## Adjust the distant width of the echolocation ShapeCast
 func _update_echolocation_width() -> void:
@@ -28,3 +38,28 @@ func _update_echolocation_width() -> void:
 
 func _update_health() -> void:
 	$Player.health = yachtsinkers.starting_health
+
+func _on_visual_hint_timer_timeout() -> void:
+	$VisualHint.text = ""
+
+func display_dialogue(lines) -> void:
+	$Dialogue.focus_mode = 2
+	$Caption.focus_mode = 0
+	$Dialogue.show()
+	$Dialogue.grab_focus()
+	self.lines = lines
+	line_index = 0
+	_display_next_line()
+
+func _display_next_line() -> void:
+	$Dialogue.text = lines[line_index]
+	line_index += 1 
+
+func _on_dialogue_pressed() -> void:
+	if line_index < lines.size():
+		_display_next_line()
+	else:
+		$Dialogue.focus_mode = 0
+		$Caption.focus_mode = 2
+		$Dialogue.hide()
+		$Caption.grab_focus()

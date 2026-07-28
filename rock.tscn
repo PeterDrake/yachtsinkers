@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://bxsllf8ybqpya"]
 
 [ext_resource type="Script" uid="uid://dgpti0wp78lpe" path="res://rock.gd" id="1_o0qsl"]
-[ext_resource type="AudioStream" uid="uid://bnjrmkrxkkr8u" path="res://rock.wav" id="2_68h2w"]
 [ext_resource type="PackedScene" uid="uid://dyb35767htb4y" path="res://models/rock_pack_vol_01_g5n1k9t4l7.glb" id="2_wecdg"]
+[ext_resource type="AudioStream" uid="uid://bylreoh14petr" path="res://audio/sonar_rock.wav" id="3_46y1q"]
+[ext_resource type="AudioStream" uid="uid://dcmddl2n1bvft" path="res://audio/bubbles.wav" id="4_46y1q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dcxyd"]
-size = Vector3(0.9289551, 0.39575195, 1)
+size = Vector3(0.8531723, 0.39575195, 0.9797363)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o0qsl"]
 
@@ -16,7 +17,7 @@ script = ExtResource("1_o0qsl")
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, -0.29552352, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1733591117]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012573242, -0.044799805, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0036354065, -0.044799805, 0.00012207031)
 shape = SubResource("BoxShape3D_dcxyd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=718199581]
@@ -24,6 +25,17 @@ visible = false
 mesh = SubResource("BoxMesh_o0qsl")
 
 [node name="SonarSound" type="AudioStreamPlayer3D" parent="." unique_id=692003736]
-stream = ExtResource("2_68h2w")
+stream = ExtResource("3_46y1q")
 bus = &"sfx"
 playback_type = 1
+
+[node name="Bubbles" type="AudioStreamPlayer3D" parent="." unique_id=2129158060]
+stream = ExtResource("4_46y1q")
+attenuation_model = 1
+volume_db = -10.0
+autoplay = true
+max_distance = 20.0
+bus = &"sfx"
+playback_type = 1
+
+[connection signal="finished" from="Bubbles" to="." method="_on_bubbles_finished"]

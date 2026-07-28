@@ -31,6 +31,9 @@ func _ready() -> void:
 	_bus_index = AudioServer.get_bus_index("sfx")
 	var sfx_slider = $VBoxContainer/HBoxContainer/VBoxContainer/SoundEffectsSlider
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
+	_bus_index = AudioServer.get_bus_index("music")
+	var music_slider = $VBoxContainer/HBoxContainer/VBoxContainer/MusicSlider
+	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
 
 func _on_master_slider_value_changed(value: float) -> void:
 	if visible:
@@ -45,7 +48,10 @@ func _on_sound_effects_slider_value_changed(value: float) -> void:
 		$SfxPlayer.play()
 
 func _on_music_slider_value_changed(value: float) -> void:
-	pass # Replace with function body.
+	if visible:
+		_bus_index = AudioServer.get_bus_index("music")
+		AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value))
+		$MusicPlayer.play()
 
 func _on_echolocation_width_slider_value_changed(value: float) -> void:
 	yachtsinkers.echolocation_width = value

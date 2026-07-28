@@ -61,15 +61,13 @@ focus_mode = 3
 theme_override_font_sizes/font_size = 22
 text = "You are an orca attacking billionaires' yachts. Why? Don't worry about it.
 
-Rotate with left and right arrow keys or A/D. Move forward with the up arrow or W.
+Ram the yacht repeatedly to destroy it.
 
-You can hear a moving yacht. Ram the yacht repeatedly to destroy it.
+Rotate with left and right arrow keys or A/D. Move forward with the up arrow or W. Press space to emit an echolocation pulse, which will produce echoes from objects in front of you.
 
-Press space to emit an echolocation pulse, which will produce echoes from objects in front of you.
+There are also rocks out there somewhere, as well as several friendly orcas who will give you advice for destroying the yacht.
 
-There are also silent rocks out there somewhere, as well as several friendly orcas who will give you advice for destroying the yacht.
-
-Hitting the rock  will damage (and eventually kill) you.
+Hitting the rocks will damage (and eventually kill) you.
 
 Later levels introduce additional hazards and abilities."
 autowrap_mode = 2
