@@ -37,7 +37,8 @@ func _check_for_collisions():
 			var collider = get_slide_collision(i).get_collider()
 			if "Rock" in collider.name and velocity != Vector3.ZERO:
 				$RockHitSound.play()
-				take_damage("You hit a rock.")
+				#take_damage("You hit a rock.")
+				take_damage("")
 			elif "Border" in collider.name and velocity != Vector3.ZERO:
 				$BorderSound.play()
 				caption.say("[Hitting Border]")
@@ -51,16 +52,20 @@ func _check_for_collisions():
 				collider.detonate(true)
 
 func take_damage(reason: String):
+	if reason != "":
+		reason += "\n"
 	if not level.level_over:
 		health -= 1
 		if health == 0:
 			level.level_over = true
-			caption.say(reason + "\nYou have died")
+			caption.say(reason + "You have died")
+			#caption.say("You have died")
 			await get_tree().create_timer(2.0).timeout
 			yachtsinkers.display_defeat()
 			queue_free()
 		else:
-			caption.say(reason + "\nYour health: " + str(health))
+			caption.say(reason + "Your health: " + str(health))
+			#caption.say("Your health: " + str(health))
 
 func _rudder_bite_available() -> bool:
 	return yachtsinkers.bite_enabled and rudder and global_position.distance_to(rudder.global_position) < 3

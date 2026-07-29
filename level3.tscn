@@ -141,6 +141,15 @@ playback_type = 1
 [node name="FAB converted" parent="Yacht" unique_id=215462717 instance=ExtResource("11_l2pgs")]
 transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 0, -0.25779188, 0)
 
+[node name="Node" type="Node" parent="Yacht" unique_id=1154696513]
+
+[node name="RandomBarkPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=2108548753]
+bus = &"sfx"
+
+[node name="RandomBarkTimer" type="Timer" parent="Yacht/Node" unique_id=279976458]
+wait_time = 3.0
+autostart = true
+
 [node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=297788535]
 stream = ExtResource("15_0m7xm")
 bus = &"music"
@@ -149,5 +158,6 @@ playback_type = 1
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="finished" from="Yacht/RudderSound" to="Yacht" method="_on_rudder_sound_finished"]
 [connection signal="finished" from="Yacht/BoatSound" to="Yacht" method="_on_buoy_sound_finished"]
+[connection signal="timeout" from="Yacht/Node/RandomBarkTimer" to="Yacht" method="_on_random_bark_timer_timeout"]
 
 [editable path="LevelComponents"]

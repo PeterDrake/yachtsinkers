@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var yachtsinkers := get_node("../..")
 @onready var level := get_node("..")
-@onready var s
+
 var lines
 var line_index
 var undiscovered_ability = load("res://sprites/undiscovered_ability.png")

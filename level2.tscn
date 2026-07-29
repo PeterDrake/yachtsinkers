@@ -116,6 +116,21 @@ playback_type = 1
 [node name="FAB converted" parent="Yacht" unique_id=778134472 instance=ExtResource("10_4ou0f")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -0.67434776, 0)
 
+[node name="Node" type="Node" parent="Yacht" unique_id=1205176374]
+
+[node name="RammedPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=1017620706]
+bus = &"sfx"
+
+[node name="AbandonPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=709709108]
+bus = &"sfx"
+
+[node name="RandomBarkPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=1757746168]
+bus = &"sfx"
+
+[node name="RandomBarkTimer" type="Timer" parent="Yacht/Node" unique_id=1932888241]
+wait_time = 5.0
+autostart = true
+
 [node name="BorderLeft" parent="." unique_id=72152200 instance=ExtResource("13_s8oj7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 20)
 
@@ -136,5 +151,6 @@ playback_type = 1
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="finished" from="Yacht/RudderSound" to="Yacht" method="_on_rudder_sound_finished"]
 [connection signal="finished" from="Yacht/BoatSound" to="Yacht" method="_on_buoy_sound_finished"]
+[connection signal="timeout" from="Yacht/Node/RandomBarkTimer" to="Yacht" method="_on_random_bark_timer_timeout"]
 
 [editable path="LevelComponents"]

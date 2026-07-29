@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var player := get_node('../LevelComponents/Player')
 @onready var yachtsinkers := get_node('../..')
 @onready var level := get_node("..")
+@onready var level_number := int(level.name.substr(level.name.length() - 1))
 
 @export var health : int
 @export var gun_range : int
@@ -11,6 +12,10 @@ var waypoint_index = 0
 var sinking := false
 var shooting := false
 var speed := 150
+
+const BARKS := {1: ["poor", "bigger", "flippy"],
+				2: ["shoot", "abandon", "wild"],
+				3: ["mines", "yacht mine", "poors", "king"]}
 
 const WAYPOINTS := [Vector3(-20, 0, -20), Vector3(-20, 0, 20), Vector3(20, 0, 20), Vector3(20, 0, -20)]
 
@@ -26,8 +31,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
+	_crew_speech()
 	if $ShotTimer.is_stopped():
-		if not shooting and player and position.distance_to(player.position) < gun_range:
+		if not shooting and player and global_position.distance_to(player.global_position) < gun_range:
 			shooting = true
 			$ReloadSound.play()  # Loading Sound
 			caption.say("Loading gun...")
@@ -41,6 +47,19 @@ func _process(_delta: float) -> void:
 				else:
 					caption.say("Gun missed.")
 			shooting = false
+
+func _crew_speech() -> void:
+	if level_number == 1:
+		if $Node/FlippingOrcaPlayer.visible and global_position.distance_to(player.global_position) < 30:
+			print("flipping orca")
+			$Node/FlippingOrcaPlayer.hide()
+	elif level_number == 2:
+		if $Node/RammedPlayer.visible and health == 19:
+			print("rammed us")
+			$Node/RammedPlayer.hide()
+		elif $Node/AbandonPlayer.visible and health == 1:
+			print("abandon ship")
+			$Node/AbandonPlayer.hide()
 
 func _on_buoy_sound_finished() -> void:
 	$BoatSound.play()
@@ -78,3 +97,8 @@ func sonar_return() -> void:
 	await get_tree().create_timer(distance / 10.0).timeout
 	level.report_with_visual_hint("...yacht")
 	$SonarSound.play()
+
+func _on_random_bark_timer_timeout() -> void:
+	var barks = BARKS[level_number]
+	print(barks)
+	print(barks[randi() % barks.size()])

@@ -44,6 +44,18 @@ health = 10
 [node name="Sketchfab_Scene" parent="Yacht" index="0" unique_id=529316871]
 transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, 0.66986465, 0.044659197, -4.545868)
 
+[node name="Node" type="Node" parent="Yacht" unique_id=571971624]
+
+[node name="FlippingOrcaPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=787942986]
+bus = &"sfx"
+
+[node name="RandomBarkPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=1341898841]
+bus = &"sfx"
+
+[node name="RandomBarkTimer" type="Timer" parent="Yacht/Node" unique_id=361466593]
+wait_time = 5.0
+autostart = true
+
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("7_n8vhr")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 10, 0, 38)
 lines = Array[String](["GLADIS: Get in loser. We're going YachtSinking. [Press space to continue.]", "DELILAH: Schweet.", "GLADIS: Any advice, Delilah?", "DELILAH: Try to ram the yacht very very hard.", "Your ram damage has increased."])
@@ -58,6 +70,7 @@ bus = &"music"
 playback_type = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="Yacht/Node/RandomBarkTimer" to="Yacht" method="_on_random_bark_timer_timeout"]
 [connection signal="finished" from="LevelMusic" to="." method="_on_level_music_finished"]
 
 [editable path="LevelComponents"]
