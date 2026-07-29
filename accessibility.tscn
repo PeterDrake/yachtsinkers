@@ -69,10 +69,9 @@ Blind players should be able to play with a screen reader. Headphones are strong
 
 Deaf players should be able to play with on-screen visuals.
 
+There are mild flashing lights in level 3, which may affect photosensitive players. These are disabled by default and can be enabled in the settings.
+
 The game can be played without a mouse.
-
-
-
 
 "
 autowrap_mode = 2
