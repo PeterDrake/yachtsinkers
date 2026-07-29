@@ -65,16 +65,16 @@ theme_override_styles/normal = ExtResource("2_g4wvt")
 theme_override_styles/focus = ExtResource("2_g4wvt")
 text = "Game Design: Peter Drake, Saph Leeper
 Programming: Peter Drake, Saph Leeper
+Music: Saph Leeper
 Accessibility Consultants: Chad Bouton, Eric Blackburn, Vjeran Bezik
 
-Thanks to the Games for Blind Gamers and Godot communities.
+Thanks to the Games for Blind Gamers, Godot, and IDGA-GASIG communities.
 
 Developed in Godot.
 
-This is part of summer research funded by the John S. Rogers Science Research Program at Lewis & Clark College. It was part of the July 2026 Making Games Accessible jam.
+Orca model: GoldenZtuff. Yacht models: Dexsoft Games, ELVIS Warehouse. Mine model: Prof P. Rock model: Vampawn.
 
-
-"
+This is part of summer research funded by the John S. Rogers Science Research Program at Lewis & Clark College. It was part of the July 2026 Making Games Accessible jam."
 autowrap_mode = 2
 
 [node name="ReturnButton" type="Button" parent="VBoxContainer" unique_id=1488913545]
