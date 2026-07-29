@@ -43,6 +43,7 @@ func _on_visual_hint_timer_timeout() -> void:
 	$VisualHint.text = ""
 
 func display_dialogue(this_orca_lines) -> void:
+	$Caption.text = ""
 	$Dialogue.focus_mode = 2
 	$Caption.focus_mode = 0
 	$Dialogue.show()
@@ -60,6 +61,7 @@ func _on_dialogue_pressed() -> void:
 		_display_next_line()
 	else:
 		$Dialogue.focus_mode = 0
+		$Caption.text = "(Messages will appear here.)"
 		$Caption.focus_mode = 2
 		$Dialogue.hide()
 		$Caption.grab_focus()

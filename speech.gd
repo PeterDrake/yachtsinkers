@@ -9,4 +9,4 @@ func say(text: String) -> void:
 	$CaptionTimer.start()
 
 func _on_caption_timer_timeout() -> void:
-	caption.text = ""
+	caption.text = "(Messages will appear here.)"
