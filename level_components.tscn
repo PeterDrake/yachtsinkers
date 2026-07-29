@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dgndjh1ahdbf2" path="res://level_components.gd" id="1_wcufj"]
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_82ii5"]
 [ext_resource type="PackedScene" uid="uid://b6gu0tmnbjees" path="res://caption.tscn" id="5_jnp46"]
+[ext_resource type="Texture2D" uid="uid://ch10xyiv1rs3j" path="res://sprites/undiscovered_ability.png" id="5_jvp1j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
 sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
@@ -55,8 +56,10 @@ mesh = SubResource("PlaneMesh_3qxw5")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -239.0
-offset_bottom = 88.0
+offset_left = -248.0
+offset_top = 8.0
+offset_right = -9.0
+offset_bottom = 96.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -79,6 +82,21 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 32
 text = "fsdsf"
 autowrap_mode = 2
+
+[node name="BiteIndicator" type="Sprite2D" parent="." unique_id=1818459424]
+position = Vector2(52, 52.249996)
+scale = Vector2(0.176, 0.175)
+texture = ExtResource("5_jvp1j")
+
+[node name="DiveIndicator" type="Sprite2D" parent="." unique_id=450833927]
+position = Vector2(155.99998, 52.249996)
+scale = Vector2(0.176, 0.175)
+texture = ExtResource("5_jvp1j")
+
+[node name="SlapIndicator" type="Sprite2D" parent="." unique_id=1246992189]
+position = Vector2(260, 52.249996)
+scale = Vector2(0.176, 0.175)
+texture = ExtResource("5_jvp1j")
 
 [connection signal="timeout" from="VisualHintTimer" to="." method="_on_visual_hint_timer_timeout"]
 [connection signal="pressed" from="Dialogue" to="." method="_on_dialogue_pressed"]

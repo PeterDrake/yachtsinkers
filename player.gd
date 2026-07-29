@@ -11,6 +11,7 @@ var health := 5
 @onready var rudder := get_node("../../Yacht/RudderSound")
 @onready var level := get_node("../..")
 @onready var yachtsinkers := get_node("../../..")
+@onready var components := get_node("../../LevelComponents")
 @onready var dialogue := get_node("../../LevelComponents/Dialogue")
 
 const SLAP_RANGE := 20
@@ -64,6 +65,9 @@ func take_damage(reason: String):
 func _rudder_bite_available() -> bool:
 	return yachtsinkers.bite_enabled and rudder and global_position.distance_to(rudder.global_position) < 3
 
+func _dive_available() -> bool:
+	return yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 10
+
 func _signify_invalid_action(text: String) -> void:
 	$InvalidActionSound.play()
 	level.report_with_visual_hint(text)
@@ -71,11 +75,17 @@ func _signify_invalid_action(text: String) -> void:
 func _process(_delta: float) -> void:
 	if not dialogue.visible:
 		if _rudder_bite_available():
-			visual_hint.text = "Press 1 to bite rudder now!"
-			$"../VisualHintTimer".stop()
-		elif visual_hint.text == "Press 1 to bite rudder now!":
-			visual_hint.text = ""
-			$"../VisualHintTimer".stop()
+			components.update_indicator("bite_avail")
+		elif not _rudder_bite_available() and yachtsinkers.bite_enabled:
+			components.update_indicator("bite_unavail")
+		if _dive_available() and $WaveTimer.is_stopped():
+			components.update_indicator("dive_avail")
+		elif (not _dive_available() or not $WaveTimer.is_stopped()) and yachtsinkers.dive_enabled:
+			components.update_indicator("dive_unavail")
+		if yachtsinkers.slap_enabled and $SlapTimer.is_stopped():
+			components.update_indicator("slap_avail")
+		elif yachtsinkers.slap_enabled and not $SlapTimer.is_stopped():
+			components.update_indicator("slap_unavail")
 		if Input.is_action_just_pressed("space") and not dialogue.visible:
 			level.report_with_visual_hint("Echolocating...")
 			$SonarSound.play()
@@ -92,7 +102,7 @@ func _process(_delta: float) -> void:
 			else:
 				_signify_invalid_action("Bite unavailable")
 		elif Input.is_action_just_pressed("dive"):
-			if yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 10:
+			if _dive_available():
 				if $WaveTimer.is_stopped():
 					$DiveSound.play()
 					caption.say("Wave activated.")
@@ -104,8 +114,6 @@ func _process(_delta: float) -> void:
 					$orcaanimated.position += Vector3.DOWN * 1.0 #Come back up
 				else:
 					_signify_invalid_action("Dive recharging")
-			else:
-				_signify_invalid_action("Dive unavailable")
 		elif Input.is_action_just_pressed("slap"):
 			if yachtsinkers.slap_enabled:
 				if $SlapTimer.is_stopped():
@@ -122,8 +130,6 @@ func _process(_delta: float) -> void:
 							object.detonate(false)
 				else:
 					_signify_invalid_action("Tail slap recharging")
-			else:
-				_signify_invalid_action("Tail slap unavailable")
 
 func receive_bullet():
 	if not level.level_over:
