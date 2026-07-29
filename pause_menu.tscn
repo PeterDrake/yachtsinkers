@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://73ld43bownb0"]
 
 [ext_resource type="Script" uid="uid://cdcq5lo4lq35d" path="res://pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="Theme" uid="uid://bi14d5k5kfkal" path="res://UI.tres" id="2_nwcfo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwcfo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p81d2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05uyy"]
 
 [node name="PauseMenu" type="Control" unique_id=290838109]
 process_mode = 2
@@ -32,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_nwcfo")
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=1091792887]
 layout_mode = 2
@@ -52,13 +60,25 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="LeftPanel" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1949321904]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nwcfo")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1221192663]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ContinueButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2049052619]
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=845373686]
+custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p81d2")
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2049052619]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../../VBoxContainer2/InstructionsButton")
 focus_neighbor_top = NodePath("../../VBoxContainer2/InstructionsButton")
 focus_neighbor_right = NodePath("../RestartButton")
@@ -69,8 +89,10 @@ theme_override_font_sizes/font_size = 48
 text = "Continue"
 
 [node name="RestartButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1038856797]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../ContinueButton")
 focus_neighbor_top = NodePath("../ContinueButton")
 focus_neighbor_right = NodePath("../QuitButton")
@@ -81,8 +103,10 @@ theme_override_font_sizes/font_size = 48
 text = "Restart Level"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1365439469]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../RestartButton")
 focus_neighbor_top = NodePath("../RestartButton")
 focus_neighbor_right = NodePath("../../VBoxContainer2/SettingsButton")
@@ -92,13 +116,25 @@ focus_previous = NodePath("../RestartButton")
 theme_override_font_sizes/font_size = 48
 text = "Quit to Title"
 
+[node name="Panel2" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=777585329]
+custom_minimum_size = Vector2(400, 110)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p81d2")
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=953045439]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=912260969]
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1919140351]
+custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p81d2")
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=912260969]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../../VBoxContainer/QuitButton")
 focus_neighbor_top = NodePath("../../VBoxContainer/QuitButton")
 focus_neighbor_right = NodePath("../AudioLibraryButton")
@@ -109,8 +145,10 @@ theme_override_font_sizes/font_size = 48
 text = "Settings"
 
 [node name="AudioLibraryButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617347346]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../SettingsButton")
 focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_right = NodePath("../InstructionsButton")
@@ -121,8 +159,10 @@ theme_override_font_sizes/font_size = 48
 text = "Audio Library"
 
 [node name="InstructionsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=617886323]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../AudioLibraryButton")
 focus_neighbor_top = NodePath("../AudioLibraryButton")
 focus_neighbor_right = NodePath("../../../Title")
@@ -131,6 +171,16 @@ focus_next = NodePath("../../../Title")
 focus_previous = NodePath("../AudioLibraryButton")
 theme_override_font_sizes/font_size = 48
 text = "Instructions"
+
+[node name="Panel2" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1201549060]
+custom_minimum_size = Vector2(400, 110)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p81d2")
+
+[node name="RightPanel" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=977271426]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_05uyy")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
