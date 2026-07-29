@@ -37,7 +37,7 @@ func _check_for_collisions():
 			var collider = get_slide_collision(i).get_collider()
 			if "Rock" in collider.name and velocity != Vector3.ZERO:
 				$RockHitSound.play()
-				take_damage("You collided with a rock.")
+				take_damage("You hit a rock.")
 			elif "Border" in collider.name and velocity != Vector3.ZERO:
 				$BorderSound.play()
 				caption.say("[Hitting Border]")

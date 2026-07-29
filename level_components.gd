@@ -41,7 +41,7 @@ func _ready() -> void:
 func restore_level() -> void:
 	$Caption.grab_focus()
 	_update_echolocation_width()
-	$Player/CollisionTimer.wait_time = 1.0 / yachtsinkers.game_speed
+	$Player/CollisionTimer.wait_time = 2.0 / yachtsinkers.game_speed
 	$Player/WaveTimer.wait_time = 20.0 / yachtsinkers.game_speed
 	$Player/SlapTimer.wait_time = 5.0 / yachtsinkers.game_speed
 
