@@ -41,6 +41,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_nwcfo")
 
+[node name="Panel2" type="Panel" parent="VBoxContainer" unique_id=532894333]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdmo1")
+
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=1091792887]
 layout_mode = 2
 size_flags_vertical = 0
@@ -68,11 +73,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_nwcfo")
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1221192663]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=845373686]
-custom_minimum_size = Vector2(400, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_p81d2")
 
 [node name="ContinueButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2049052619]
 custom_minimum_size = Vector2(400, 0)
@@ -124,11 +124,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_p81d2")
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=953045439]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1919140351]
-custom_minimum_size = Vector2(400, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_p81d2")
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=912260969]
 custom_minimum_size = Vector2(400, 0)
