@@ -43,7 +43,7 @@ func _on_visual_hint_timer_timeout() -> void:
 	$VisualHint.text = ""
 
 func display_dialogue(this_orca_lines) -> void:
-	$Caption.text = ""
+	$Caption.set_caption_text("")
 	$Dialogue.focus_mode = 2
 	$Caption.focus_mode = 0
 	$Dialogue.show()
@@ -54,14 +54,14 @@ func display_dialogue(this_orca_lines) -> void:
 
 func _display_next_line() -> void:
 	$Dialogue.text = lines[line_index]
-	line_index += 1 
+	line_index += 1
 
 func _on_dialogue_pressed() -> void:
 	if line_index < lines.size():
 		_display_next_line()
 	else:
 		$Dialogue.focus_mode = 0
-		$Caption.text = ""
+		$Caption.set_caption_text("")
 		$Caption.focus_mode = 2
 		$Dialogue.hide()
 		$Caption.grab_focus()

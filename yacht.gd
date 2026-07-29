@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var speech := get_node('../LevelComponents/Speech')
+@onready var caption := get_node('../LevelComponents/Caption')
 @onready var player := get_node('../LevelComponents/Player')
 @onready var yachtsinkers := get_node('../..')
 @onready var level := get_node("..")
@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 		if not shooting and player and position.distance_to(player.position) < gun_range:
 			shooting = true
 			$ReloadSound.play()  # Loading Sound
-			speech.say("Loading gun...")
+			caption.say("Loading gun...")
 			await get_tree().create_timer(2.0).timeout
 			if $ShotTimer.is_stopped(): # May have been started by a wave
 				$ShotSound.play()  # Shooting Sound
@@ -39,7 +39,7 @@ func _process(_delta: float) -> void:
 				if position.distance_to(player.position) < gun_range:
 					player.receive_bullet()
 				else:
-					speech.say("Gun missed.")
+					caption.say("Gun missed.")
 			shooting = false
 
 func _on_buoy_sound_finished() -> void:
@@ -54,7 +54,7 @@ func receive_hit(damage) -> void:
 	if not sinking:
 		health -= damage
 		if health <= 0:
-			speech.say("Yacht destroyed")
+			caption.say("Yacht destroyed")
 			$BoatSound.stop()
 			$DestructionSound.play()
 			sinking = true
@@ -63,7 +63,7 @@ func receive_hit(damage) -> void:
 			yachtsinkers.display_victory()
 			queue_free()
 		else:
-			speech.say("Yacht health: " + str(health))
+			caption.say("Yacht health: " + str(health))
 
 func receive_bite() -> void:
 	$RudderSound.queue_free()

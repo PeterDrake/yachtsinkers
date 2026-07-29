@@ -5,7 +5,7 @@ const ROTATION_SPEED := 1.5
 var degrees := 0
 var health := 5
 
-@onready var speech := get_node("../Speech")
+@onready var caption := get_node("../Caption")
 @onready var visual_hint := get_node("../VisualHint")
 @onready var yacht := get_node("../../Yacht")
 @onready var rudder := get_node("../../Yacht/RudderSound")
@@ -39,7 +39,7 @@ func _check_for_collisions():
 				take_damage("You collided with a rock.")
 			elif "Border" in collider.name and velocity != Vector3.ZERO:
 				$BorderSound.play()
-				speech.say("[Hitting Border]")
+				caption.say("[Hitting Border]")
 			elif collider.name == "Yacht":
 				if not collider.sinking:
 					$YachtHitSound.play()
@@ -54,12 +54,12 @@ func take_damage(reason: String):
 		health -= 1
 		if health == 0:
 			level.level_over = true
-			speech.say(reason + "\nYou have died")
+			caption.say(reason + "\nYou have died")
 			await get_tree().create_timer(2.0).timeout
 			yachtsinkers.display_defeat()
 			queue_free()
 		else:
-			speech.say(reason + "\nYour health: " + str(health))
+			caption.say(reason + "\nYour health: " + str(health))
 
 func _rudder_bite_available() -> bool:
 	return yachtsinkers.bite_enabled and rudder and global_position.distance_to(rudder.global_position) < 3
@@ -86,7 +86,7 @@ func _process(_delta: float) -> void:
 		elif Input.is_action_just_pressed("bite"):
 			if _rudder_bite_available():
 				$BiteSound.play()
-				speech.say("Rudder bitten off.")
+				caption.say("Rudder bitten off.")
 				yacht.receive_bite()
 				$orcaanimated.animate_ability("bite")
 			else:
@@ -95,7 +95,7 @@ func _process(_delta: float) -> void:
 			if yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 10:
 				if $WaveTimer.is_stopped():
 					$DiveSound.play()
-					speech.say("Wave activated.")
+					caption.say("Wave activated.")
 					$WaveTimer.start()
 					yacht.receive_wave()
 					$orcaanimated.position -= Vector3.DOWN * 1.0 #Go down for animation
@@ -110,7 +110,7 @@ func _process(_delta: float) -> void:
 			if yachtsinkers.slap_enabled:
 				if $SlapTimer.is_stopped():
 					$SlapSound.play()
-					speech.say("Tail slap activated.")
+					caption.say("Tail slap activated.")
 					$SlapTimer.start()
 					$orcaanimated.animate_ability("slap")
 					for object in level.get_children():

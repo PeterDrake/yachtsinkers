@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 @export var lines : Array[String]
 
-@onready var speech := get_node("../LevelComponents/Speech")
 @onready var player := get_node("../LevelComponents/Player")
 @onready var yachtsinkers := get_node("../..")
 @onready var level := get_node("..")

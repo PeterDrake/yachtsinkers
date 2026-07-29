@@ -1,6 +1,5 @@
 extends StaticBody3D
 
-@onready var speech := get_node("../Speech")
 @onready var player := get_node("../Player")
 @onready var level := get_node("../..")
 
