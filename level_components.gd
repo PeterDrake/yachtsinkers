@@ -61,7 +61,7 @@ func _on_dialogue_pressed() -> void:
 		_display_next_line()
 	else:
 		$Dialogue.focus_mode = 0
-		$Caption.text = "(Messages will appear here.)"
+		$Caption.text = ""
 		$Caption.focus_mode = 2
 		$Dialogue.hide()
 		$Caption.grab_focus()
