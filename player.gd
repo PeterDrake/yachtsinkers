@@ -96,7 +96,7 @@ func _process(_delta: float) -> void:
 		elif Input.is_action_just_pressed("bite"):
 			if _rudder_bite_available():
 				$BiteSound.play()
-				caption.say("Rudder bitten off.")
+				#caption.say("Rudder bitten off.")
 				yacht.receive_bite()
 				$orcaanimated.animate_ability("bite")
 			else:
@@ -105,7 +105,7 @@ func _process(_delta: float) -> void:
 			if _dive_available():
 				if $WaveTimer.is_stopped():
 					$DiveSound.play()
-					caption.say("Wave activated.")
+					#caption.say("Wave activated.")
 					$WaveTimer.start()
 					yacht.receive_wave()
 					$orcaanimated.position -= Vector3.DOWN * 1.0 #Go down for animation
@@ -118,7 +118,7 @@ func _process(_delta: float) -> void:
 			if yachtsinkers.slap_enabled:
 				if $SlapTimer.is_stopped():
 					$SlapSound.play()
-					caption.say("Tail slap activated.")
+					#caption.say("Tail slap activated.")
 					$SlapTimer.start()
 					$orcaanimated.animate_ability("slap")
 					for object in level.get_children():
