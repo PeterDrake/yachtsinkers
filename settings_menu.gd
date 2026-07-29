@@ -34,7 +34,7 @@ func _ready() -> void:
 	_bus_index = AudioServer.get_bus_index("music")
 	var music_slider = $VBoxContainer/HBoxContainer/VBoxContainer/MusicSlider
 	music_slider.value = 10 * db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
-
+	
 func _on_master_slider_value_changed(value: float) -> void:
 	if visible:
 		_bus_index = AudioServer.get_bus_index("Master")
@@ -60,4 +60,4 @@ func _on_health_slider_value_changed(value: float) -> void:
 	yachtsinkers.starting_health = value
 
 func _on_speed_slider_value_changed(value: float) -> void:
-	yachtsinkers.game_speed = value
+	yachtsinkers.game_speed = value / 5.0

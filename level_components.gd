@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var yachtsinkers := get_node("../..")
 @onready var level := get_node("..")
-
+@onready var s
 var lines
 var line_index
 var undiscovered_ability = load("res://sprites/undiscovered_ability.png")
@@ -20,7 +20,7 @@ func _ready() -> void:
 		yachtsinkers.ram_damage = 1
 	if level_number <= 2:
 		yachtsinkers.dive_enabled = false
-		yachtsinkers.starting_health = 5.0
+		yachtsinkers.health_bonus = false
 	yachtsinkers.slap_enabled = false
 	yachtsinkers.player_speed = 250.0
 	if not yachtsinkers.bite_enabled:
@@ -36,6 +36,7 @@ func _ready() -> void:
 	else:
 		update_indicator("slap_unavail")
 	_update_health()
+	restore_level()
 
 func restore_level() -> void:
 	$Caption.grab_focus()
@@ -57,7 +58,9 @@ func _update_echolocation_width() -> void:
 
 func _update_health() -> void:
 	$Player.health = yachtsinkers.starting_health
-
+	if yachtsinkers.health_bonus:
+		$Player.health += 5
+	
 func _on_visual_hint_timer_timeout() -> void:
 	$VisualHint.text = ""
 

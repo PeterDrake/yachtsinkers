@@ -18,7 +18,7 @@ func play_dialog():
 	elif my_name == "Phil":
 		yachtsinkers.bite_enabled = true
 	elif my_name == "Clara":
-		yachtsinkers.starting_health += 5
+		yachtsinkers.health_bonus = true
 		player.health += 5
 	elif my_name == "Mary":
 		yachtsinkers.dive_enabled = true

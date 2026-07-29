@@ -3,7 +3,7 @@ extends CharacterBody3D
 const ROTATION_SPEED := 1.5
 
 var degrees := 0
-var health := 5
+var health : int
 
 @onready var caption := get_node("../Caption")
 @onready var visual_hint := get_node("../VisualHint")
