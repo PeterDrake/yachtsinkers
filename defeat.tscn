@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://1kcegvvxlcc7"]
 
 [ext_resource type="Script" uid="uid://ceqka2o5odf52" path="res://defeat.gd" id="1_888is"]
+[ext_resource type="Theme" uid="uid://bi14d5k5kfkal" path="res://UI.tres" id="2_frb4q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_muum1"]
 
 [node name="Defeat" type="Control" unique_id=2122777761]
 process_mode = 3
@@ -27,9 +30,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_oerog")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1598158506]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_top = -106.5
+offset_bottom = 106.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -58,21 +64,30 @@ focus_neighbor_bottom = NodePath("../TryAgainButton")
 focus_next = NodePath("../TryAgainButton")
 focus_previous = NodePath("../Title")
 focus_mode = 3
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 48
 text = "Those pesky yachters gotcha!"
+horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="TryAgainButton" type="Button" parent="VBoxContainer" unique_id=1488913545]
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1390483002]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_muum1")
+
+[node name="TryAgainButton" type="Button" parent="VBoxContainer" unique_id=1488913545]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../Text")
 focus_neighbor_top = NodePath("../Text")
 focus_neighbor_right = NodePath("../Title")
 focus_neighbor_bottom = NodePath("../Title")
 focus_next = NodePath("../Title")
 focus_previous = NodePath("../Text")
-theme_override_font_sizes/font_size = 24
-text = "Try Again"
+theme = ExtResource("2_frb4q")
+theme_override_font_sizes/font_size = 32
+text = "Restart Level"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/TryAgainButton" to="." method="_on_try_again_button_pressed"]
