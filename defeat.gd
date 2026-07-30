@@ -6,7 +6,7 @@ func _on_visibility_changed() -> void:
 	if visible:
 		var n = yachtsinkers.current_level_number
 		$VBoxContainer/Title.text = "Defeat: Level " + str(n)
-		$VBoxContainer/Title.accessibility_name = "Defeat: Level " + str(n)
+		#$VBoxContainer/Title.accessibility_name = "Defeat: Level " + str(n)
 		if get_tree().is_accessibility_enabled():
 			$VBoxContainer/Title.grab_focus()
 		else:

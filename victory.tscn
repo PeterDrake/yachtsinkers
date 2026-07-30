@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://icd46btl30pd"]
 
 [ext_resource type="Script" uid="uid://bik4e6fau351b" path="res://victory.gd" id="1_7bnjr"]
+[ext_resource type="Script" uid="uid://dbmo7xnohfe3n" path="res://buttonize.gd" id="2_qr7ta"]
 [ext_resource type="Theme" uid="uid://bi14d5k5kfkal" path="res://UI.tres" id="2_v31sk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
@@ -51,6 +52,7 @@ focus_previous = NodePath("../AdvanceButton")
 focus_mode = 3
 theme_override_font_sizes/font_size = 64
 horizontal_alignment = 1
+script = ExtResource("2_qr7ta")
 
 [node name="Text" type="Label" parent="VBoxContainer" unique_id=25926822]
 custom_minimum_size = Vector2(1000, 1)
