@@ -39,7 +39,10 @@ func _ready() -> void:
 	restore_level()
 
 func restore_level() -> void:
-	$Caption.grab_focus()
+	if $Dialogue.visible:
+		$Dialogue.grab_focus()
+	else:
+		$Caption.grab_focus()
 	_update_echolocation_width()
 	$Player/CollisionTimer.wait_time = 2.0 / yachtsinkers.game_speed
 	$Player/WaveTimer.wait_time = 20.0 / yachtsinkers.game_speed
