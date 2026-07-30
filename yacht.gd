@@ -13,9 +13,15 @@ var sinking := false
 var shooting := false
 var speed := 150
 
-const BARKS := {1: ["poor", "bigger", "flippy"],
-				2: ["shoot", "abandon", "wild"],
-				3: ["mines", "yacht mine", "poors", "king"]}
+var BARKS := {1: [load('res://audio/yachtpeople_orcaattack.wav'),
+					load('res://audio/yachtpeople_biggeryacht.wav'),
+					load('res://audio/yachtpeople_swimtrunksetc.wav')],
+				2: [load('res://audio/yachtpeople_shoother.wav'),
+					load('res://audio/yachtpeople_wildorcas.wav')],
+				3: [load('res://audio/yachtpeople_mines.wav'),
+					load('res://audio/yachtpeople_mines2.wav'),
+					load('res://audio/yachtpeople_taxes.wav'),
+					load('res://audio/yachtpeople_kingoftheworld.wav')]}
 
 const WAYPOINTS := [Vector3(-20, 0, -20), Vector3(-20, 0, 20), Vector3(20, 0, 20), Vector3(20, 0, -20)]
 
@@ -51,14 +57,14 @@ func _process(_delta: float) -> void:
 func _crew_speech() -> void:
 	if level_number == 1:
 		if $Node/FlippingOrcaPlayer.visible and global_position.distance_to(player.global_position) < 30:
-			print("flipping orca")
+			$Node/FlippingOrcaPlayer.play()
 			$Node/FlippingOrcaPlayer.hide()
 	elif level_number == 2:
 		if $Node/RammedPlayer.visible and health == 19:
-			print("rammed us")
+			$Node/RammedTimer.start()
 			$Node/RammedPlayer.hide()
 		elif $Node/AbandonPlayer.visible and health == 1:
-			print("abandon ship")
+			$Node/AbandonPlayer.play()
 			$Node/AbandonPlayer.hide()
 
 func _on_buoy_sound_finished() -> void:
@@ -100,5 +106,8 @@ func sonar_return() -> void:
 
 func _on_random_bark_timer_timeout() -> void:
 	var barks = BARKS[level_number]
-	print(barks)
-	print(barks[randi() % barks.size()])
+	$Node/RandomBarkPlayer.stream = barks[randi() % barks.size()]
+	$Node/RandomBarkPlayer.play()
+
+func _on_rammed_timer_timeout() -> void:
+	$Node/RammedPlayer.play()

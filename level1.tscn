@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="2_v38iq"]
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="3_usj0q"]
 [ext_resource type="PackedScene" uid="uid://br4wdelphw7yr" path="res://border.tscn" id="4_crycw"]
+[ext_resource type="AudioStream" uid="uid://47iwoqim3x65" path="res://audio/yachtpeople_orcaspotted.wav" id="6_xy4tn"]
 [ext_resource type="AudioStream" uid="uid://b40grg2v3ax4i" path="res://audio/2.Gladis.wav" id="7_i2041"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_n8vhr"]
 
@@ -56,13 +57,14 @@ transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0
 [node name="Node" type="Node" parent="Yacht" unique_id=571971624]
 
 [node name="FlippingOrcaPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=787942986]
+stream = ExtResource("6_xy4tn")
 bus = &"sfx"
 
 [node name="RandomBarkPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=1341898841]
 bus = &"sfx"
 
 [node name="RandomBarkTimer" type="Timer" parent="Yacht/Node" unique_id=361466593]
-wait_time = 5.0
+wait_time = 30.0
 autostart = true
 
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("7_n8vhr")]
