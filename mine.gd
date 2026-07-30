@@ -19,7 +19,8 @@ func detonate(hit := true) -> void:
 		exploding = true
 		if hit:  # Collision with orca rather than tail slap
 			$CollisionShape3D.disabled = true
-			player.take_damage("You hit a mine.")
+			#player.take_damage("You hit a mine.")
+			player.take_damage("")
 		$DetonationSound.play()
 		$"FAB converted".queue_free()
 		if not mine_explosions_enabled_box.button_pressed:

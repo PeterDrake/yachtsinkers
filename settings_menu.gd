@@ -27,30 +27,30 @@ func _on_visibility_changed() -> void:
 func _ready() -> void:
 	_bus_index = AudioServer.get_bus_index("Master")
 	var master_slider = $VBoxContainer/HBoxContainer/VBoxContainer/MasterSlider
-	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
+	master_slider.value = 10 * db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
 	_bus_index = AudioServer.get_bus_index("sfx")
 	var sfx_slider = $VBoxContainer/HBoxContainer/VBoxContainer/SoundEffectsSlider
-	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
+	sfx_slider.value = 10 * db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
 	_bus_index = AudioServer.get_bus_index("music")
 	var music_slider = $VBoxContainer/HBoxContainer/VBoxContainer/MusicSlider
-	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
-
+	music_slider.value = 10 * db_to_linear(AudioServer.get_bus_volume_db(_bus_index))
+	
 func _on_master_slider_value_changed(value: float) -> void:
 	if visible:
 		_bus_index = AudioServer.get_bus_index("Master")
-		AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value))
+		AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value / 10.0))
 		$MasterPlayer.play()
 
 func _on_sound_effects_slider_value_changed(value: float) -> void:
 	if visible:
 		_bus_index = AudioServer.get_bus_index("sfx")
-		AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value))
+		AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value / 10.0))
 		$SfxPlayer.play()
 
 func _on_music_slider_value_changed(value: float) -> void:
 	if visible:
 		_bus_index = AudioServer.get_bus_index("music")
-		AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value))
+		AudioServer.set_bus_volume_db(_bus_index, linear_to_db(value / 10.0))
 		$MusicPlayer.play()
 
 func _on_echolocation_width_slider_value_changed(value: float) -> void:
@@ -60,4 +60,4 @@ func _on_health_slider_value_changed(value: float) -> void:
 	yachtsinkers.starting_health = value
 
 func _on_speed_slider_value_changed(value: float) -> void:
-	yachtsinkers.game_speed = value
+	yachtsinkers.game_speed = value / 5.0

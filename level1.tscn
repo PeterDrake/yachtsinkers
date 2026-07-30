@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="2_v38iq"]
 [ext_resource type="PackedScene" uid="uid://baaiohuuwnua8" path="res://yacht.tscn" id="3_usj0q"]
 [ext_resource type="PackedScene" uid="uid://br4wdelphw7yr" path="res://border.tscn" id="4_crycw"]
+[ext_resource type="AudioStream" uid="uid://47iwoqim3x65" path="res://audio/yachtpeople_orcaspotted.wav" id="6_xy4tn"]
+[ext_resource type="AudioStream" uid="uid://b40grg2v3ax4i" path="res://audio/2.Gladis.wav" id="7_i2041"]
 [ext_resource type="PackedScene" uid="uid://c64plly6bqef" path="res://orca.tscn" id="7_n8vhr"]
 
 [node name="Level1" type="Node3D" unique_id=84596190]
@@ -15,8 +17,17 @@ script = ExtResource("1_v38iq")
 [node name="Player" parent="LevelComponents" index="2" unique_id=219399317]
 transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.742278e-08, -7.642742e-15, -1, 0, 0, 58)
 
-[node name="Rock" parent="LevelComponents" index="4" unique_id=1796733267]
+[node name="Rock" parent="LevelComponents" index="3" unique_id=1796733267]
 transform = Transform3D(9.659258, 0, -2.5881906, 0, 10, 0, 2.5881906, 0, 9.659258, -12, 0, 39)
+
+[node name="VisualHint" parent="LevelComponents" index="6" unique_id=793958474]
+offset_left = -239.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 88.0
+
+[node name="Dialogue" parent="LevelComponents" index="8" unique_id=472846714]
+offset_top = -53.0
 
 [node name="Rock2" parent="LevelComponents" unique_id=1200073297 instance=ExtResource("2_v38iq")]
 transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, 17, 0, 29)
@@ -43,6 +54,19 @@ health = 10
 [node name="Sketchfab_Scene" parent="Yacht" index="0" unique_id=529316871]
 transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, 0.66986465, 0.044659197, -4.545868)
 
+[node name="Node" type="Node" parent="Yacht" unique_id=571971624]
+
+[node name="FlippingOrcaPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=787942986]
+stream = ExtResource("6_xy4tn")
+bus = &"sfx"
+
+[node name="RandomBarkPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=1341898841]
+bus = &"sfx"
+
+[node name="RandomBarkTimer" type="Timer" parent="Yacht/Node" unique_id=361466593]
+wait_time = 30.0
+autostart = true
+
 [node name="DelilahOrca" parent="." unique_id=1879044386 instance=ExtResource("7_n8vhr")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 10, 0, 38)
 lines = Array[String](["GLADIS: Get in loser. We're going YachtSinking. [Press space to continue.]", "DELILAH: Schweet.", "GLADIS: Any advice, Delilah?", "DELILAH: Try to ram the yacht very very hard.", "Your ram damage has increased."])
@@ -51,7 +75,14 @@ lines = Array[String](["GLADIS: Get in loser. We're going YachtSinking. [Press s
 transform = Transform3D(0.49999997, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, 0.49999997, -12, 0, 30)
 lines = Array[String](["GLADIS: Phil, I need to slow these yachts down. [Press space to continue.]", "PHIL: You could try biting the rudder off.", "GLADIS: How would I do that?", "PHIL: Get behind the yacht. When you hear the rudder splashing, press 1."])
 
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=1700400119]
+stream = ExtResource("7_i2041")
+bus = &"music"
+playback_type = 1
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="Yacht/Node/RandomBarkTimer" to="Yacht" method="_on_random_bark_timer_timeout"]
+[connection signal="finished" from="LevelMusic" to="." method="_on_level_music_finished"]
 
 [editable path="LevelComponents"]
 [editable path="LevelComponents/Rock"]

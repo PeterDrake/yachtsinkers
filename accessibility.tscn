@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://iogcu7fx8wuf"]
 
 [ext_resource type="Script" uid="uid://cgr2k4ygw56la" path="res://accessibility.gd" id="1_x62nd"]
+[ext_resource type="Theme" uid="uid://bi14d5k5kfkal" path="res://UI.tres" id="2_dsp45"]
+[ext_resource type="StyleBox" uid="uid://3ry3a7e2dkyv" path="res://UI_text.tres" id="2_i1t6q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
-bg_color = Color(0, 0.17626616, 0.31130394, 1)
+bg_color = Color(0, 0.1764706, 0.30980393, 1)
 
 [node name="Accessibility" type="Control" unique_id=2122777761]
 process_mode = 3
@@ -59,27 +61,33 @@ focus_next = NodePath("../ReturnButton")
 focus_previous = NodePath("../Title")
 focus_mode = 3
 theme_override_font_sizes/font_size = 22
-text = "Created during the July 2026 Making Games Accessible jam, YachtSinkers! is meant to be as accessible as possible, including to blind players. It supports screenreaders.
+theme_override_styles/normal = ExtResource("2_i1t6q")
+theme_override_styles/focus = ExtResource("2_i1t6q")
+text = "Created during the July 2026 Making Games Accessible jam, YachtSinkers! is meant to be as accessible as possible.
 
-Deaf players should also be able to complete the game, as all necessary information is available visually, including subtitles.
+Blind players should be able to play with a screen reader. Headphones are strongly recommended to locate directions of sounds.
 
-The game can be played using only the keyboard.
+Deaf players should be able to play with on-screen visuals.
 
+There are mild flashing lights in level 3, which may affect photosensitive players. These are disabled by default and can be enabled in the settings.
 
-
+The game can be played without a mouse.
 
 "
 autowrap_mode = 2
 
 [node name="ReturnButton" type="Button" parent="VBoxContainer" unique_id=1488913545]
+custom_minimum_size = Vector2(600, 50)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_neighbor_left = NodePath("../Text")
 focus_neighbor_top = NodePath("../Text")
 focus_neighbor_right = NodePath("../Title")
 focus_neighbor_bottom = NodePath("../Title")
 focus_next = NodePath("../Title")
 focus_previous = NodePath("../Text")
+theme = ExtResource("2_dsp45")
 theme_override_font_sizes/font_size = 24
 text = "Return"
 

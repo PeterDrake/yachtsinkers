@@ -1,0 +1,34 @@
+[gd_resource type="Theme" format=3 uid="uid://bi14d5k5kfkal"]
+
+[ext_resource type="StyleBox" uid="uid://887u6k07xff8" path="res://UI_focus.tres" id="1_w50aj"]
+[ext_resource type="StyleBox" uid="uid://c3bmoh2mdcsph" path="res://UI_normal.tres" id="2_1iots"]
+[ext_resource type="StyleBox" uid="uid://bavwchgucyjkj" path="res://UI_pressed.tres" id="3_w2jbw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mom7w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nuqgq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lgly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0824t"]
+
+[resource]
+Button/colors/font_color = Color(0, 0.12598908, 0.318388, 1)
+Button/colors/font_focus_color = Color(0, 0.1254902, 0.31764707, 1)
+Button/colors/font_hover_color = Color(0, 0.1254902, 0.31764707, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0.1254902, 0.31764707, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/styles/focus = ExtResource("1_w50aj")
+Button/styles/hover = ExtResource("1_w50aj")
+Button/styles/normal = ExtResource("2_1iots")
+Button/styles/pressed = ExtResource("3_w2jbw")
+CheckBox/colors/checkbox_checked_color = Color(1, 1, 1, 1)
+CheckBox/colors/checkbox_unchecked_color = Color(0.05882353, 0.12941177, 0.18431373, 1)
+CheckBox/colors/font_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_focus_color = Color(0.83137256, 0.93333334, 1, 1)
+CheckBox/colors/font_hover_color = Color(0.83137256, 0.93333334, 1, 1)
+CheckBox/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_mom7w")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_nuqgq")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_7lgly")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_0824t")

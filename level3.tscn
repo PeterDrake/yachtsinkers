@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dffcb3yearue3" path="res://audio/sonar_yacht.wav" id="10_siwpi"]
 [ext_resource type="PackedScene" uid="uid://13ia6j0wrl6j" path="res://models/yacht1.glb" id="11_l2pgs"]
 [ext_resource type="AudioStream" uid="uid://brut1flk7i3f6" path="res://audio/yacht_destruction.wav" id="11_siwpi"]
+[ext_resource type="AudioStream" uid="uid://b40grg2v3ax4i" path="res://audio/2.Gladis.wav" id="15_0m7xm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2272n"]
 size = Vector3(4.039499, 1.9121094, 19.08239)
@@ -32,8 +33,17 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 [node name="Player" parent="LevelComponents" index="2" unique_id=219399317]
 transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.742278e-08, -7.642742e-15, -1, 0, 0, 51)
 
-[node name="Rock" parent="LevelComponents" index="4" unique_id=1796733267]
+[node name="Rock" parent="LevelComponents" index="3" unique_id=1796733267]
 transform = Transform3D(4.330127, 0, -2.5, 0, 5, 0, 2.5, 0, 4.330127, -8.552256, 4.7683716e-07, 42.41801)
+
+[node name="VisualHint" parent="LevelComponents" index="6" unique_id=793958474]
+offset_left = -239.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 88.0
+
+[node name="Dialogue" parent="LevelComponents" index="8" unique_id=472846714]
+offset_top = -53.0
 
 [node name="Rock2" parent="LevelComponents" unique_id=2115460905 instance=ExtResource("2_ymh28")]
 transform = Transform3D(-6.0621777, 0, -3.4999998, 0, 7, 0, 3.4999998, 0, -6.0621777, 13, 0, 33)
@@ -140,8 +150,23 @@ playback_type = 1
 [node name="FAB converted" parent="Yacht" unique_id=215462717 instance=ExtResource("11_l2pgs")]
 transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 0, -0.25779188, 0)
 
+[node name="Node" type="Node" parent="Yacht" unique_id=1154696513]
+
+[node name="RandomBarkPlayer" type="AudioStreamPlayer3D" parent="Yacht/Node" unique_id=2108548753]
+bus = &"sfx"
+
+[node name="RandomBarkTimer" type="Timer" parent="Yacht/Node" unique_id=279976458]
+wait_time = 5.0
+autostart = true
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=297788535]
+stream = ExtResource("15_0m7xm")
+bus = &"music"
+playback_type = 1
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="finished" from="Yacht/RudderSound" to="Yacht" method="_on_rudder_sound_finished"]
 [connection signal="finished" from="Yacht/BoatSound" to="Yacht" method="_on_buoy_sound_finished"]
+[connection signal="timeout" from="Yacht/Node/RandomBarkTimer" to="Yacht" method="_on_random_bark_timer_timeout"]
 
 [editable path="LevelComponents"]

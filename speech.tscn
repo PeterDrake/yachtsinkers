@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bsjjrexwnmn13"]
+[gd_scene format=3 uid="uid://bbggsysb1fi0s"]
 
-[ext_resource type="Script" uid="uid://baepkwsak77wd" path="res://speech.gd" id="1_1tdmq"]
+[ext_resource type="Script" uid="uid://csmd634lk64qy" path="res://speech.gd" id="1_1tdmq"]
 
 [node name="Speech" type="Node" unique_id=106919617]
 script = ExtResource("1_1tdmq")

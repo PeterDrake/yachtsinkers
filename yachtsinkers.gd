@@ -15,6 +15,7 @@ var ram_damage := 1
 var bite_enabled := false
 var dive_enabled := false
 var slap_enabled := false
+var health_bonus := false
 
 func restart_level():
 	end_level()

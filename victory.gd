@@ -6,12 +6,15 @@ extends Control
 func _on_visibility_changed() -> void:
 	if visible:
 		var n = yachtsinkers.current_level_number
+		print("Current level number: " + str(n))
 		$VBoxContainer/Title.text = "Victory: Level " + str(n)
+		$VBoxContainer/Title.accessibility_name = "Victory: Level " + str(n)
 		if n == 3:
 			$VBoxContainer/AdvanceButton.text = "Return to Title Screen"
 		else:
 			$VBoxContainer/AdvanceButton.text = "Continue to Level " + str(n + 1)
 		if get_tree().is_accessibility_enabled():
+			print("Putting focus on title")
 			$VBoxContainer/Title.grab_focus()
 		else:
 			$VBoxContainer/AdvanceButton.grab_focus()

@@ -3,14 +3,15 @@ extends CharacterBody3D
 const ROTATION_SPEED := 1.5
 
 var degrees := 0
-var health := 5
+var health : int
 
-@onready var speech := get_node("../Speech")
+@onready var caption := get_node("../Caption")
 @onready var visual_hint := get_node("../VisualHint")
 @onready var yacht := get_node("../../Yacht")
 @onready var rudder := get_node("../../Yacht/RudderSound")
 @onready var level := get_node("../..")
 @onready var yachtsinkers := get_node("../../..")
+@onready var components := get_node("../../LevelComponents")
 @onready var dialogue := get_node("../../LevelComponents/Dialogue")
 
 const SLAP_RANGE := 20
@@ -36,10 +37,11 @@ func _check_for_collisions():
 			var collider = get_slide_collision(i).get_collider()
 			if "Rock" in collider.name and velocity != Vector3.ZERO:
 				$RockHitSound.play()
-				take_damage("You collided with a rock.")
+				#take_damage("You hit a rock.")
+				take_damage("")
 			elif "Border" in collider.name and velocity != Vector3.ZERO:
 				$BorderSound.play()
-				speech.say("[Hitting Border]")
+				caption.say("[Hitting Border]")
 			elif collider.name == "Yacht":
 				if not collider.sinking:
 					$YachtHitSound.play()
@@ -50,19 +52,26 @@ func _check_for_collisions():
 				collider.detonate(true)
 
 func take_damage(reason: String):
+	if reason != "":
+		reason += "\n"
 	if not level.level_over:
 		health -= 1
 		if health == 0:
 			level.level_over = true
-			speech.say(reason + "\nYou have died")
+			caption.say(reason + "You have died")
+			#caption.say("You have died")
 			await get_tree().create_timer(2.0).timeout
 			yachtsinkers.display_defeat()
 			queue_free()
 		else:
-			speech.say(reason + "\nYour health: " + str(health))
+			caption.say(reason + "Your health: " + str(health))
+			#caption.say("Your health: " + str(health))
 
 func _rudder_bite_available() -> bool:
 	return yachtsinkers.bite_enabled and rudder and global_position.distance_to(rudder.global_position) < 3
+
+func _dive_available() -> bool:
+	return yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 10
 
 func _signify_invalid_action(text: String) -> void:
 	$InvalidActionSound.play()
@@ -71,11 +80,17 @@ func _signify_invalid_action(text: String) -> void:
 func _process(_delta: float) -> void:
 	if not dialogue.visible:
 		if _rudder_bite_available():
-			visual_hint.text = "Press 1 to bite rudder now!"
-			$"../VisualHintTimer".stop()
-		elif visual_hint.text == "Press 1 to bite rudder now!":
-			visual_hint.text = ""
-			$"../VisualHintTimer".stop()
+			components.update_indicator("bite_avail")
+		elif not _rudder_bite_available() and yachtsinkers.bite_enabled:
+			components.update_indicator("bite_unavail")
+		if _dive_available() and $WaveTimer.is_stopped():
+			components.update_indicator("dive_avail")
+		elif (not _dive_available() or not $WaveTimer.is_stopped()) and yachtsinkers.dive_enabled:
+			components.update_indicator("dive_unavail")
+		if yachtsinkers.slap_enabled and $SlapTimer.is_stopped():
+			components.update_indicator("slap_avail")
+		elif yachtsinkers.slap_enabled and not $SlapTimer.is_stopped():
+			components.update_indicator("slap_unavail")
 		if Input.is_action_just_pressed("space") and not dialogue.visible:
 			level.report_with_visual_hint("Echolocating...")
 			$SonarSound.play()
@@ -86,16 +101,16 @@ func _process(_delta: float) -> void:
 		elif Input.is_action_just_pressed("bite"):
 			if _rudder_bite_available():
 				$BiteSound.play()
-				speech.say("Rudder bitten off.")
+				#caption.say("Rudder bitten off.")
 				yacht.receive_bite()
 				$orcaanimated.animate_ability("bite")
 			else:
 				_signify_invalid_action("Bite unavailable")
 		elif Input.is_action_just_pressed("dive"):
-			if yachtsinkers.dive_enabled and yacht and global_position.distance_to(yacht.global_position) < 10:
+			if _dive_available():
 				if $WaveTimer.is_stopped():
 					$DiveSound.play()
-					speech.say("Wave activated.")
+					#caption.say("Wave activated.")
 					$WaveTimer.start()
 					yacht.receive_wave()
 					$orcaanimated.position -= Vector3.DOWN * 1.0 #Go down for animation
@@ -104,13 +119,11 @@ func _process(_delta: float) -> void:
 					$orcaanimated.position += Vector3.DOWN * 1.0 #Come back up
 				else:
 					_signify_invalid_action("Dive recharging")
-			else:
-				_signify_invalid_action("Dive unavailable")
 		elif Input.is_action_just_pressed("slap"):
 			if yachtsinkers.slap_enabled:
 				if $SlapTimer.is_stopped():
 					$SlapSound.play()
-					speech.say("Tail slap activated.")
+					#caption.say("Tail slap activated.")
 					$SlapTimer.start()
 					$orcaanimated.animate_ability("slap")
 					for object in level.get_children():
@@ -122,8 +135,6 @@ func _process(_delta: float) -> void:
 							object.detonate(false)
 				else:
 					_signify_invalid_action("Tail slap recharging")
-			else:
-				_signify_invalid_action("Tail slap unavailable")
 
 func receive_bullet():
 	if not level.level_over:

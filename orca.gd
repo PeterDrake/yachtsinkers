@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 @export var lines : Array[String]
 
-@onready var speech := get_node("../LevelComponents/Speech")
 @onready var player := get_node("../LevelComponents/Player")
 @onready var yachtsinkers := get_node("../..")
 @onready var level := get_node("..")
@@ -19,7 +18,7 @@ func play_dialog():
 	elif my_name == "Phil":
 		yachtsinkers.bite_enabled = true
 	elif my_name == "Clara":
-		yachtsinkers.starting_health += 5
+		yachtsinkers.health_bonus = true
 		player.health += 5
 	elif my_name == "Mary":
 		yachtsinkers.dive_enabled = true

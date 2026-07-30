@@ -10,8 +10,14 @@ func _ready() -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		level_over = false
+		if $LevelMusic:
+			$LevelMusic.play()
 		$LevelComponents.restore_level()
 
 func report_with_visual_hint(text: String) -> void:
 	$LevelComponents/VisualHint.text = text	
 	$LevelComponents/VisualHintTimer.start()
+
+func _on_level_music_finished() -> void:
+	if visible and $LevelMusic:
+		$LevelMusic.play()

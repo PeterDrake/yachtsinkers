@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://crsb702v3qubh"]
 
 [ext_resource type="PackedScene" uid="uid://b2lldqx6plupy" path="res://level_components.tscn" id="1_u52ul"]
+[ext_resource type="AudioStream" uid="uid://cdkhnxsd140tu" path="res://audio/2.Gladis.mp3" id="2_vonw3"]
 
 [node name="Level" type="Node3D" unique_id=84596190]
 
 [node name="LevelComponents" parent="." unique_id=1029447965 instance=ExtResource("1_u52ul")]
 
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=1468155131]
+stream = ExtResource("2_vonw3")
+bus = &"music"
+playback_type = 1
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="finished" from="LevelMusic" to="LevelComponents" method="_on_level_music_finished"]

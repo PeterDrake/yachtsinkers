@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cca0fudfwucjs" path="res://player.tscn" id="1_jvp1j"]
 [ext_resource type="Script" uid="uid://dgndjh1ahdbf2" path="res://level_components.gd" id="1_wcufj"]
-[ext_resource type="PackedScene" uid="uid://bsjjrexwnmn13" path="res://speech.tscn" id="3_mvxmv"]
 [ext_resource type="PackedScene" uid="uid://bxsllf8ybqpya" path="res://rock.tscn" id="4_82ii5"]
+[ext_resource type="PackedScene" uid="uid://b6gu0tmnbjees" path="res://caption.tscn" id="5_jnp46"]
+[ext_resource type="Texture2D" uid="uid://ch10xyiv1rs3j" path="res://sprites/undiscovered_ability.png" id="5_jvp1j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
 sky_top_color = Color(0.62549645, 0.72092956, 0.96595246, 1)
@@ -18,12 +19,6 @@ sky_material = SubResource("ProceduralSkyMaterial_noarx")
 background_mode = 2
 sky = SubResource("Sky_a0tk4")
 glow_enabled = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6jxr"]
-bg_color = Color(0, 0, 0, 0.24705882)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ix6xn"]
-bg_color = Color(0, 0, 0, 0.24705882)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4splp"]
 transparency = 1
@@ -48,31 +43,10 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, -0.9227412, -0.38542044, 0, 0.38542044, -0.9227412, 0, -1.5978748, -1.1316499)
 current = true
 
-[node name="Speech" parent="." unique_id=106919617 instance=ExtResource("3_mvxmv")]
-
 [node name="Rock" parent="." unique_id=1796733267 instance=ExtResource("4_82ii5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.447744, 4.7683716e-07, -0.5819893)
 
-[node name="Caption" type="Label" parent="." unique_id=120003237]
-custom_minimum_size = Vector2(100, -1)
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -45.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 10
-focus_mode = 2
-accessibility_live = 1
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_o6jxr")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ix6xn")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
+[node name="Caption" parent="." unique_id=765725501 instance=ExtResource("5_jnp46")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1374695697]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
@@ -82,8 +56,10 @@ mesh = SubResource("PlaneMesh_3qxw5")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -239.0
-offset_bottom = 88.0
+offset_left = -248.0
+offset_top = 8.0
+offset_right = -9.0
+offset_bottom = 96.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -106,6 +82,21 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 32
 text = "fsdsf"
 autowrap_mode = 2
+
+[node name="BiteIndicator" type="Sprite2D" parent="." unique_id=1818459424]
+position = Vector2(52, 52.249996)
+scale = Vector2(0.176, 0.175)
+texture = ExtResource("5_jvp1j")
+
+[node name="DiveIndicator" type="Sprite2D" parent="." unique_id=450833927]
+position = Vector2(155.99998, 52.249996)
+scale = Vector2(0.176, 0.175)
+texture = ExtResource("5_jvp1j")
+
+[node name="SlapIndicator" type="Sprite2D" parent="." unique_id=1246992189]
+position = Vector2(260, 52.249996)
+scale = Vector2(0.176, 0.175)
+texture = ExtResource("5_jvp1j")
 
 [connection signal="timeout" from="VisualHintTimer" to="." method="_on_visual_hint_timer_timeout"]
 [connection signal="pressed" from="Dialogue" to="." method="_on_dialogue_pressed"]

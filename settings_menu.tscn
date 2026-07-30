@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://br1a3kdte8j1h"]
 
 [ext_resource type="Script" uid="uid://judovvyrk1sv" path="res://settings_menu.gd" id="1_ufg0w"]
+[ext_resource type="Theme" uid="uid://bi14d5k5kfkal" path="res://UI.tres" id="2_d0eu6"]
 [ext_resource type="AudioStream" uid="uid://cba184lmg4ati" path="res://audio/volume.wav" id="2_mlw3h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oerog"]
 bg_color = Color(0, 0.17626616, 0.31130394, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_muum1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r55hg"]
 
 [node name="SettingsMenu" type="Control" unique_id=2122777761]
 process_mode = 3
@@ -51,6 +56,11 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="LeftPanel" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=288756968]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_muum1")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1863789700]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -77,8 +87,7 @@ focus_neighbor_bottom = NodePath("../SoundEffectsSlider")
 focus_next = NodePath("../SoundEffectsSlider")
 focus_previous = NodePath("../../../Title")
 accessibility_name = "Master volume"
-max_value = 1.0
-step = 0.1
+max_value = 10.0
 
 [node name="SoundEffectsLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1777148410]
 layout_mode = 2
@@ -96,8 +105,7 @@ focus_neighbor_bottom = NodePath("../MusicSlider")
 focus_next = NodePath("../MusicSlider")
 focus_previous = NodePath("../MasterSlider")
 accessibility_name = "Sound effects volume"
-max_value = 1.0
-step = 0.1
+max_value = 10.0
 
 [node name="MusicLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=448819451]
 layout_mode = 2
@@ -115,8 +123,17 @@ focus_neighbor_bottom = NodePath("../../VBoxContainer2/MineExplosionBox")
 focus_next = NodePath("../../VBoxContainer2/MineExplosionBox")
 focus_previous = NodePath("../SoundEffectsSlider")
 accessibility_name = "Music volume"
-max_value = 1.0
-step = 0.1
+max_value = 10.0
+
+[node name="BottomPanel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=722144164]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r55hg")
+
+[node name="MiddlePanel" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1619768377]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_muum1")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=202048014]
 layout_mode = 2
@@ -136,7 +153,13 @@ focus_neighbor_right = NodePath("../EcholocationWidthSlider")
 focus_neighbor_bottom = NodePath("../EcholocationWidthSlider")
 focus_next = NodePath("../EcholocationWidthSlider")
 focus_previous = NodePath("../../VBoxContainer/MusicSlider")
+theme = ExtResource("2_d0eu6")
 text = "Enable mine explosions (may affect photosensitive players)"
+
+[node name="AccessibilityPanel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1204821577]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r55hg")
 
 [node name="GameplayLabel2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=767926788]
 layout_mode = 2
@@ -167,7 +190,7 @@ value = 20.0
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 24
-text = "Player Health"
+text = "Player Starting Health"
 
 [node name="HealthSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1147721975]
 layout_mode = 2
@@ -178,7 +201,7 @@ focus_neighbor_right = NodePath("../SpeedSlider")
 focus_neighbor_bottom = NodePath("../SpeedSlider")
 focus_next = NodePath("../SpeedSlider")
 focus_previous = NodePath("../EcholocationWidthSlider")
-accessibility_name = "Player health"
+accessibility_name = "Player starting health"
 min_value = 1.0
 max_value = 20.0
 value = 5.0
@@ -199,15 +222,14 @@ focus_neighbor_bottom = NodePath("../ReturnButton")
 focus_next = NodePath("../ReturnButton")
 focus_previous = NodePath("../HealthSlider")
 accessibility_name = "Game speed"
-min_value = 0.1
-max_value = 2.0
-step = 0.1
-value = 1.0
+min_value = 1.0
+max_value = 10.0
+value = 5.0
 
-[node name="Spacer" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=571513730]
+[node name="GameplayPanel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1811507289]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
-size_flags_vertical = 6
-text = " "
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r55hg")
 
 [node name="ReturnButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=180227928]
 layout_mode = 2
@@ -217,9 +239,20 @@ focus_neighbor_right = NodePath("../../../Title")
 focus_neighbor_bottom = NodePath("../../../Title")
 focus_next = NodePath("../../../Title")
 focus_previous = NodePath("../SpeedSlider")
+theme = ExtResource("2_d0eu6")
 theme_override_font_sizes/font_size = 24
 text = "Return
 "
+
+[node name="BottomPanel" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=996466181]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r55hg")
+
+[node name="RightPanel" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1263386053]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r55hg")
 
 [node name="MasterPlayer" type="AudioStreamPlayer" parent="." unique_id=2026723307]
 stream = ExtResource("2_mlw3h")
