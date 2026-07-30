@@ -19,6 +19,15 @@ transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.
 [node name="Rock" parent="LevelComponents" index="3" unique_id=1796733267]
 transform = Transform3D(9.659258, 0, -2.5881906, 0, 10, 0, 2.5881906, 0, 9.659258, -12, 0, 39)
 
+[node name="VisualHint" parent="LevelComponents" index="6" unique_id=793958474]
+offset_left = -239.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 88.0
+
+[node name="Dialogue" parent="LevelComponents" index="8" unique_id=472846714]
+offset_top = -53.0
+
 [node name="Rock2" parent="LevelComponents" unique_id=1200073297 instance=ExtResource("2_v38iq")]
 transform = Transform3D(-3.059797e-07, 0, 7, 0, 7, 0, -7, 0, -3.059797e-07, 17, 0, 29)
 

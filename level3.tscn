@@ -36,6 +36,15 @@ transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.
 [node name="Rock" parent="LevelComponents" index="3" unique_id=1796733267]
 transform = Transform3D(4.330127, 0, -2.5, 0, 5, 0, 2.5, 0, 4.330127, -8.552256, 4.7683716e-07, 42.41801)
 
+[node name="VisualHint" parent="LevelComponents" index="6" unique_id=793958474]
+offset_left = -239.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 88.0
+
+[node name="Dialogue" parent="LevelComponents" index="8" unique_id=472846714]
+offset_top = -53.0
+
 [node name="Rock2" parent="LevelComponents" unique_id=2115460905 instance=ExtResource("2_ymh28")]
 transform = Transform3D(-6.0621777, 0, -3.4999998, 0, 7, 0, 3.4999998, 0, -6.0621777, 13, 0, 33)
 
@@ -147,7 +156,7 @@ transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, 
 bus = &"sfx"
 
 [node name="RandomBarkTimer" type="Timer" parent="Yacht/Node" unique_id=279976458]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=297788535]

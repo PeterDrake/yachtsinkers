@@ -50,7 +50,6 @@ focus_next = NodePath("../Text")
 focus_previous = NodePath("../AdvanceButton")
 focus_mode = 3
 theme_override_font_sizes/font_size = 64
-text = "Victory: Level 1"
 horizontal_alignment = 1
 
 [node name="Text" type="Label" parent="VBoxContainer" unique_id=25926822]

@@ -6,7 +6,9 @@ extends Control
 func _on_visibility_changed() -> void:
 	if visible:
 		var n = yachtsinkers.current_level_number
+		print("Current level number: " + str(n))
 		$VBoxContainer/Title.text = "Victory: Level " + str(n)
+		$VBoxContainre/Title.accessibility_name = "Victory: Level " + str(n)
 		if n == 3:
 			$VBoxContainer/AdvanceButton.text = "Return to Title Screen"
 		else:
