@@ -65,7 +65,7 @@ theme_override_styles/normal = ExtResource("2_i1t6q")
 theme_override_styles/focus = ExtResource("2_i1t6q")
 text = "Created during the July 2026 Making Games Accessible jam, YachtSinkers! is meant to be as accessible as possible.
 
-Blind players should be able to play with a screen reader. Headphones are strongly recommended to locate directions of sounds.
+Blind players should be able to play with a screen reader. Headphones are strongly recommended to locate directions of sounds. The pitch of the yacht sound is lower if the yacht is behind you.
 
 Deaf players should be able to play with on-screen visuals.
 

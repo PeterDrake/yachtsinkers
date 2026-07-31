@@ -1,7 +1,6 @@
 extends Label
 
 func say(new_text: String) -> void:
-	print("Saying " + new_text)
 	set_caption_text(new_text)
 	$CaptionTimer.start()
 

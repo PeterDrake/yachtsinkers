@@ -87,12 +87,10 @@ func _adjust_boat_sound() -> void:
 		if $ShapeCast3D.get_collider(i).name.begins_with("Yacht"):
 			saw_yacht = true
 			if not yacht_ahead:
-				print("Yacht ahead")
 				yacht_ahead = true
 				yacht_sound.pitch_scale = 1.0
 			break
 	if (not saw_yacht) and yacht_ahead:
-		print("Yacht astern")
 		yacht_ahead = false
 		yacht_sound.pitch_scale = 0.75
 	
