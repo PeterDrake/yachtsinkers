@@ -9,6 +9,9 @@ hipass = 0.5
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_j3pel"]
 resource_name = "PitchShift"
 
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_g28q7"]
+resource_name = "PitchShift"
+
 [resource]
 bus/1/name = &"sfx"
 bus/1/solo = false
@@ -38,6 +41,8 @@ bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = -20.020227
 bus/4/send = &"sfx"
+bus/4/effect/0/effect = SubResource("AudioEffectPitchShift_g28q7")
+bus/4/effect/0/enabled = true
 bus/5/name = &"music"
 bus/5/solo = false
 bus/5/mute = false

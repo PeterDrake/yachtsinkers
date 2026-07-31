@@ -19,7 +19,7 @@ height = 3.1809692
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xx5pe"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4flbx"]
-points = PackedVector3Array(-1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, -20, -1, 20, 20, -1, 20, -20, 1, 20, 20, 1, 20)
+points = PackedVector3Array(-100, -1, 0, 100, -1, 0, -100, 1, 0, 100, 1, 0, -100, -1, 100, 100, -1, 100, -100, 1, 100, 100, 1, 100)
 
 [node name="Player" type="CharacterBody3D" unique_id=219399317]
 transform = Transform3D(1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 0, -8.742278e-08, -7.642742e-15, -1, 0, 0, 0)
@@ -39,6 +39,12 @@ visible = false
 mesh = SubResource("CapsuleMesh_xx5pe")
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=2053754596]
+transform = Transform3D(1, 6.6814974e-22, 0, 6.6814974e-22, 1, 0, 0, 0, 1, -8.731939e-08, -7.633704e-15, -0.5)
+shape = SubResource("ConvexPolygonShape3D_4flbx")
+target_position = Vector3(0, 0, 0)
+collide_with_areas = true
+
+[node name="ForwardShapeCast" type="ShapeCast3D" parent="." unique_id=180012930]
 transform = Transform3D(1, 6.6814974e-22, 0, 6.6814974e-22, 1, 0, 0, 0, 1, -8.731939e-08, -7.633704e-15, -0.5)
 shape = SubResource("ConvexPolygonShape3D_4flbx")
 target_position = Vector3(0, 0, 0)
