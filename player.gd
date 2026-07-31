@@ -13,6 +13,9 @@ var health : int
 @onready var yachtsinkers := get_node("../../..")
 @onready var components := get_node("../../LevelComponents")
 @onready var dialogue := get_node("../../LevelComponents/Dialogue")
+@onready var yacht_sound := get_node("../../Yacht/BoatSound")
+
+var yacht_ahead := false
 
 const SLAP_RANGE := 20
 
@@ -76,8 +79,23 @@ func _dive_available() -> bool:
 func _signify_invalid_action(text: String) -> void:
 	$InvalidActionSound.play()
 	level.report_with_visual_hint(text)
+
+func _adjust_boat_sound() -> void:
+	var count = $ShapeCast3D.get_collision_count()
+	var saw_yacht := false
+	for i in range(count):
+		if $ShapeCast3D.get_collider(i).name.begins_with("Yacht"):
+			saw_yacht = true
+			if not yacht_ahead:
+				yacht_ahead = true
+				yacht_sound.pitch_scale = 1.0
+			break
+	if (not saw_yacht) and yacht_ahead:
+		yacht_ahead = false
+		yacht_sound.pitch_scale = 0.75
 	
 func _process(_delta: float) -> void:
+	_adjust_boat_sound()
 	if not dialogue.visible:
 		if _rudder_bite_available():
 			components.update_indicator("bite_avail")
