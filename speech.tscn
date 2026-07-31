@@ -1,9 +1,32 @@
 [gd_scene format=3 uid="uid://bbggsysb1fi0s"]
 
-[ext_resource type="Script" uid="uid://csmd634lk64qy" path="res://speech.gd" id="1_1tdmq"]
+[sub_resource type="GDScript" id="GDScript_14rsx"]
+script/source = "extends Node
+
+var voice_id := DisplayServer.tts_get_voices_for_language(\"en\")[0]
+
+@onready var caption := get_node(\"../Caption\")
+
+#func say(text: String) -> void:
+	#print(\"Saying \" + text)
+	#set_caption_text(text)
+	#$CaptionTimer.start()
+#
+#func set_caption_text(text: String):
+	## This doesn't work
+	##caption.accessibility_live = 2
+	## Neither does this
+	##var ae := caption.get_accessibility_element()
+	##DisplayServer.accessibility_update_set_role(ae, DisplayServer.ROLE_BUTTON)
+	#caption.text = text
+	#caption.accessibility_name = text
+	#
+#func _on_caption_timer_timeout() -> void:
+	#set_caption_text(\"\")
+"
 
 [node name="Speech" type="Node" unique_id=106919617]
-script = ExtResource("1_1tdmq")
+script = SubResource("GDScript_14rsx")
 
 [node name="CaptionTimer" type="Timer" parent="." unique_id=1790940818]
 wait_time = 10.0
